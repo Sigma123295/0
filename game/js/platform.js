@@ -36,7 +36,7 @@ const Platform = {
         location.reload();
       });
     }
-    try { this.player = await this.ysdk.getPlayer(); } catch (e) { this.player = null; }
+    try { this.player = await this.ysdk.getPlayer({ scopes: false }); } catch (e) { this.player = null; }
     try {
       const st = await this.ysdk.adv.getBannerAdvStatus();
       if (!st.stickyAdvIsShowing) this.ysdk.adv.showBannerAdv();
@@ -103,7 +103,7 @@ const Platform = {
   async login() {
     try {
       await this.ysdk.auth.openAuthDialog();
-      this.player = await this.ysdk.getPlayer();
+      this.player = await this.ysdk.getPlayer({ scopes: false });
       return this.isAuth();
     } catch (e) { return false; }
   },
