@@ -44,16 +44,16 @@ button { cursor: pointer; font: inherit; color: inherit; }
 .hidden { display: none !important; }
 
 .phone {
-  width: min(720px, 100%);
+  width: 100%;
   height: 100%;
   background: #0a0d12;
-  border-radius: 28px;
-  padding: 8px;
-  box-shadow: 0 20px 60px #000a, inset 0 0 0 2px #2a3a4a;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
   display: flex; flex-direction: column;
 }
 .phone-screen {
-  flex: 1; min-height: 0; border-radius: 30px; overflow: hidden;
+  flex: 1; min-height: 0; border-radius: 0; overflow: hidden;
   background: #071018; display: flex; flex-direction: column; position: relative;
 }
 .status {
@@ -242,10 +242,6 @@ button { cursor: pointer; font: inherit; color: inherit; }
 }
 .pause-card { text-align: center; }
 .img-zoom { width: 100%; border-radius: 12px; max-height: 58vh; object-fit: contain; pointer-events: none; }
-@media (max-width: 760px) {
-  .phone { width: 100%; height: 100%; border-radius: 0; padding: 0; box-shadow: none; }
-  .phone-screen { border-radius: 0; }
-}
 
   </style>
   <script src="/sdk.js"></script>
