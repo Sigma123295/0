@@ -366,11 +366,6 @@ const Game = {
         <p class="muted">${t("coinsHelp")}</p>
         <button class="btn gold" style="width:100%;min-height:56px;margin:8px 0" data-k="1" onclick="Game.adCoins()">${t("watchAdCoins")}</button>
         <p class="muted">${t("rewardedHint")}</p>
-        <div class="q-card" style="margin-top:12px">
-          <b>${t("login")}</b>
-          <p class="muted">${t("loginHint")}</p>
-          ${Platform.isAuth() ? "<p>Yandex ID ✓</p>" : `<button class="btn" data-k="1" onclick="Game.doLogin()">${t("login")}</button>`}
-        </div>
         <div class="btn-row" style="margin-top:10px">
           <button class="btn sec" data-k="1" onclick="Game.toggleMusic()">${t("music")}: ${this.music ? "ON" : "OFF"}</button>
           <button class="btn sec" data-k="1" onclick="Game.toggleSfx()">${t("sfx")}: ${this.sfx ? "ON" : "OFF"}</button>
