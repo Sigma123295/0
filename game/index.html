@@ -5,219 +5,199 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#0d2a44">
+  <meta name="theme-color" content="#071018">
   <meta name="google" content="notranslate">
-  <title>Шкала откровенности</title>
+  <title>Ночной Кайфон</title>
   <style>
 :root {
-  --bg: #0b1e33;
-  --bg2: #143a58;
-  --card: rgba(20, 70, 110, 0.78);
-  --line: rgba(140, 220, 255, 0.38);
-  --pink: #3db4ff;
-  --pink2: #8ae4ff;
-  --violet: #4f8cff;
+  --bg: #071018;
   --cyan: #7ef0ff;
+  --blue: #3db4ff;
   --gold: #ffd15a;
-  --text: #f3fbff;
-  --muted: #b7d7ec;
-  --her: linear-gradient(135deg, #3db4ff, #7a6bff);
-  --me: linear-gradient(135deg, #2fd0ff, #4f8cff);
+  --text: #f4fbff;
+  --muted: #9bb8cc;
+  --line: rgba(140, 220, 255, 0.28);
+  --tg-in: #1e2c3a;
+  --tg-out: #2b6ea3;
   --safe: env(safe-area-inset-top, 0px);
   --safeb: env(safe-area-inset-bottom, 0px);
-  --navh: 64px;
-  --toph: 56px;
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body {
   margin: 0; padding: 0; width: 100%; height: 100%;
-  overflow: hidden; background: #071422; color: var(--text);
+  overflow: hidden; background: #050b12; color: var(--text);
   font-family: "Segoe UI", "Nunito", "Trebuchet MS", sans-serif;
   user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
   overscroll-behavior: none; touch-action: manipulation;
 }
 img { -webkit-user-drag: none; pointer-events: none; }
-button, .tap { cursor: pointer; font: inherit; color: inherit; }
+button { cursor: pointer; font: inherit; color: inherit; }
 #app {
-  position: relative; width: 100%; height: 100%; margin: 0 auto;
+  width: 100%; height: 100%; margin: 0 auto;
   max-width: min(100vw, calc(100vh * 2));
   max-height: min(100vh, calc(100vw * 2));
+  display: flex; align-items: center; justify-content: center;
   background:
-    radial-gradient(1200px 520px at 8% -12%, #2a7ab8 0%, transparent 55%),
-    radial-gradient(900px 480px at 110% 8%, #1a5f8a 0%, transparent 50%),
-    linear-gradient(180deg, #16456d 0%, #0d2a44 48%, #071828 100%);
-  overflow: hidden;
-  display: flex; flex-direction: column;
+    radial-gradient(900px 500px at 20% 0%, #1a4d73 0%, transparent 55%),
+    linear-gradient(180deg, #0b2236, #050b12);
 }
 .hidden { display: none !important; }
-.boot {
-  position: absolute; inset: 0; display: flex; flex-direction: column;
-  align-items: center; justify-content: flex-end; z-index: 20;
+
+.phone {
+  width: min(430px, 100%);
+  height: min(100%, 900px);
+  background: #0a0d12;
+  border-radius: 40px;
+  padding: 11px;
+  box-shadow: 0 20px 60px #000a, inset 0 0 0 2px #2a3a4a;
+  display: flex; flex-direction: column;
 }
+.phone-screen {
+  flex: 1; min-height: 0; border-radius: 30px; overflow: hidden;
+  background: #071018; display: flex; flex-direction: column; position: relative;
+}
+.status {
+  height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 16px 0; font-size: 12px; font-weight: 700; z-index: 5;
+}
+.status span { opacity: .9; }
+.homebar {
+  height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  background: #071018;
+}
+.homebar i {
+  width: 120px; height: 5px; border-radius: 99px; background: #dbefff; display: block; border: 0;
+}
+.homebar button { background: none; border: 0; padding: 8px 40px; }
+
+.boot { position: absolute; inset: 0; z-index: 20; }
 .boot-hero { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.boot-glow { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, #0d2a44 78%); }
-.boot-copy { position: relative; z-index: 2; text-align: center; padding: 0 20px 48px; width: 100%; }
-.boot-kicker { letter-spacing: .28em; text-transform: uppercase; color: var(--pink2); font-size: 12px; margin: 0 0 8px; }
-.boot h1 { margin: 0; font-size: clamp(28px, 7vw, 44px); text-shadow: 0 8px 30px #000; }
-.boot-sub { color: var(--cyan); margin: 8px 0 18px; }
-.boot-bar { width: 180px; height: 6px; margin: 0 auto; border-radius: 99px; background: rgba(255,255,255,.15); overflow: hidden; }
-.boot-bar i { display: block; height: 100%; width: 30%; background: linear-gradient(90deg, var(--pink), var(--cyan)); animation: load 1.2s ease infinite; }
+.boot-glow { position: absolute; inset: 0; background: linear-gradient(180deg, transparent, #071018 78%); }
+.boot-copy { position: absolute; left: 0; right: 0; bottom: 36px; text-align: center; padding: 0 16px; }
+.boot h1 { margin: 0; font-size: 28px; }
+.boot-kicker { letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); font-size: 11px; }
+.boot-bar { width: 160px; height: 5px; margin: 12px auto 0; border-radius: 99px; background: #fff2; overflow: hidden; }
+.boot-bar i { display: block; height: 100%; width: 30%; background: linear-gradient(90deg, var(--blue), var(--cyan)); animation: load 1.1s ease infinite; }
 @keyframes load { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
 
 .view { flex: 1; min-height: 0; display: flex; flex-direction: column; position: relative; }
 .topbar {
-  height: calc(var(--toph) + var(--safe));
-  padding: var(--safe) 12px 0;
-  display: flex; align-items: center; gap: 8px; flex-shrink: 0;
-  background: linear-gradient(180deg, rgba(10,34,56,.94), rgba(10,34,56,.45));
+  height: 48px; display: flex; align-items: center; gap: 8px; padding: 0 10px; flex-shrink: 0;
+  background: rgba(8,20,32,.92);
 }
-.topbar h2 { flex: 1; margin: 0; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.icon-btn, .coin-chip, .pill {
+.topbar h2 { flex: 1; margin: 0; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.icon-btn, .coin-chip {
   border: 1px solid var(--line); background: rgba(255,255,255,.06);
-  border-radius: 999px; min-height: 40px; min-width: 40px;
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  padding: 0 12px;
+  border-radius: 999px; min-height: 34px; min-width: 34px;
+  display: inline-flex; align-items: center; justify-content: center; padding: 0 10px;
 }
-.icon-btn { font-size: 18px; }
-.coin-chip { color: var(--gold); font-weight: 700; }
+.coin-chip { color: var(--gold); font-weight: 800; font-size: 13px; }
+
 .scroll {
   flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
-  touch-action: pan-y;
-  padding: 12px 14px calc(var(--navh) + var(--safeb) + 16px);
+  -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y;
+  padding: 10px 12px 16px;
 }
-.scroll::-webkit-scrollbar { width: 6px; }
-.scroll::-webkit-scrollbar-thumb { background: rgba(80,190,255,.5); border-radius: 99px; }
+.scroll::-webkit-scrollbar { width: 4px; }
+.scroll::-webkit-scrollbar-thumb { background: rgba(80,190,255,.45); border-radius: 99px; }
 
-.nav {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  height: calc(var(--navh) + var(--safeb));
-  padding-bottom: var(--safeb);
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  background: rgba(8, 28, 48, .94); border-top: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+.home {
+  flex: 1; min-height: 0; background: #071018 url("assets/img/ui/home-wall.jpg") center/cover no-repeat;
+  display: flex; flex-direction: column; padding: 12px 18px 8px;
 }
-.nav button {
-  background: none; border: 0; color: var(--muted); display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 2px; font-size: 11px;
+.home-grid {
+  margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 10px; padding-bottom: 8px;
 }
-.nav button.on { color: #fff; text-shadow: 0 0 12px var(--cyan); }
-.nav b { font-size: 18px; font-weight: 700; }
+.app-ico { background: none; border: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.app-ico img {
+  width: 62px; height: 62px; border-radius: 16px; object-fit: cover;
+  box-shadow: 0 8px 20px #0006; pointer-events: none;
+}
+.app-ico span { font-size: 11px; font-weight: 700; text-shadow: 0 1px 4px #000; text-align: center; line-height: 1.2; }
 
-.hero-card {
-  position: relative; border-radius: 22px; overflow: hidden;
-  height: clamp(200px, 34vw, 300px);
-  border: 1px solid var(--line); margin-bottom: 14px;
-}
-.hero-card img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: 22% 12%;
-}
-.hero-card .shade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, #0a243cd9 86%); }
-.hero-card .copy { position: absolute; left: 14px; right: 14px; bottom: 12px; }
-.hero-card h3 { margin: 0 0 4px; font-size: 22px; }
-.badge-row { display: flex; gap: 6px; flex-wrap: wrap; }
-.badge { background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.2); border-radius: 8px; padding: 3px 8px; font-size: 11px; }
-.badge.hot { background: #ff2d7a; border: 0; font-weight: 800; }
-.badge.gold { background: var(--gold); color: #3a2200; font-weight: 800; }
-
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .card {
-  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
-  padding: 12px; display: flex; gap: 10px; align-items: center;
+  width: 100%; text-align: left; background: rgba(20,70,110,.78); border: 1px solid var(--line);
+  border-radius: 16px; padding: 10px; display: flex; gap: 10px; align-items: center;
 }
-.card.col { flex-direction: column; align-items: stretch; }
-.avatar {
-  width: 58px; height: 58px; border-radius: 16px; object-fit: cover; flex-shrink: 0;
-  border: 2px solid var(--cyan); box-shadow: 0 0 16px rgba(80,200,255,.35);
-}
-.online { width: 10px; height: 10px; background: #39ff95; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #39ff95; }
-.muted { color: var(--muted); font-size: 13px; }
+.avatar { width: 52px; height: 52px; border-radius: 16px; object-fit: cover; flex-shrink: 0; border: 2px solid var(--cyan); }
+.muted { color: var(--muted); font-size: 12px; }
+.preview { color: #9ad8ff; font-size: 12px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .btn {
-  border: 0; border-radius: 16px; min-height: 48px; padding: 0 16px; font-weight: 800;
-  background: linear-gradient(135deg, var(--pink), var(--violet)); color: #fff;
-  box-shadow: 0 8px 22px rgba(255,77,184,.28);
+  border: 0; border-radius: 14px; min-height: 44px; padding: 0 14px; font-weight: 800;
+  background: linear-gradient(135deg, var(--blue), #6a7bff); color: #fff;
 }
-.btn.sec { background: rgba(255,255,255,.08); border: 1px solid var(--line); box-shadow: none; }
+.btn.sec { background: rgba(255,255,255,.08); border: 1px solid var(--line); }
 .btn.gold { background: linear-gradient(135deg, #ffd15a, #ff9a3c); color: #3a2200; }
-.btn.cyan { background: linear-gradient(135deg, #5ce1ff, #6d7bff); }
-.btn:disabled { opacity: .5; }
+.btn.cyan { background: linear-gradient(135deg, #5ce1ff, #4f8cff); }
 .btn-row { display: flex; gap: 8px; }
 .btn-row .btn { flex: 1; }
 
-.chat-list .card { width: 100%; text-align: left; background: var(--card); border: 1px solid var(--line); }
-.preview { color: var(--pink2); font-size: 13px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.photo-card { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 3/4; border: 1px solid var(--line); }
+.photo-card img { width: 100%; height: 100%; object-fit: cover; }
+.photo-card.locked img { filter: blur(14px) saturate(1.15); transform: scale(1.08); }
+.photo-card .meta {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 6px;
+  background: linear-gradient(180deg, transparent, #000c);
+  display: flex; justify-content: space-between;
+}
+.lock-ico { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 24px; }
+.badge { background: rgba(0,0,0,.45); border-radius: 8px; padding: 3px 7px; font-size: 11px; }
+.badge.hot { background: #ff2d7a; font-weight: 800; }
+.badge.gold { background: var(--gold); color: #3a2200; font-weight: 800; }
 
-.messages { display: flex; flex-direction: column; gap: 8px; padding-bottom: 8px; }
+.q-card { background: rgba(20,70,110,.78); border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+.progress { height: 7px; background: #fff1; border-radius: 99px; overflow: hidden; margin: 8px 0 12px; }
+.progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+.answers { display: flex; flex-direction: column; gap: 8px; }
+.answer, .choice {
+  text-align: left; min-height: 46px; border-radius: 12px; border: 1px solid var(--line);
+  background: rgba(255,255,255,.07); padding: 10px 12px;
+}
+.result { text-align: center; }
+.result .big { font-size: 24px; margin: 8px 0; }
+.stars { color: var(--gold); letter-spacing: 3px; }
+
+.tg {
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  background-color: #0e1a22;
+  background-image:
+    radial-gradient(circle at 12px 12px, rgba(255,255,255,.05) 1px, transparent 0),
+    radial-gradient(circle at 36px 28px, rgba(90,180,160,.12) 8px, transparent 9px);
+  background-size: 48px 48px, 64px 64px;
+}
+.messages { display: flex; flex-direction: column; gap: 6px; padding: 8px 8px 12px; }
 .bubble {
-  max-width: 82%; padding: 10px 12px; border-radius: 16px; line-height: 1.35; font-size: 15px;
+  max-width: 82%; padding: 8px 10px; border-radius: 14px; line-height: 1.35; font-size: 14px;
   word-wrap: break-word;
 }
-.bubble.her { align-self: flex-start; background: var(--her); border-bottom-left-radius: 4px; }
-.bubble.me { align-self: flex-end; background: var(--me); border-bottom-right-radius: 4px; }
-.choices { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-.choice {
-  text-align: left; background: rgba(255,255,255,.07); border: 1px solid var(--line);
-  border-radius: 14px; padding: 12px; min-height: 46px;
-}
-.choice:hover, .choice:focus { outline: 0; border-color: var(--cyan); }
+.bubble.her { align-self: flex-start; background: var(--tg-in); border-bottom-left-radius: 4px; }
+.bubble.me { align-self: flex-end; background: var(--tg-out); border-bottom-right-radius: 4px; }
+.choices { display: flex; flex-direction: column; gap: 6px; padding: 0 8px 10px; }
+.tg-item { width: 100%; }
+.dot { width: 9px; height: 9px; background: #39ff95; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px #39ff95; }
 
-.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.photo-card { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3/4; border: 1px solid var(--line); }
-.photo-card img { width: 100%; height: 100%; object-fit: cover; }
-.photo-card.locked img { filter: blur(16px) saturate(1.2); transform: scale(1.08); }
-.photo-card .meta {
-  position: absolute; left: 0; right: 0; bottom: 0; padding: 8px;
-  background: linear-gradient(180deg, transparent, #000c);
-  display: flex; justify-content: space-between; align-items: flex-end; gap: 6px;
-}
-.lock-ico { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 28px; }
-
-.q-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 16px; }
-.progress { height: 8px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; margin: 8px 0 14px; }
-.progress i { display: block; height: 100%; background: linear-gradient(90deg, var(--pink), var(--cyan)); }
-.answers { display: flex; flex-direction: column; gap: 8px; }
-.answer { text-align: left; min-height: 52px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.06); padding: 12px; }
-
-.result { text-align: center; padding: 12px 6px 20px; }
-.result .big { font-size: 28px; margin: 8px 0; }
-.stars { color: var(--gold); font-size: 22px; letter-spacing: 3px; }
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+.stat { background: rgba(255,255,255,.07); border-radius: 14px; padding: 12px; text-align: center; }
+.stat b { display: block; font-size: 20px; color: var(--gold); }
 
 .toast {
-  position: absolute; left: 50%; bottom: calc(var(--navh) + 18px); transform: translateX(-50%);
-  background: #12344f; border: 1px solid var(--line); padding: 10px 14px; border-radius: 14px;
-  z-index: 30; white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+  position: absolute; left: 50%; bottom: 36px; transform: translateX(-50%);
+  background: #12344f; border: 1px solid var(--line); padding: 8px 12px; border-radius: 12px;
+  z-index: 30; max-width: 90%; font-size: 13px;
 }
 .modal {
-  position: absolute; inset: 0; background: rgba(5,0,10,.72); display: flex; align-items: flex-end;
-  justify-content: center; z-index: 40; padding: 16px;
+  position: absolute; inset: 0; background: rgba(5,10,16,.72); display: flex; align-items: flex-end;
+  justify-content: center; z-index: 40; padding: 12px;
 }
-.modal-card {
-  width: min(460px, 100%); background: #154262; border: 1px solid var(--line);
-  border-radius: 22px; padding: 16px; margin-bottom: var(--safeb);
-}
-.viewer { align-items: center; }
-.viewer img { width: min(420px, 100%); max-height: 70%; object-fit: contain; border-radius: 12px; }
+.modal-card { width: 100%; background: #154262; border: 1px solid var(--line); border-radius: 18px; padding: 14px; }
 .pause {
-  position: absolute; inset: 0; background: rgba(6,0,12,.82); display: flex; align-items: center;
+  position: absolute; inset: 0; background: rgba(6,12,20,.82); display: flex; align-items: center;
   justify-content: center; z-index: 50;
 }
-.pause-card { text-align: center; }
-.section-title { margin: 4px 0 10px; font-size: 16px; color: var(--cyan); }
-.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
-.stat { background: rgba(255,255,255,.06); border-radius: 14px; padding: 12px; text-align: center; }
-.stat b { display: block; font-size: 22px; color: var(--gold); }
-
-@media (min-width: 820px) {
-  .photo-grid { grid-template-columns: repeat(4, 1fr); }
-  .grid-2 { grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .hero-card { height: clamp(240px, 28vw, 320px); }
-  .scroll { padding-left: 22px; padding-right: 22px; }
-  .chat-col { display: grid !important; grid-template-columns: 1fr 1fr; gap: 8px !important; }
-}
-@media (max-width: 380px) {
-  .nav button { font-size: 10px; }
-  .avatar { width: 50px; height: 50px; }
+@media (max-width: 520px) {
+  .phone { width: 100%; height: 100%; border-radius: 0; padding: 0; box-shadow: none; }
+  .phone-screen { border-radius: 0; }
 }
 
   </style>
@@ -225,33 +205,38 @@ button, .tap { cursor: pointer; font: inherit; color: inherit; }
 </head>
 <body>
   <div id="app">
-    <div id="boot" class="boot">
-      <div class="boot-glow"></div>
-      <img class="boot-hero" src="assets/img/hero.jpg" alt="">
-      <div class="boot-copy">
-        <p class="boot-kicker">тесты · фото · монеты</p>
-        <h1>Шкала откровенности</h1>
-        <p class="boot-sub">Насколько ты пошлый?</p>
-        <div class="boot-bar"><i></i></div>
-      </div>
-    </div>
-    <div id="view" class="view hidden"></div>
-    <div id="toast" class="toast hidden"></div>
-    <div id="modal" class="modal hidden"></div>
-    <div id="pause" class="pause hidden">
-      <div class="pause-card">
-        <h2>Пауза</h2>
-        <p>Игра на паузе, звук выключен</p>
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="status"><span id="clock">21:14</span><span>KayPhone</span><span>▮▮▮</span></div>
+        <div id="boot" class="boot">
+          <div class="boot-glow"></div>
+          <img class="boot-hero" src="assets/img/hero.jpg" alt="">
+          <div class="boot-copy">
+            <p class="boot-kicker">ночной кайфон</p>
+            <h1>Ночной Кайфон</h1>
+            <p class="boot-sub">TEST 18+ · Чаты · Фоточки</p>
+            <div class="boot-bar"><i></i></div>
+          </div>
+        </div>
+        <div id="view" class="view hidden"></div>
+        <div id="toast" class="toast hidden"></div>
+        <div id="modal" class="modal hidden"></div>
+        <div id="pause" class="pause hidden">
+          <div class="pause-card"><h2>Пауза</h2><p>Игра на паузе, звук выключен</p></div>
+        </div>
+        <div class="homebar"><button type="button" onclick="Game.showHome()" aria-label="home"><i></i></button></div>
       </div>
     </div>
   </div>
   <script>
 const I18N = {
   ru: {
-    title: "Шкала откровенности",
-    tests: "Тесты",
-    photos: "Фото",
-    coinsTab: "Монеты",
+    title: "Ночной Кайфон",
+    tests: "TEST 18+",
+    photos: "Горячие фоточки",
+    chats: "Мои чаты",
+    profile: "Мой профиль",
+    home: "На экран",
     back: "Назад",
     coins: "монет",
     hot: "Горячая",
@@ -268,9 +253,7 @@ const I18N = {
     coinsGot: "+{c} монет",
     alreadyRewarded: "Повторно монеты не начисляются",
     how: "Как играть",
-    howBody: "Проходите тесты — за первое прохождение каждого теста 20 монет. Смотрите рекламу — 50 монет за просмотр. Каждое фото стоит 50 монет или одну рекламу. Управление: нажимайте пальцем или мышью. На компьютере — стрелки, Enter, Escape. Прогресс сохраняется сам.",
-    login: "Войти через Яндекс ID",
-    loginHint: "Вход сохраняет прогресс в облаке на всех устройствах. Без входа тоже можно играть — прогресс останется на этом устройстве.",
+    howBody: "На домашнем экране четыре приложения. TEST 18+ — тесты, за первое прохождение 20 монет. Горячие фоточки — 50 монет или реклама. Мои чаты — переписка с вариантами ответа. Профиль — музыка, баланс и реклама за 50 монет. Нажимайте пальцем или мышью. На компьютере: стрелки, Enter, Escape, кнопка домой внизу телефона. Прогресс сохраняется сам.",
     music: "Музыка",
     sfx: "Звуки",
     paused: "Пауза",
@@ -278,66 +261,27 @@ const I18N = {
     needCoins: "Не хватает монет. Пройдите тест или посмотрите рекламу.",
     opened: "Фото открыто",
     close: "Закрыть",
-    continue: "Далее",
-    ageNote: "Персонажи старше 21 года. Фото — стильные портреты.",
+    online: "в сети",
     coinsHelp: "1 реклама = 50 монет. 1 тест = 20 монет. 1 фото = 50 монет.",
-    moreCoins: "Монеты за рекламу"
-  },
-  en: {
-    title: "Candid Scale",
-    tests: "Tests",
-    photos: "Photos",
-    coinsTab: "Coins",
-    back: "Back",
-    coins: "coins",
-    hot: "Hot",
-    openFor: "Unlock for",
-    watchAd: "Watch an ad to unlock the photo",
-    watchAdCoins: "Watch an ad and get 50 coins",
-    adLocal: "On Yandex Games this shows an ad. Preview reward granted.",
-    adFail: "Ads unavailable right now. Try later.",
-    rewardedHint: "You will watch an ad and get an in-game reward.",
-    testReward: "This test: {n} questions · +{c} coins",
-    startTest: "Start test",
-    result: "Your result",
-    again: "Try again",
-    coinsGot: "+{c} coins",
-    alreadyRewarded: "Coins are awarded once",
-    how: "How to play",
-    howBody: "Complete tests — 20 coins for the first clear of each test. Watch an ad — 50 coins. Each photo costs 50 coins or one ad. Tap or click. On desktop: arrows, Enter, Escape. Progress saves automatically.",
-    login: "Sign in with Yandex ID",
-    loginHint: "Sign in to save cloud progress across devices. Guest play keeps progress on this device.",
-    music: "Music",
-    sfx: "Sounds",
-    paused: "Paused",
-    pausedHint: "The game is paused and muted",
-    needCoins: "Not enough coins. Finish a test or watch an ad.",
-    opened: "Photo unlocked",
-    close: "Close",
-    continue: "Next",
-    ageNote: "Characters are over 21. Photos are stylish portraits.",
-    coinsHelp: "1 ad = 50 coins. 1 test = 20 coins. 1 photo = 50 coins.",
-    moreCoins: "Coins for an ad"
+    typing: "печатает...",
+    chatsDone: "чатов пройдено",
+    testsDone: "тестов пройдено",
+    photosOpen: "фото открыто"
   }
 };
 function t(key, vars) {
-  const lang = (window.Game && Game.lang) || "ru";
-  let s = (I18N[lang] && I18N[lang][key]) || I18N.ru[key] || key;
+  let s = (I18N.ru && I18N.ru[key]) || key;
   if (vars) Object.keys(vars).forEach((k) => { s = s.replace("{" + k + "}", vars[k]); });
   return s;
 }
 function tx(obj) {
   if (!obj) return "";
   if (typeof obj === "string") return obj;
-  const lang = (window.Game && Game.lang) || "ru";
-  return obj[lang] || obj.ru || obj.en || "";
+  return obj.ru || obj.en || "";
 }
 
 const CONTENT = {
-  "GAME_TITLE": {
-    "ru": "Шкала откровенности",
-    "en": "Candid Scale"
-  },
+  "GAME_TITLE": "Ночной Кайфон",
   "PHOTOS": [
     {
       "id": "p01",
@@ -7801,7 +7745,1602 @@ const CONTENT = {
   "TEST_REWARD": 20,
   "AD_COINS": 50,
   "PHOTO_PRICE": 50,
-  "START_COINS": 0
+  "START_COINS": 0,
+  "GIRLS": [
+    {
+      "id": "alisa",
+      "age": 24,
+      "avatar": "assets/img/photos/p01.jpg",
+      "name": "Алиса",
+      "job": "Бариста",
+      "preview": "Я сейчас одна... напиши?"
+    },
+    {
+      "id": "mira",
+      "age": 26,
+      "avatar": "assets/img/photos/p04.jpg",
+      "name": "Мира",
+      "job": "Фотограф",
+      "preview": "Поймала свет. Хочешь кадр?"
+    },
+    {
+      "id": "kira",
+      "age": 25,
+      "avatar": "assets/img/photos/p07.jpg",
+      "name": "Кира",
+      "job": "Тренер",
+      "preview": "После тренировки энергия бьёт ключом"
+    },
+    {
+      "id": "lena",
+      "age": 27,
+      "avatar": "assets/img/photos/p06.jpg",
+      "name": "Лена",
+      "job": "Путешественница",
+      "preview": "Закат на море. Жаль, тебя нет рядом"
+    },
+    {
+      "id": "nina",
+      "age": 23,
+      "avatar": "assets/img/photos/p08.jpg",
+      "name": "Нина",
+      "job": "Диджей",
+      "preview": "Ночной сет закончился. Не спится"
+    },
+    {
+      "id": "eva",
+      "age": 28,
+      "avatar": "assets/img/photos/p09.jpg",
+      "name": "Ева",
+      "job": "Стилист",
+      "preview": "Примеряю платье. Оценишь?"
+    },
+    {
+      "id": "dasha",
+      "age": 25,
+      "avatar": "assets/img/photos/p10.jpg",
+      "name": "Даша",
+      "job": "Дизайнер",
+      "preview": "Дома тихо. Составишь компанию в чате?"
+    },
+    {
+      "id": "sofia",
+      "age": 26,
+      "avatar": "assets/img/photos/p11.jpg",
+      "name": "София",
+      "job": "Йога-инструктор",
+      "preview": "Рассвет у океана. Дыши со мной"
+    }
+  ],
+  "CHATS": {
+    "alisa": [
+      {
+        "her": "Привет. Сегодня смена короткая, я уже дома с какао."
+      },
+      {
+        "opts": [
+          {
+            "t": "Звучит уютно. Как прошёл день?",
+            "h": 2
+          },
+          {
+            "t": "Какао — серьёзный аргумент.",
+            "h": 1
+          },
+          {
+            "t": "Привет. Что нового?",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "День был шумный, но вечером хочется тихого разговора. Ты из тех, кто пишет коротко или рассказывает?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Могу и так, и так — как тебе спокойнее.",
+            "h": 2
+          },
+          {
+            "t": "Люблю подробности, если есть настроение.",
+            "h": 1
+          },
+          {
+            "t": "Коротко. Меньше шума.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда секрет: я иногда оставляю сердечко на стаканчике постоянным гостям. Глупо?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Мило. Я бы точно заметил.",
+            "h": 2
+          },
+          {
+            "t": "Это маленький ритуал, мне нравится.",
+            "h": 1
+          },
+          {
+            "t": "Немного театрально.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "А ты? Есть привычка, которую стесняешься рассказывать незнакомцам?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Слушаю один и тот же плейлист, когда хочу спокойствия.",
+            "h": 2
+          },
+          {
+            "t": "Перечитываю старые сообщения, если день странный.",
+            "h": 1
+          },
+          {
+            "t": "Пока держу в секрете.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Хорошо. Тогда ближе: если бы мы сидели за столиком у окна, о чём бы ты спросил первым?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Какой вечер тебя заряжает после смены.",
+            "h": 2
+          },
+          {
+            "t": "Куда бы ты поехала на выходные без планов.",
+            "h": 1
+          },
+          {
+            "t": "Что вкуснее всего в твоём меню.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Меня заряжает тёплый свет и человек, который не торопит. Ты умеешь не торопить?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Умею. Можно просто писать и молчать паузами.",
+            "h": 2
+          },
+          {
+            "t": "Постараюсь, если напомнишь.",
+            "h": 1
+          },
+          {
+            "t": "Иногда спешу, честно.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда ещё один вопрос без подвоха: комплимент в чате — про глаза, про голос или про характер?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Про то, какая ты живая в мелочах.",
+            "h": 2
+          },
+          {
+            "t": "Про взгляд. У тебя тёплый.",
+            "h": 1
+          },
+          {
+            "t": "Про характер — он дольше держится.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Ты милый, когда не играешь. Если бы я прислала фото с веранды кафе, ты бы написал честно?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Честно и мягко. Красиво — скажу красиво.",
+            "h": 2
+          },
+          {
+            "t": "Сначала смущусь, потом напишу.",
+            "h": 1
+          },
+          {
+            "t": "Коротко: огонь.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Ха. Ладно, держи настроение: я сегодня без спешки. Напиши, как бы ты закончил этот вечер, если бы мы были в одном городе."
+      },
+      {
+        "opts": [
+          {
+            "t": "Прогулка домой длинной дорогой и чай.",
+            "h": 2
+          },
+          {
+            "t": "Ещё час разговоров на веранде.",
+            "h": 2
+          },
+          {
+            "t": "Кино и плед, без лишнего шума.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Мне это подходит. Сохраняю тебя в особых. Завтра напишу первой, если не против."
+      },
+      {
+        "opts": [
+          {
+            "t": "Только да. Буду ждать.",
+            "h": 2
+          },
+          {
+            "t": "Я могу написать сам утром.",
+            "h": 1
+          },
+          {
+            "t": "Ок. Спокойной ночи.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Спокойной. И спасибо, что выбрал тёплые ответы — это чувствуется даже в чате."
+      },
+      {
+        "her": "Знаешь, я бы отправила тебе фото с кухни... но сначала скажи, ты смотришь только на какао или и на меня?"
+      },
+      {
+        "opts": [
+          {
+            "t": "На тебя. Какао — фон.",
+            "h": 2
+          },
+          {
+            "t": "На атмосферу целиком.",
+            "h": 1
+          },
+          {
+            "t": "Пока на сообщения.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Хороший ответ. Тогда держи секрет: я иногда пишу людям в три ночи, если они звучат как ты. Не пропадай."
+      },
+      {
+        "opts": [
+          {
+            "t": "Не пропаду. Пиши даже в три.",
+            "h": 2
+          },
+          {
+            "t": "Я тоже редко сплю.",
+            "h": 1
+          },
+          {
+            "t": "Ок, спокойной.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Спокойной… хотя спокойной уже не будет. Завтра напишу «доброе» первой 🔥"
+      }
+    ],
+    "mira": [
+      {
+        "her": "Снимала витрины и случайно поймала своё отражение. Странно нравится."
+      },
+      {
+        "opts": [
+          {
+            "t": "Покажи. Хочу понять твой взгляд.",
+            "h": 2
+          },
+          {
+            "t": "Отражения — честная магия.",
+            "h": 1
+          },
+          {
+            "t": "Звучит красиво.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Люди думают, фотограф всегда хочет позу. А я хочу паузу. Ты умеешь быть в кадре спокойным?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Могу молчать и смотреть.",
+            "h": 2
+          },
+          {
+            "t": "Немного стесняюсь камер.",
+            "h": 1
+          },
+          {
+            "t": "Буду шутить, пока не получится.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Хорошо. Если бы я снимала тебя на крыше, какой свет выберешь: закат или ночные огни?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Закат. Он делает голос тише.",
+            "h": 2
+          },
+          {
+            "t": "Ночь. Больше тайны.",
+            "h": 1
+          },
+          {
+            "t": "Как скажешь — ты видишь лучше.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Мне нравится, когда человек не спорит с тишиной. Расскажи город, который тебе кажется фильмом."
+      },
+      {
+        "opts": [
+          {
+            "t": "Любой приморский вечером.",
+            "h": 2
+          },
+          {
+            "t": "Старый центр после дождя.",
+            "h": 1
+          },
+          {
+            "t": "Не знаю. Подскажи свой.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Мой — тот, где неон отражается в лужах. Если я пришлю такой кадр, напишешь не «класс», а что-то живое?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Напишу, какой в нём воздух.",
+            "h": 2
+          },
+          {
+            "t": "Попробую без шаблона.",
+            "h": 1
+          },
+          {
+            "t": "Класс запрещён, принято.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Ещё секрет: я иногда снимаю пустые стулья. Они честнее людей. Ты бы сел на такой стул рядом?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Сел бы. И не заполнял паузу словами.",
+            "h": 2
+          },
+          {
+            "t": "Сел бы и спросил, кого ты ждёшь.",
+            "h": 1
+          },
+          {
+            "t": "Странная романтика, но ок.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Ты внимательный. Это редкость. Если бы у нас была одна плёнка на двоих, что снимем первым?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Твои руки и чашку.",
+            "h": 2
+          },
+          {
+            "t": "Улицу под дождём.",
+            "h": 1
+          },
+          {
+            "t": "Нас в отражении окна.",
+            "h": 2
+          }
+        ]
+      },
+      {
+        "her": "Сохраняю это. Спокойной ночи. Если не спится — напиши, я тоже ещё с камерой."
+      },
+      {
+        "opts": [
+          {
+            "t": "Напишу. Не пропадай.",
+            "h": 2
+          },
+          {
+            "t": "Спокойной. Пусть кадры будут мягкими.",
+            "h": 1
+          },
+          {
+            "t": "Ок.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Мягкими и будут. Ты хороший собеседник для ночи."
+      },
+      {
+        "her": "Если я сниму тебя только в полумраке, без лица — это всё ещё про нас или уже слишком близко?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Про нас. Мне нравится тайна.",
+            "h": 2
+          },
+          {
+            "t": "Можно, если без публикации.",
+            "h": 1
+          },
+          {
+            "t": "Лучше обычный портрет.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Без публикации. Только тебе. Я редко так говорю. Напиши, когда будет тишина — я включу камеру."
+      },
+      {
+        "opts": [
+          {
+            "t": "Тишина уже есть. Пиши.",
+            "h": 2
+          },
+          {
+            "t": "Ночью напишу.",
+            "h": 1
+          },
+          {
+            "t": "Договорились.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда это наш маленький фильм. Не стирай переписку."
+      }
+    ],
+    "kira": [
+      {
+        "her": "Только с тренировки. Пульс ещё высокий, а в чате почему-то хочется писать тебе."
+      },
+      {
+        "opts": [
+          {
+            "t": "Пиши. Я на линии.",
+            "h": 2
+          },
+          {
+            "t": "Как самочувствие?",
+            "h": 1
+          },
+          {
+            "t": "Круто, что не забыла.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Нормально. Иногда после спорта я резкая. Если скажу «давай честно» — выдержишь?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Выдержу. Лучше правда.",
+            "h": 2
+          },
+          {
+            "t": "Попробую без обиды.",
+            "h": 1
+          },
+          {
+            "t": "Зависит от темы.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тема простая: свидание после зала. Кофе, прогулка или домашняя еда?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Прогулка, пока город остывает.",
+            "h": 2
+          },
+          {
+            "t": "Еда. Ты заслужила спокойный стол.",
+            "h": 1
+          },
+          {
+            "t": "Кофе и короткие шутки.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Мне нравится движение. Но вечером — чтобы кто-то заметил, что я устала, без лекции. Ты так умеешь?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Умею. «Давай сядем» — и всё.",
+            "h": 2
+          },
+          {
+            "t": "Могу принести воду и заткнуться.",
+            "h": 2
+          },
+          {
+            "t": "Обычно советую восстановиться.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Почти идеально. А комплимент: про силу или про то, как я смеюсь, когда сдаю темп?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Про смех. Он честнее медалей.",
+            "h": 2
+          },
+          {
+            "t": "Про силу и мягкость сразу.",
+            "h": 1
+          },
+          {
+            "t": "Про дисциплину. Это красиво.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Ого. Ладно, ближе: если я пришлю фото с зала, без фильтров, ты не начнёшь про идеальность?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Напишу, что живое лучше идеального.",
+            "h": 2
+          },
+          {
+            "t": "Просто скажу, что ты в своём месте.",
+            "h": 1
+          },
+          {
+            "t": "Скажу «мощно» и не буду умничать.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Договорились. Завтра утренний бег. Составишь компанию хотя бы текстом — «не сдавайся на третьем круге»?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Напишу ещё до будильника.",
+            "h": 2
+          },
+          {
+            "t": "Могу быть твоим темпом в чате.",
+            "h": 1
+          },
+          {
+            "t": "Ок, напомню.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда ты в команде. Мне с тобой легко, хотя мы только в переписке. Это редкий вид спорта."
+      },
+      {
+        "opts": [
+          {
+            "t": "Тогда не сходим с дистанции.",
+            "h": 2
+          },
+          {
+            "t": "Мне тоже легко. Это важно.",
+            "h": 1
+          },
+          {
+            "t": "Продолжим завтра.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Продолжим. И да — можешь писать не только про спорт."
+      },
+      {
+        "her": "После зала я горячая не только от нагрузки. Если бы ты был рядом, я бы не стала сразу в душ. Слишком прямо?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Прямо — и мне это зашло.",
+            "h": 2
+          },
+          {
+            "t": "Немного прямо, но приятно.",
+            "h": 1
+          },
+          {
+            "t": "Давай мягче.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Мягче тоже умею. Но с тобой хочется искры. Завтра утром пришлю голосовое после пробежки. Слушать будешь?"
+      },
+      {
+        "opts": [
+          {
+            "t": "До последнего вздоха.",
+            "h": 2
+          },
+          {
+            "t": "Конечно.",
+            "h": 1
+          },
+          {
+            "t": "Если не на работе.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Значит, ты в команде. И да — можешь писать не только про спорт 😉"
+      }
+    ],
+    "lena": [
+      {
+        "her": "Пишу с набережной. Ветер тёплый, сумка полная магнитов, которых я никогда не вешаю."
+      },
+      {
+        "opts": [
+          {
+            "t": "Зато есть повод вспоминать города.",
+            "h": 2
+          },
+          {
+            "t": "Пришли вид, если не лень.",
+            "h": 1
+          },
+          {
+            "t": "Куда дальше?",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Дальше — неизвестно. Люблю билеты без жёсткого плана. Ты бы выдержал такое путешествие рядом?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Да. Главное — не терять друг друга на вокзале.",
+            "h": 2
+          },
+          {
+            "t": "Нужен один якорь: утро с кофе.",
+            "h": 1
+          },
+          {
+            "t": "Я больше по маршрутам.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Кофе можно. А вечер? Море, крыша отеля или ночной рынок?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Море. Чтобы разговаривать почти шёпотом.",
+            "h": 2
+          },
+          {
+            "t": "Рынок. Чтобы смеяться над специями.",
+            "h": 1
+          },
+          {
+            "t": "Крыша. Город как карта.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Ты романтик с чемоданом. Если бы я прислала пляж на закате, что напишешь вместо «красиво»?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Что воздух, кажется, пахнет каникулами.",
+            "h": 2
+          },
+          {
+            "t": "Что хочется быть в кадре, но не портить его.",
+            "h": 2
+          },
+          {
+            "t": "Что этот свет тебе идёт.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Идёт. Иногда слишком. Люди пялятся, я надеваю шляпу. Ты бы защитил или пошутил?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Встал бы так, чтобы тебе было спокойно.",
+            "h": 2
+          },
+          {
+            "t": "Шляпа + шутка, чтобы снять напряжение.",
+            "h": 1
+          },
+          {
+            "t": "Ты справишься сама, я рядом.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Рядом — ключевое. Знаешь, в поездках я редко пишу кому-то перед сном. Сегодня вот пишу."
+      },
+      {
+        "opts": [
+          {
+            "t": "Тогда я буду твоей тихой станцией.",
+            "h": 2
+          },
+          {
+            "t": "Пиши, даже если это три слова.",
+            "h": 1
+          },
+          {
+            "t": "Приятно быть исключением.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Три слова: не пропадай, ладно? Завтра паром, связь может моргать."
+      },
+      {
+        "opts": [
+          {
+            "t": "Не пропаду. Напиши, как ступишь на берег.",
+            "h": 2
+          },
+          {
+            "t": "Буду ждать, даже если сообщения придут пачкой.",
+            "h": 1
+          },
+          {
+            "t": "Ок, удачной дороги.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Удачной нам переписке. Ты сделал этот закат теплее, чем он был."
+      },
+      {
+        "her": "На пароме все смотрят в телефон. Я смотрю на закат и думаю, как бы ты стоял сзади и говорил тихо. Слишком кино?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Хочу в этом кадре.",
+            "h": 2
+          },
+          {
+            "t": "Кино, но приятное.",
+            "h": 1
+          },
+          {
+            "t": "Красиво описала.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда не пропадай, пока я на воде. Когда ступлю на берег — напишу первой. Жди."
+      },
+      {
+        "opts": [
+          {
+            "t": "Жду. Береги себя.",
+            "h": 2
+          },
+          {
+            "t": "Напиши пачкой, если связь моргнет.",
+            "h": 1
+          },
+          {
+            "t": "Ок.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Ты сделал этот закат теплее. Это редкость. Целую в щёку — пока только так 😘"
+      }
+    ],
+    "nina": [
+      {
+        "her": "Свет выключили, зал ещё гудит в ушах. Пишу тебе, потому что тишина резко слишком большая."
+      },
+      {
+        "opts": [
+          {
+            "t": "Я тут. Можно без темы.",
+            "h": 2
+          },
+          {
+            "t": "Как прошёл сет?",
+            "h": 1
+          },
+          {
+            "t": "Добро пожаловать в тишину.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Сет огонь, но я не хочу быть «диджеем» в чате. Хочу быть просто Ниной, которая ест картошку в три ночи."
+      },
+      {
+        "opts": [
+          {
+            "t": "Привет, Нина с картошкой. Как вкус?",
+            "h": 2
+          },
+          {
+            "t": "Это самый честный статус.",
+            "h": 1
+          },
+          {
+            "t": "В три ночи всё вкуснее.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Солёная и идеальная. Если бы ты заехал после концерта, что привёз бы — плед, чай или тишину?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Тишину и чай. Плед само собой.",
+            "h": 2
+          },
+          {
+            "t": "Чай и глупые мемы, если устала от крутого.",
+            "h": 1
+          },
+          {
+            "t": "Просто себя и наушники.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Мемы принимаются. А комплимент без сцены: что тебе во мне слышно, когда нет баса?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Тёплый голос, который не орёт.",
+            "h": 2
+          },
+          {
+            "t": "Любопытство. Ты всё ещё ищешь трек.",
+            "h": 1
+          },
+          {
+            "t": "Усталость и блеск сразу.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Блеск можно выключить. Иногда хочется, чтобы меня не фотографировали. Ты бы убрал телефон?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Убрал бы. Ты не контент.",
+            "h": 2
+          },
+          {
+            "t": "Спросил бы. Без «можно кадр».",
+            "h": 1
+          },
+          {
+            "t": "Один кадр для тебя, не для ленты.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "За это можно даже поделиться плейлистом. Если я пришлю ночной трек, послушаешь до конца?"
+      },
+      {
+        "opts": [
+          {
+            "t": "До последнего затухания.",
+            "h": 2
+          },
+          {
+            "t": "И напишу, где мурашки.",
+            "h": 2
+          },
+          {
+            "t": "Попробую, если не усну.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Не засни сразу. Мне сегодня нужна переписка как afterparty. Ты остаёшься?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Остаюсь. Ещё один круг.",
+            "h": 2
+          },
+          {
+            "t": "На два сообщения точно.",
+            "h": 1
+          },
+          {
+            "t": "Чуть-чуть и спать.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда добро пожаловать в мой тихий клуб. Здесь только мы и картошка."
+      },
+      {
+        "her": "Afterparty без людей — это ты и я в чате. Если бы ты был на диване, я бы положила голову тебе на плечо. Можно так писать?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Можно. Даже нужно.",
+            "h": 2
+          },
+          {
+            "t": "Мне приятно.",
+            "h": 1
+          },
+          {
+            "t": "Давай без спешки.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Без спешки, но с искрой. Держи плейлист «для нас». Слушай до конца и напиши, где мурашки."
+      },
+      {
+        "opts": [
+          {
+            "t": "Уже включил.",
+            "h": 2
+          },
+          {
+            "t": "Ночью послушаю.",
+            "h": 1
+          },
+          {
+            "t": "Ок.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Добро пожаловать в мой тихий клуб. Картошка, плед и ты. Не сбегай."
+      }
+    ],
+    "eva": [
+      {
+        "her": "Стою у зеркала в бордовом платье и понимаю, что хочу мнение не коллеги, а твоё."
+      },
+      {
+        "opts": [
+          {
+            "t": "Пришли. Скажу как человек, не как критик.",
+            "h": 2
+          },
+          {
+            "t": "Бордовый тебе идёт уже в воображении.",
+            "h": 1
+          },
+          {
+            "t": "Какой повод?",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Повод — я. Иногда наряжаюсь без выхода. Ты бы понял такую странность?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Понял. Красота не обязана быть для зала.",
+            "h": 2
+          },
+          {
+            "t": "Это свидание с собой. Уважаю.",
+            "h": 1
+          },
+          {
+            "t": "Я бы предложил выйти хотя бы в парк.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Парк можно. Только без оценки «дорого/дёшево». Говори про настроение ткани."
+      },
+      {
+        "opts": [
+          {
+            "t": "Тогда: платье звучит как вечер без спешки.",
+            "h": 2
+          },
+          {
+            "t": "Бордо — как низкий голос.",
+            "h": 1
+          },
+          {
+            "t": "Звучит уверенно.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Низкий голос — попал. Если бы ты выбирал комплимент: осанка, взгляд или то, как я поправляю волосы?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Как поправляешь волосы. Живая деталь.",
+            "h": 2
+          },
+          {
+            "t": "Взгляд. Он держит зал без слов.",
+            "h": 1
+          },
+          {
+            "t": "Осанка. В ней характер.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Ты опасный стилист слов. Ладно, ближе: балкон ночью, шёлковый халат, город внизу. Напишешь что-то тёплое, не липкое?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Ты выглядишь как пауза, которую хочется сохранить.",
+            "h": 2
+          },
+          {
+            "t": "Городу повезло с видом наверх.",
+            "h": 1
+          },
+          {
+            "t": "Осторожно красиво. Я рядом в чате.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Пауза — хорошее слово. Я редко кому даю право на паузу. Не злоупотребляй."
+      },
+      {
+        "opts": [
+          {
+            "t": "Не буду. Буду точным.",
+            "h": 2
+          },
+          {
+            "t": "Тогда буду спрашивать, когда много.",
+            "h": 1
+          },
+          {
+            "t": "Понял границы.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Границы есть, интерес тоже. Завтра примерочная. Напишешь «удачной ткани» утром?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Напишу. И спрошу, какое настроение выберешь.",
+            "h": 2
+          },
+          {
+            "t": "Удачной ткани. Заранее.",
+            "h": 1
+          },
+          {
+            "t": "Ок.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Заранее принято. Ты умеешь быть парой к платью, даже из чата."
+      },
+      {
+        "her": "Платье сняла. Остался халат. Это не приглашение «приехать», это приглашение говорить ещё час. Выдержишь?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Выдержу. Говори.",
+            "h": 2
+          },
+          {
+            "t": "Ещё час — легко.",
+            "h": 1
+          },
+          {
+            "t": "Давай до завтра.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда комплимент без ткани: мне нравится, как ты выбираешь слова. Это горячее, чем бордо."
+      },
+      {
+        "opts": [
+          {
+            "t": "Тогда буду точным и дальше.",
+            "h": 2
+          },
+          {
+            "t": "Приятно слышать.",
+            "h": 1
+          },
+          {
+            "t": "Спасибо.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Завтра примерочная. Напишешь «удачной ткани» утром — и я улыбнусь в зеркало как будто ты рядом."
+      }
+    ],
+    "dasha": [
+      {
+        "her": "Переставляю вазу третий раз. Это либо дизайн, либо я жду, пока ты напишешь."
+      },
+      {
+        "opts": [
+          {
+            "t": "Написал. Вазу можно оставить.",
+            "h": 2
+          },
+          {
+            "t": "Покажи комнату, я «посмотрю свет».",
+            "h": 1
+          },
+          {
+            "t": "Привет. Как вечер?",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Вечер мягкий. Дома пахнет чаем и карандашами. Ты бы выдержал такой тихий быт?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Да. Тишина — тоже свидание.",
+            "h": 2
+          },
+          {
+            "t": "Если можно сидеть рядом и читать.",
+            "h": 1
+          },
+          {
+            "t": "Иногда мне нужно больше шума.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Шум можно дозированно. А сейчас вопрос: плед, сериал или разговор без экрана?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Разговор. Экрану сегодня выходной.",
+            "h": 2
+          },
+          {
+            "t": "Плед и голоса. Сериал фоном.",
+            "h": 1
+          },
+          {
+            "t": "Сериал, но с комментариями.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Без экрана победил. Расскажи, какую мелочь в человеке ты замечаешь первой дома."
+      },
+      {
+        "opts": [
+          {
+            "t": "Как ставит кружку. Честно.",
+            "h": 2
+          },
+          {
+            "t": "Смех, когда никто не снимает.",
+            "h": 2
+          },
+          {
+            "t": "Порядок или творческий хаос.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Кружка — попал в дизайнера. Если пришлю фото с цветами у окна, не говори «миленько». Скажи точнее."
+      },
+      {
+        "opts": [
+          {
+            "t": "Свет падает так, будто комната выдыхает.",
+            "h": 2
+          },
+          {
+            "t": "Цветы делают тишину цветной.",
+            "h": 1
+          },
+          {
+            "t": "Хочется быть в этом кадре аккуратно.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Аккуратно — да. Я не люблю, когда врываются. Ты стучишься в чат или вваливаешься?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Стучусь. «Как ты?» — и жду.",
+            "h": 2
+          },
+          {
+            "t": "Иногда вваливаюсь от радости. Могу учиться.",
+            "h": 1
+          },
+          {
+            "t": "Пишу сразу по делу.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Учись. Тогда ты можешь быть человеком, которому я присылаю домашние кадры. Это уровень доверия."
+      },
+      {
+        "opts": [
+          {
+            "t": "Храню. Не разнесу.",
+            "h": 2
+          },
+          {
+            "t": "Значит, буду бережным.",
+            "h": 1
+          },
+          {
+            "t": "Спасибо за доверие.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Бережность принята. Спокойной ночи. Ваза остаётся где стоит."
+      },
+      {
+        "her": "Ваза стоит. Я нет: хожу и думаю о тебе. Если бы ты был на кухне, я бы готовила чай слишком медленно, чтобы ты не уходил. Глупо?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Не глупо. Я бы остался.",
+            "h": 2
+          },
+          {
+            "t": "Мило до мурашек.",
+            "h": 1
+          },
+          {
+            "t": "Немного театра.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда ты человек, которому можно домашние кадры. Это уровень. Не разнеси."
+      },
+      {
+        "opts": [
+          {
+            "t": "Храню. Никому.",
+            "h": 2
+          },
+          {
+            "t": "Буду бережным.",
+            "h": 1
+          },
+          {
+            "t": "Спасибо за доверие.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Спокойной. Если не уснёшь — напиши. Я ещё с лампой."
+      }
+    ],
+    "sofia": [
+      {
+        "her": "Сейчас рассвет. Песок ещё холодный, чай горячий. Дыши со мной: четыре на вдохе."
+      },
+      {
+        "opts": [
+          {
+            "t": "Вдох. Я здесь.",
+            "h": 2
+          },
+          {
+            "t": "Четыре. И выдох длиннее.",
+            "h": 1
+          },
+          {
+            "t": "Слишком рано, но для тебя можно.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Для меня можно — опасная фраза. Я не хочу, чтобы меня выбирали вместо сна. Хочу, чтобы хотели этот ритм."
+      },
+      {
+        "opts": [
+          {
+            "t": "Хочу ритм. Не жертву.",
+            "h": 2
+          },
+          {
+            "t": "Тогда разбужу себя сам.",
+            "h": 1
+          },
+          {
+            "t": "Иногда сон победит, честно.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Честность — уже йога. Если бы мы встретились после практики, куда пойдём: чай, море или молчание?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Море и молчание. Чай можно взять с собой.",
+            "h": 2
+          },
+          {
+            "t": "Чай и мягкий разговор.",
+            "h": 1
+          },
+          {
+            "t": "Молчание, если ты не против компании.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Не против. Люди думают, что я всегда спокойная. А я просто хорошо выдыхаю. Ты заметишь, когда мне шумно внутри?"
+      },
+      {
+        "opts": [
+          {
+            "t": "Замечу по коротким сообщениям.",
+            "h": 2
+          },
+          {
+            "t": "Спрошу прямо и тихо.",
+            "h": 2
+          },
+          {
+            "t": "Могу не заметить сразу.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Прямо и тихо — идеально. Если пришлю фото заката на берегу, не пиши «вау». Напиши, куда ушёл день."
+      },
+      {
+        "opts": [
+          {
+            "t": "День ушёл в воду и стал спокойнее.",
+            "h": 2
+          },
+          {
+            "t": "День остался в твоих волосах на ветру.",
+            "h": 1
+          },
+          {
+            "t": "День закончился правильно.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Нравится. Оставь меня в избранных не как «спокойную девушку», а как человека, с которым можно молчать."
+      },
+      {
+        "opts": [
+          {
+            "t": "Оставляю. Молчание тоже связь.",
+            "h": 2
+          },
+          {
+            "t": "Буду писать, когда тишина тёплая.",
+            "h": 1
+          },
+          {
+            "t": "Ок. Ты в особом списке.",
+            "h": 1
+          }
+        ]
+      },
+      {
+        "her": "Тогда до вечерней практики. Если не напишешь — я всё равно пожелаю тебе ровного дыхания."
+      },
+      {
+        "opts": [
+          {
+            "t": "Напишу. Дыши спокойно.",
+            "h": 2
+          },
+          {
+            "t": "И тебе ровного дня.",
+            "h": 1
+          },
+          {
+            "t": "До вечера.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "До вечера. Ты приятно присутствуешь."
+      },
+      {
+        "her": "На берегу ветер забирается под ткань, и я думаю не о практике. О том, как бы ты стоял рядом и молчал. Это тоже близость."
+      },
+      {
+        "opts": [
+          {
+            "t": "Хочу эту тишину с тобой.",
+            "h": 2
+          },
+          {
+            "t": "Понимаю.",
+            "h": 1
+          },
+          {
+            "t": "Красиво сказано.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "Тогда дыши со мной ещё раз. И оставь меня не как «спокойную девушку», а как ту, кому можно писать ночью."
+      },
+      {
+        "opts": [
+          {
+            "t": "Пиши ночью. Я тут.",
+            "h": 2
+          },
+          {
+            "t": "Буду на связи.",
+            "h": 1
+          },
+          {
+            "t": "До вечера.",
+            "h": 0
+          }
+        ]
+      },
+      {
+        "her": "До вечера. Ты приятно присутствуешь. Это редкий вид тепла 🤍"
+      }
+    ]
+  }
 };
 
 const AudioFX = (() => {
@@ -8094,60 +9633,74 @@ const Platform = {
   }
 };
 
-const SAVE_KEY = "candid_scale_v1";
+const SAVE_KEY = "kayphone_v1";
 
 const Game = {
   lang: "ru",
-  screen: "hub",
-  tab: "tests",
+  screen: "home",
   coins: 0,
   unlocked: {},
   testsDone: {},
+  chats: {},
   music: true,
   sfx: true,
   focus: 0,
   test: null,
+  chatId: null,
   fsAsked: false,
 
   async start() {
     await Platform.init();
-    const rawLang = (Platform.lang() || "ru").slice(0, 2).toLowerCase();
-    this.lang = ["ru", "be", "kk", "uk", "uz"].includes(rawLang) ? "ru" : "en";
-    document.documentElement.lang = this.lang === "ru" ? "ru" : "en";
+    this.lang = "ru";
+    document.documentElement.lang = "ru";
     this.loadLocal();
     const cloud = await Platform.loadCloud();
     if (cloud && typeof cloud.coins === "number") this.mergeCloud(cloud);
     AudioFX.setMusic(this.music);
     AudioFX.setSfx(this.sfx);
     this.bindGlobal();
-    this.goTab("tests");
+    this.showHome();
     Platform.ready();
     this.save();
+    this.tickClock();
+    setInterval(() => this.tickClock(), 30000);
+  },
+
+  defaultChats() {
+    const o = {};
+    CONTENT.GIRLS.forEach((g) => { o[g.id] = { i: 0, h: 0, log: [], done: false }; });
+    return o;
   },
 
   loadLocal() {
     try {
       const d = JSON.parse(localStorage.getItem(SAVE_KEY) || "null");
-      if (!d) { this.coins = CONTENT.START_COINS; return; }
+      if (!d) { this.coins = CONTENT.START_COINS || 0; this.chats = this.defaultChats(); return; }
       this.coins = d.coins || 0;
       this.unlocked = d.unlocked || {};
       this.testsDone = d.testsDone || {};
+      this.chats = d.chats || this.defaultChats();
       this.music = d.music !== false;
       this.sfx = d.sfx !== false;
-      if (d.lang === "en" || d.lang === "ru") this.lang = d.lang;
-    } catch (e) { this.coins = 0; }
+    } catch (e) { this.coins = 0; this.chats = this.defaultChats(); }
   },
 
   mergeCloud(d) {
     if ((d.coins || 0) > this.coins) this.coins = d.coins;
     this.unlocked = Object.assign({}, d.unlocked || {}, this.unlocked);
     this.testsDone = Object.assign({}, d.testsDone || {}, this.testsDone);
+    const base = this.defaultChats();
+    Object.keys(base).forEach((id) => {
+      const a = (d.chats && d.chats[id]) || base[id];
+      const b = this.chats[id] || base[id];
+      this.chats[id] = (a.i || 0) >= (b.i || 0) ? a : b;
+    });
   },
 
   save() {
     const data = {
       coins: this.coins, unlocked: this.unlocked, testsDone: this.testsDone,
-      music: this.music, sfx: this.sfx, lang: this.lang, t: Date.now()
+      chats: this.chats, music: this.music, sfx: this.sfx, t: Date.now()
     };
     try { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); } catch (e) {}
     clearTimeout(this._cloudT);
@@ -8176,12 +9729,23 @@ const Game = {
     });
   },
 
-  screenNeedsPlay() { return this.screen === "testPlay" || this.screen === "photo"; },
+  screenNeedsPlay() {
+    return this.screen === "testPlay" || this.screen === "chat" || this.screen === "photo";
+  },
+
+  tickClock() {
+    const el = document.getElementById("clock");
+    if (!el) return;
+    const d = new Date();
+    el.textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+  },
 
   onKey(e) {
     if (e.key === "Escape") {
       if (!document.getElementById("modal").classList.contains("hidden")) { this.closeModal(); return; }
-      if (this.screen === "testPlay" || this.screen === "result" || this.screen === "photo") this.goTab(this.tab);
+      if (this.screen === "home") return;
+      if (this.screen === "chat") { this.showChats(); return; }
+      this.showHome();
       return;
     }
     const items = [...document.querySelectorAll("[data-k]")];
@@ -8201,6 +9765,7 @@ const Game = {
     b.classList.remove("hidden");
     document.getElementById("boot").classList.add("hidden");
     this.focus = 0;
+    this.tickClock();
   },
 
   toast(msg) {
@@ -8210,7 +9775,6 @@ const Game = {
     clearTimeout(this._tt);
     this._tt = setTimeout(() => n.classList.add("hidden"), 2400);
   },
-
   closeModal() { document.getElementById("modal").classList.add("hidden"); document.getElementById("modal").innerHTML = ""; },
   modal(html) {
     const m = document.getElementById("modal");
@@ -8219,59 +9783,52 @@ const Game = {
     m.onclick = (e) => { if (e.target === m) this.closeModal(); };
   },
 
-  top(title, back) {
-    return `<div class="topbar">
-      ${back ? `<button class="icon-btn" data-k="1" onclick="Game.goTab(Game.tab)">←</button>` : `<span class="icon-btn">✧</span>`}
-      <h2>${title}</h2>
-      <span class="coin-chip">✦ ${this.coins}</span>
-      <button class="icon-btn" data-k="1" onclick="Game.toggleMusic()">${this.music ? "♫" : "🔇"}</button>
-    </div>`;
+  top(title, backFn) {
+    const back = backFn
+      ? `<button class="icon-btn" data-k="1" onclick="${backFn}">←</button>`
+      : `<span class="icon-btn">✧</span>`;
+    return `<div class="topbar">${back}<h2>${title}</h2><span class="coin-chip">✦ ${this.coins}</span></div>`;
   },
 
-  nav() {
-    const on = (id) => this.tab === id ? "on" : "";
-    return `<nav class="nav">
-      <button class="${on("tests")}" data-k="1" onclick="Game.goTab('tests')"><b>✦</b>${t("tests")}</button>
-      <button class="${on("photos")}" data-k="1" onclick="Game.goTab('photos')"><b>♡</b>${t("photos")}</button>
-      <button class="${on("coins")}" data-k="1" onclick="Game.goTab('coins')"><b>✦</b>${t("coinsTab")}</button>
-    </nav>`;
-  },
-
-  goTab(id) {
+  showHome() {
     AudioFX.click();
-    this.tab = id;
-    this.screen = "hub";
+    this.screen = "home";
     Platform.stopGameplay();
-    if (id === "tests") this.showTests();
-    else if (id === "photos") this.showPhotos();
-    else this.showCoins();
+    this.el(`<div class="home">
+      <div class="home-grid">
+        <button class="app-ico" data-k="1" onclick="Game.showTests()">
+          <img src="assets/img/ui/app-test.jpg" alt=""><span>TEST 18+</span>
+        </button>
+        <button class="app-ico" data-k="1" onclick="Game.showPhotos()">
+          <img src="assets/img/ui/app-photos.jpg" alt=""><span>Горячие<br>фоточки</span>
+        </button>
+        <button class="app-ico" data-k="1" onclick="Game.showChats()">
+          <img src="assets/img/ui/app-chats.jpg" alt=""><span>Мои чаты</span>
+        </button>
+        <button class="app-ico" data-k="1" onclick="Game.showProfile()">
+          <img src="assets/img/ui/app-profile.jpg" alt=""><span>Мой профиль</span>
+        </button>
+      </div>
+    </div>`);
   },
 
   showTests() {
+    AudioFX.click();
+    this.screen = "tests";
+    Platform.stopGameplay();
     const cards = CONTENT.QUIZZES.map((q) => {
       const done = !!this.testsDone[q.id];
       return `<button class="card" data-k="1" onclick="Game.previewTest('${q.id}')">
         <img class="avatar" src="${q.cover}" alt="">
-        <div style="text-align:left;flex:1;min-width:0">
+        <div style="min-width:0;flex:1">
           <b>${tx(q.title)}</b>
           <div class="muted">${t("testReward", { n: q.questions, c: q.reward })}</div>
           <div class="preview">${done ? "✓ +20" : "+20 ✦"}</div>
         </div>
       </button>`;
     }).join("");
-    this.el(`${this.top(tx(CONTENT.GAME_TITLE))}
-      <div class="scroll">
-        <div class="hero-card">
-          <img src="assets/img/hero.jpg" alt="">
-          <div class="shade"></div>
-          <div class="copy">
-            <div class="badge-row"><span class="badge hot">${t("hot")}</span><span class="badge">${CONTENT.QUIZZES.length} ${t("tests")}</span></div>
-            <h3>${tx(CONTENT.GAME_TITLE)}</h3>
-            <div class="muted">${t("coinsHelp")}</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:8px">${cards}</div>
-      </div>${this.nav()}`);
+    this.el(`${this.top(t("tests"), "Game.showHome()")}
+      <div class="scroll" style="display:flex;flex-direction:column;gap:8px">${cards}</div>`);
   },
 
   previewTest(id) {
@@ -8299,18 +9856,14 @@ const Game = {
     const st = this.test;
     const item = st.quiz.qs[st.i];
     const pct = Math.round((st.i / st.quiz.qs.length) * 100);
-    const ans = item.a.map((a, i) =>
-      `<button class="answer" data-k="1" onclick="Game.answer(${i})">${tx(a.t)}</button>`
-    ).join("");
-    this.el(`${this.top(tx(st.quiz.title), true)}
-      <div class="scroll">
-        <div class="q-card">
-          <div class="muted">${st.i + 1} / ${st.quiz.qs.length} · ${t("testReward", { n: st.quiz.qs.length, c: st.quiz.reward })}</div>
-          <div class="progress"><i style="width:${pct}%"></i></div>
-          <h3>${tx(item.q)}</h3>
-          <div class="answers">${ans}</div>
-        </div>
-      </div>`);
+    const ans = item.a.map((a, i) => `<button class="answer" data-k="1" onclick="Game.answer(${i})">${tx(a.t)}</button>`).join("");
+    this.el(`${this.top(tx(st.quiz.title), "Game.showTests()")}
+      <div class="scroll"><div class="q-card">
+        <div class="muted">${st.i + 1} / ${st.quiz.qs.length} · ${t("testReward", { n: st.quiz.qs.length, c: st.quiz.reward })}</div>
+        <div class="progress"><i style="width:${pct}%"></i></div>
+        <h3>${tx(item.q)}</h3>
+        <div class="answers">${ans}</div>
+      </div></div>`);
   },
 
   answer(i) {
@@ -8336,40 +9889,37 @@ const Game = {
     this.save();
     this.screen = "result";
     Platform.stopGameplay();
-    this.el(`${this.top(t("result"), true)}
-      <div class="scroll result">
-        <div class="q-card">
-          <div class="muted">${tx(st.quiz.title)}</div>
-          <div class="big">${tx(res.title)}</div>
-          <div class="stars">${"★".repeat(Math.min(5, 1 + Math.floor(st.s / 10)))}</div>
-          <p>${tx(res.text)}</p>
-          <p class="badge gold" style="display:inline-block">${bonus ? t("coinsGot", { c: bonus }) : t("alreadyRewarded")}</p>
-          <div class="btn-row" style="margin-top:14px">
-            <button class="btn" data-k="1" onclick="Game.startTest('${st.id}')">${t("again")}</button>
-            <button class="btn sec" data-k="1" onclick="Game.goTab('tests')">${t("tests")}</button>
-          </div>
+    this.el(`${this.top(t("result"), "Game.showTests()")}
+      <div class="scroll result"><div class="q-card">
+        <div class="big">${tx(res.title)}</div>
+        <div class="stars">${"★".repeat(Math.min(5, 1 + Math.floor(st.s / 10)))}</div>
+        <p>${tx(res.text)}</p>
+        <p class="badge gold" style="display:inline-block">${bonus ? t("coinsGot", { c: bonus }) : t("alreadyRewarded")}</p>
+        <div class="btn-row" style="margin-top:12px">
+          <button class="btn" data-k="1" onclick="Game.startTest('${st.id}')">${t("again")}</button>
+          <button class="btn sec" data-k="1" onclick="Game.showTests()">${t("tests")}</button>
         </div>
-      </div>`);
+      </div></div>`);
     Platform.interstitial(() => {});
   },
 
   showPhotos() {
+    AudioFX.click();
+    this.screen = "photos";
+    Platform.stopGameplay();
     const cards = CONTENT.PHOTOS.map((p) => {
       const open = !!this.unlocked[p.id];
       return `<button class="photo-card ${open ? "" : "locked"}" data-k="1" onclick="Game.openPhoto('${p.id}')">
         <img src="${p.src}" alt="">
         ${open ? "" : `<div class="lock-ico">🔒</div>`}
-        <div class="meta">
-          <span class="badge hot">${t("hot")}</span>
-          <span class="badge gold">${open ? "✓" : "✦ 50"}</span>
-        </div>
+        <div class="meta"><span class="badge hot">${t("hot")}</span><span class="badge gold">${open ? "✓" : "✦ 50"}</span></div>
       </button>`;
     }).join("");
-    this.el(`${this.top(t("photos"))}
+    this.el(`${this.top(t("photos"), "Game.showHome()")}
       <div class="scroll">
         <p class="muted" style="margin-top:0">${t("coinsHelp")}</p>
         <div class="photo-grid">${cards}</div>
-      </div>${this.nav()}`);
+      </div>`);
   },
 
   openPhoto(id) {
@@ -8379,17 +9929,17 @@ const Game = {
       this.screen = "photo";
       Platform.startGameplay();
       this.modal(`<div class="modal-card" style="text-align:center">
-        <img src="${p.src}" alt="" style="width:100%;border-radius:12px;max-height:55vh;object-fit:contain">
+        <img src="${p.src}" alt="" style="width:100%;border-radius:12px;max-height:52vh;object-fit:contain">
         <h3>${tx(p.title)}</h3>
-        <button class="btn sec" data-k="1" onclick="Game.closeModal();Game.goTab('photos')">${t("close")}</button>
+        <button class="btn sec" data-k="1" onclick="Game.closeModal();Game.showPhotos()">${t("close")}</button>
       </div>`);
       return;
     }
     this.modal(`<div class="modal-card">
-      <div class="badge-row"><span class="badge hot">${t("hot")}</span><span class="badge gold">✦ 50</span></div>
+      <div><span class="badge hot">${t("hot")}</span> <span class="badge gold">✦ 50</span></div>
       <h3>${tx(p.title)}</h3>
       <p class="muted">${t("rewardedHint")}</p>
-      <button class="btn" style="width:100%;margin-top:10px" data-k="1" onclick="Game.buyPhoto('${id}')">${t("openFor")} 50</button>
+      <button class="btn" style="width:100%;margin-top:8px" data-k="1" onclick="Game.buyPhoto('${id}')">${t("openFor")} 50</button>
       <button class="btn cyan" style="width:100%;margin-top:8px" data-k="1" onclick="Game.adPhoto('${id}')">${t("watchAd")}</button>
       <button class="btn sec" style="width:100%;margin-top:8px" data-k="1" onclick="Game.closeModal()">${t("close")}</button>
     </div>`);
@@ -8404,93 +9954,145 @@ const Game = {
     this.showPhotos();
     this.openPhoto(id);
   },
-
   buyPhoto(id) {
     if (this.coins < CONTENT.PHOTO_PRICE) { this.toast(t("needCoins")); return; }
     this.coins -= CONTENT.PHOTO_PRICE;
     this.unlockPhoto(id);
   },
-
   adPhoto(id) {
     Platform.rewarded(() => this.unlockPhoto(id), () => this.toast(t("adFail")));
   },
-
   adCoins() {
     Platform.rewarded(() => {
       this.coins += CONTENT.AD_COINS;
       this.save();
       AudioFX.coin();
       this.toast(t("coinsGot", { c: CONTENT.AD_COINS }));
-      if (this.tab === "coins") this.showCoins();
+      if (this.screen === "profile") this.showProfile();
     }, () => this.toast(t("adFail")));
+  },
+
+  showChats() {
+    AudioFX.click();
+    this.screen = "chats";
+    Platform.stopGameplay();
+    const cards = CONTENT.GIRLS.map((g) => {
+      const st = this.chats[g.id] || { done: false };
+      return `<button class="card tg-item" data-k="1" onclick="Game.openChat('${g.id}')">
+        <img class="avatar" src="${g.avatar}" alt="">
+        <div style="min-width:0;flex:1;text-align:left">
+          <div><b>${g.name}</b> · ${g.age} ${st.done ? "✓" : ""}</div>
+          <div class="muted"><span class="dot"></span> ${t("online")} · ${g.job}</div>
+          <div class="preview">${g.preview}</div>
+        </div>
+      </button>`;
+    }).join("");
+    this.el(`${this.top(t("chats"), "Game.showHome()")}
+      <div class="scroll" style="display:flex;flex-direction:column;gap:6px;background:#0e1a22">${cards}</div>`);
+  },
+
+  openChat(id) {
+    AudioFX.click();
+    this.chatId = id;
+    this.screen = "chat";
+    Platform.startGameplay();
+    if (!this.chats[id]) this.chats[id] = { i: 0, h: 0, log: [], done: false };
+    const st = this.chats[id];
+    if (!st.log.length) this.advanceNpc(id);
+    this.renderChat();
+  },
+
+  advanceNpc(id) {
+    const script = CONTENT.CHATS[id];
+    const st = this.chats[id];
+    while (st.i < script.length && script[st.i].her) {
+      st.log.push({ who: "her", text: script[st.i].her });
+      st.i++;
+    }
+    if (st.i >= script.length) st.done = true;
+    this.save();
+  },
+
+  renderChat() {
+    const id = this.chatId;
+    const g = CONTENT.GIRLS.find((x) => x.id === id);
+    const script = CONTENT.CHATS[id];
+    const st = this.chats[id];
+    const msgs = st.log.map((m) => `<div class="bubble ${m.who}">${m.text}</div>`).join("");
+    let choices = "";
+    if (st.i < script.length && script[st.i].opts) {
+      choices = `<div class="choices">` + script[st.i].opts.map((op, i) =>
+        `<button class="choice" data-k="1" onclick="Game.pickChat(${i})">${op.t}</button>`
+      ).join("") + `</div>`;
+    } else if (st.done) {
+      choices = `<div class="choices"><div class="q-card" style="text-align:center">♥ ${st.h}<br><button class="btn" data-k="1" onclick="Game.showChats()">${t("chats")}</button></div></div>`;
+    }
+    this.el(`${this.top(g.name, "Game.showChats()")}
+      <div class="tg">
+        <div class="scroll" id="chatScroll"><div class="messages">${msgs}</div>${choices}</div>
+      </div>`);
+    const sc = document.getElementById("chatScroll");
+    if (sc) sc.scrollTop = sc.scrollHeight;
+  },
+
+  pickChat(i) {
+    AudioFX.message();
+    const id = this.chatId;
+    const script = CONTENT.CHATS[id];
+    const st = this.chats[id];
+    const op = script[st.i].opts[i];
+    st.log.push({ who: "me", text: op.t });
+    st.h += op.h || 0;
+    st.i++;
+    this.advanceNpc(id);
+    this.renderChat();
+    if (st.done) Platform.interstitial(() => {});
   },
 
   toggleMusic() {
     this.music = !this.music;
     AudioFX.setMusic(this.music);
     this.save();
-    if (this.screen === "hub") this.goTab(this.tab);
-    else if (this.screen === "testPlay") this.renderQ();
+    this.showProfile();
   },
-
   toggleSfx() {
     this.sfx = !this.sfx;
     AudioFX.setSfx(this.sfx);
     AudioFX.click();
     this.save();
-    this.showCoins();
+    this.showProfile();
   },
 
-  setLang(l) {
-    this.lang = l;
-    document.documentElement.lang = l === "ru" ? "ru" : "en";
-    this.save();
+  showProfile() {
     AudioFX.click();
-    this.showCoins();
-  },
-
-  showCoins() {
+    this.screen = "profile";
+    Platform.stopGameplay();
+    const chatsDone = Object.values(this.chats).filter((c) => c.done).length;
     const tests = Object.keys(this.testsDone).length;
     const photos = Object.keys(this.unlocked).length;
-    this.el(`${this.top(t("coinsTab"))}
+    this.el(`${this.top(t("profile"), "Game.showHome()")}
       <div class="scroll">
         <div class="stat-row">
           <div class="stat"><b>${this.coins}</b>${t("coins")}</div>
-          <div class="stat"><b>${tests}/${CONTENT.QUIZZES.length}</b>${t("tests")}</div>
-          <div class="stat"><b>${photos}/${CONTENT.PHOTOS.length}</b>${t("photos")}</div>
+          <div class="stat"><b>${tests}/${CONTENT.QUIZZES.length}</b>${t("testsDone")}</div>
+          <div class="stat"><b>${photos}/${CONTENT.PHOTOS.length}</b>${t("photosOpen")}</div>
+          <div class="stat"><b>${chatsDone}/${CONTENT.GIRLS.length}</b>${t("chatsDone")}</div>
         </div>
         <p class="muted">${t("coinsHelp")}</p>
-        <button class="btn gold" style="width:100%;min-height:56px;margin:8px 0" data-k="1" onclick="Game.adCoins()">${t("watchAdCoins")}</button>
+        <button class="btn gold" style="width:100%;min-height:52px;margin:8px 0" data-k="1" onclick="Game.adCoins()">${t("watchAdCoins")}</button>
         <p class="muted">${t("rewardedHint")}</p>
         <div class="btn-row" style="margin-top:10px">
           <button class="btn sec" data-k="1" onclick="Game.toggleMusic()">${t("music")}: ${this.music ? "ON" : "OFF"}</button>
           <button class="btn sec" data-k="1" onclick="Game.toggleSfx()">${t("sfx")}: ${this.sfx ? "ON" : "OFF"}</button>
         </div>
-        <div class="btn-row" style="margin-top:8px">
-          <button class="btn sec" data-k="1" onclick="Game.setLang('ru')">🇷🇺 Русский</button>
-          <button class="btn sec" data-k="1" onclick="Game.setLang('en')">🇬🇧 English</button>
-        </div>
         <div class="q-card" style="margin-top:12px"><b>${t("how")}</b><p class="muted">${t("howBody")}</p></div>
-      </div>${this.nav()}`);
-  },
-
-  async doLogin() {
-    AudioFX.click();
-    const ok = await Platform.login();
-    if (ok) {
-      const cloud = await Platform.loadCloud();
-      if (cloud) this.mergeCloud(cloud);
-      this.save();
-    }
-    this.showCoins();
+      </div>`);
   }
 };
 
 window.Game = Game;
 Game.start().catch(function (e) {
-  var msg = (e && e.message) ? e.message : String(e);
-  document.body.innerHTML = '<div style="padding:28px;font-family:Segoe UI,sans-serif;color:#fff;background:#120218;min-height:100vh">' +
-    "<h2>Распакуйте архив целиком и откройте index.html из папки</h2><pre>" + msg + "</pre></div>";
+  document.body.innerHTML = '<div style="padding:24px;color:#fff;font-family:sans-serif">Распакуйте архив целиком и откройте index.html из папки.<pre>' + (e && e.message ? e.message : e) + "</pre></div>";
 });
 
   </script>
