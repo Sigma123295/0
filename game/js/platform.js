@@ -7,6 +7,11 @@ const Platform = {
   readySent: false,
 
   async init() {
+    if (location.protocol === "file:") {
+      this.local = true;
+      this.ysdk = this._mock();
+      return this.ysdk;
+    }
     const waitYa = () => new Promise((resolve) => {
       if (window.YaGames) return resolve(true);
       let n = 0;

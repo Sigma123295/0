@@ -29,6 +29,10 @@ const Game = {
     this.showHome();
     Platform.ready();
     this.save();
+    const href = location.href || "";
+    if (location.protocol === "file:" && /Temp|\.zip/i.test(href)) {
+      this.toast("Распакуйте архив в папку и откройте index.html оттуда");
+    }
   },
 
   defaultChats() {
@@ -533,4 +537,11 @@ const Game = {
 };
 
 window.Game = Game;
-Game.start();
+Game.start().catch(function (e) {
+  var msg = (e && e.message) ? e.message : String(e);
+  document.body.style.background = "#120218";
+  document.body.innerHTML = '<div style="padding:28px;font-family:Segoe UI,sans-serif;color:#fff;max-width:560px">' +
+    "<h2>Игра не запустилась</h2>" +
+    "<p>Распакуйте архив <b>целиком</b> на Рабочий стол. Затем откройте файл <b>index.html</b> из этой папки. Не открывайте его прямо изнутри zip.</p>" +
+    "<pre style='white-space:pre-wrap;color:#ff87d0'>" + msg + "</pre></div>";
+});

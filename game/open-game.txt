@@ -1,0 +1,13 @@
+Kak otkryt igru (Windows)
+
+1. Pravoy knopkoy po arhivu lunar-messages.zip -> Izvlech vse
+2. Vyberite papku na Rabochem stole, naprimer LunarMessages
+3. Otkroyte papku. Tam dolzhny byt:
+   - index.html
+   - assets
+   - css
+   - js
+4. Dvoynoy klik po index.html
+5. NE otkryvayte html pryamо iznutri zip (iz Temp) — togda budet belaya stranica bez igry
+
+Dlya Yandex Igr zagruzite v konsol sam zip, ne raspakovyvaya.
