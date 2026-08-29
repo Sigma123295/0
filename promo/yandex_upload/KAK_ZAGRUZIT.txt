@@ -1,0 +1,39 @@
+Черновик 590624 — куда что класть
+
+1) Вкладка Русский
+   Иконка:     icon_ru_512.png
+   Обложка:    cover_ru_800x470.png
+   Тексты:     скопируй из ../YANDEX_KONSOL.txt
+
+2) Вкладка English
+   Иконка:     icon_en_512.png
+   Обложка:    cover_en_800x470.png
+   Тексты:     скопируй из ../YANDEX_KONSOL_EN.txt
+
+3) Видео геймплея
+   Вертикальное:   videos/gameplay_vertical.mp4     (1080×1920, 25.5 с)
+   Горизонтальное: videos/gameplay_horizontal.mp4   (1920×1080, 25.5 с)
+
+4) Скриншоты
+   Тип: Десктопные
+   Ориентация: Альбомная
+   Добавьте скриншоты из папки screenshots_desktop_16x9/
+   Минимум 01–06. Это 1920×1080, 16:9, без окна браузера.
+
+5) Рекламные видео
+   videos/ad_vertical_ru.mp4
+   videos/ad_vertical_en.mp4
+   videos/ad_horizontal_ru.mp4
+   videos/ad_horizontal_en.mp4
+
+6) «Игра переведена на» — только Русский. English не ставь.
+
+English
+Draft 590624 — what goes where
+
+RU tab: icon_ru_512.png + cover_ru_800x470.png + YANDEX_KONSOL.txt
+EN tab: icon_en_512.png + cover_en_800x470.png + YANDEX_KONSOL_EN.txt
+Gameplay video: gameplay_vertical.mp4 and gameplay_horizontal.mp4
+Screenshots: Desktop, Landscape, files in screenshots_desktop_16x9/
+Advertising videos: the four ad_*.mp4 files
+Keep "Game translated into" = Russian only.

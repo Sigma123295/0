@@ -1,21 +1,23 @@
-ENGLISH tab in the draft. Fill these fields.
+ENGLISH tab in draft 590624. Fill these fields.
 
 IMPORTANT: in "The game is translated into" keep ONLY Russian.
 If you add English there, moderators will test English inside the game — the game is Russian.
 
+=== TEXT ===
+
 Title (0/50):
 Night KayPhone
 
-SEO (0/160):
+SEO (50–160):
 KayPhone night simulator: 18+ quizzes, flirty chats, and hot photos for coins.
 
-About (0/1000):
+About (100–1000):
 A night phone simulator. The home screen has four apps. TEST 18+ — twelve quizzes and one hundred eighty questions, twenty coins for the first clear. Hot photos — unlock a shot for fifty coins or one ad. My chats — eight stories, girls flirt, you pick replies, each chat is a long thread. My profile — coins, stats, music, and an ad for fifty coins. Progress saves automatically.
 
 Short description (0/70):
 KayPhone: quizzes, chats, and hot photos.
 
-How to play (0/1000):
+How to play (100–1000):
 Tap the icons on the phone. In quizzes pick answers. In chats tap a reply — she answers your line. Unlock photos with coins or an ad. The bar at the bottom goes home. On PC use mouse, arrows, Enter, and Escape.
 
 Tags:
@@ -23,3 +25,43 @@ simulator, quiz, chats, dating, tests
 
 Keywords:
 kayphone, chats, quizzes, photos, phone simulator, night
+
+=== PHOTOS (ENGLISH TAB) ===
+
+Icon 512×512:
+promo/yandex_upload/icon_en_512.png
+
+Cover 800×470:
+promo/yandex_upload/cover_en_800x470.png
+
+=== GAMEPLAY VIDEO ===
+
+Vertical 9:16 (same file as RU tab):
+promo/yandex_upload/videos/gameplay_vertical.mp4
+
+Horizontal 16:9 (same file as RU tab):
+promo/yandex_upload/videos/gameplay_horizontal.mp4
+
+=== DESKTOP SCREENSHOTS — LANDSCAPE ===
+
+Device: Desktop
+Orientation: Landscape
+Size: 1920×1080, 16:9, 24-bit PNG
+
+Add screenshots:
+1. promo/yandex_upload/screenshots_desktop_16x9/01_home.png
+2. promo/yandex_upload/screenshots_desktop_16x9/02_tests.png
+3. promo/yandex_upload/screenshots_desktop_16x9/03_quiz.png
+4. promo/yandex_upload/screenshots_desktop_16x9/04_photos.png
+5. promo/yandex_upload/screenshots_desktop_16x9/05_chats.png
+6. promo/yandex_upload/screenshots_desktop_16x9/06_alisa.png
+
+=== ADVERTISING VIDEOS ===
+
+Vertical:
+promo/yandex_upload/videos/ad_vertical_en.mp4
+promo/yandex_upload/videos/ad_vertical_ru.mp4
+
+Horizontal:
+promo/yandex_upload/videos/ad_horizontal_en.mp4
+promo/yandex_upload/videos/ad_horizontal_ru.mp4
