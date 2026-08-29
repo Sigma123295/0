@@ -18,8 +18,8 @@ const Platform = {
       const id = setInterval(() => {
         n++;
         if (window.YaGames) { clearInterval(id); resolve(true); }
-        else if (n > 20) { clearInterval(id); resolve(false); }
-      }, 80);
+        else if (n > 50) { clearInterval(id); resolve(false); }
+      }, 100);
     });
     const has = await waitYa();
     if (!has) {

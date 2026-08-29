@@ -26,19 +26,21 @@ JS_FILES = [
 
 def inline_index() -> str:
     css = (GAME / "css" / "app.css").read_text(encoding="utf-8")
+    # CSS lives in css/, so source uses ../assets. Inlined into index.html → ./assets
+    css = css.replace('url("../assets/', 'url("./assets/')
     js = "\n".join(p.read_text(encoding="utf-8") for p in JS_FILES)
     html = SRC.read_text(encoding="utf-8")
     html = html.replace(
-        '  <link rel="stylesheet" href="css/app.css">\n',
+        '  <link rel="stylesheet" href="./css/app.css">\n',
         f"  <style>\n{css}\n  </style>\n",
     )
     for name in (
-        "js/i18n.js",
-        "js/content.js",
-        "js/chats.js",
-        "js/audio.js",
-        "js/platform.js",
-        "js/app.js",
+        "./js/i18n.js",
+        "./js/content.js",
+        "./js/chats.js",
+        "./js/audio.js",
+        "./js/platform.js",
+        "./js/app.js",
     ):
         html = html.replace(f'  <script src="{name}"></script>\n', "")
     html = html.replace("</body>", f"  <script>\n{js}\n  </script>\n</body>")

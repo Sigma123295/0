@@ -36,7 +36,7 @@ button { cursor: pointer; font: inherit; color: inherit; }
   width: 100%; height: 100%; margin: 0 auto;
   max-width: min(100vw, calc(100vh * 2));
   max-height: min(100vh, calc(100vw * 2));
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: stretch; justify-content: center;
   background:
     radial-gradient(900px 500px at 20% 0%, #1a4d73 0%, transparent 55%),
     linear-gradient(180deg, #0b2236, #050b12);
@@ -44,11 +44,11 @@ button { cursor: pointer; font: inherit; color: inherit; }
 .hidden { display: none !important; }
 
 .phone {
-  width: min(430px, 100%);
-  height: min(100%, 900px);
+  width: min(720px, 100%);
+  height: 100%;
   background: #0a0d12;
-  border-radius: 40px;
-  padding: 11px;
+  border-radius: 28px;
+  padding: 8px;
   box-shadow: 0 20px 60px #000a, inset 0 0 0 2px #2a3a4a;
   display: flex; flex-direction: column;
 }
@@ -102,11 +102,11 @@ button { cursor: pointer; font: inherit; color: inherit; }
 .scroll::-webkit-scrollbar-thumb { background: rgba(80,190,255,.45); border-radius: 99px; }
 
 .home {
-  flex: 1; min-height: 0; background: #071018 url("assets/img/ui/home-wall.jpg") center/cover no-repeat;
+  flex: 1; min-height: 0; background: #071018 url("./assets/img/ui/home-wall.jpg") center/cover no-repeat;
   display: flex; flex-direction: column; padding: 18px 16px 10px;
 }
 .home-clock { text-align: center; color: #fff; text-shadow: 0 2px 12px #000a; padding: 8px 0 12px; }
-.home-clock .time { font-size: 58px; font-weight: 200; letter-spacing: 2px; line-height: 1; }
+.home-clock .time { font-size: 72px; font-weight: 200; letter-spacing: 2px; line-height: 1; }
 .home-clock .date { font-size: 15px; margin-top: 4px; opacity: .92; }
 .home-clock .greet { font-size: 13px; margin-top: 6px; color: #c6f4ff; }
 .home-notifs { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 12px; }
@@ -121,9 +121,9 @@ button { cursor: pointer; font: inherit; color: inherit; }
   margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 12px; padding: 8px 8px 4px;
 }
 .app-ico { background: none; border: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; }
-.app-ico .ico-wrap { position: relative; width: 64px; height: 64px; }
+.app-ico .ico-wrap { position: relative; width: 76px; height: 76px; }
 .app-ico img {
-  width: 64px; height: 64px; border-radius: 16px; object-fit: cover;
+  width: 76px; height: 76px; border-radius: 18px; object-fit: cover;
   box-shadow: 0 8px 20px #0006; pointer-events: none;
 }
 .app-ico span { font-size: 11px; font-weight: 700; text-shadow: 0 1px 4px #000; text-align: center; line-height: 1.2; }
@@ -189,7 +189,7 @@ button { cursor: pointer; font: inherit; color: inherit; }
 .tg-head .avatar { width: 38px; height: 38px; border-width: 0; }
 .tg {
   flex: 1; min-height: 0; display: flex; flex-direction: column;
-  background: #0e1621 url("assets/img/ui/tg-wall.jpg") center/cover no-repeat;
+  background: #0e1621 url("./assets/img/ui/tg-wall.jpg") center/cover no-repeat;
 }
 .messages { display: flex; flex-direction: column; gap: 6px; padding: 8px 8px 12px; }
 .bubble {
@@ -242,7 +242,7 @@ button { cursor: pointer; font: inherit; color: inherit; }
 }
 .pause-card { text-align: center; }
 .img-zoom { width: 100%; border-radius: 12px; max-height: 58vh; object-fit: contain; pointer-events: none; }
-@media (max-width: 520px) {
+@media (max-width: 760px) {
   .phone { width: 100%; height: 100%; border-radius: 0; padding: 0; box-shadow: none; }
   .phone-screen { border-radius: 0; }
 }
@@ -257,7 +257,7 @@ button { cursor: pointer; font: inherit; color: inherit; }
         <div class="status"><span id="clock">21:14</span><span>KayPhone</span><span>▮▮▮</span></div>
         <div id="boot" class="boot">
           <div class="boot-glow"></div>
-          <img class="boot-hero" src="assets/img/hero.jpg" alt="">
+          <img class="boot-hero" src="./assets/img/hero.jpg" alt="">
           <div class="boot-copy">
             <p class="boot-kicker">ночной кайфон</p>
             <h1>Ночной Кайфон</h1>
@@ -339,196 +339,196 @@ const CONTENT = {
   "PHOTOS": [
     {
       "id": "p01",
-      "src": "assets/img/photos/p01.jpg",
+      "src": "./assets/img/photos/p01.jpg",
       "price": 50,
       "title": "Утро в атласе",
       "hot": true
     },
     {
       "id": "p02",
-      "src": "assets/img/photos/p02.jpg",
+      "src": "./assets/img/photos/p02.jpg",
       "price": 50,
       "title": "Окно и город",
       "hot": true
     },
     {
       "id": "p03",
-      "src": "assets/img/photos/p03.jpg",
+      "src": "./assets/img/photos/p03.jpg",
       "price": 50,
       "title": "Золотое зеркало",
       "hot": true
     },
     {
       "id": "p04",
-      "src": "assets/img/photos/p04.jpg",
+      "src": "./assets/img/photos/p04.jpg",
       "price": 50,
       "title": "Неон и сирень",
       "hot": true
     },
     {
       "id": "p05",
-      "src": "assets/img/photos/p05.jpg",
+      "src": "./assets/img/photos/p05.jpg",
       "price": 50,
       "title": "Балкон ночью",
       "hot": true
     },
     {
       "id": "p06",
-      "src": "assets/img/photos/p06.jpg",
+      "src": "./assets/img/photos/p06.jpg",
       "price": 50,
       "title": "Закат на пляже",
       "hot": true
     },
     {
       "id": "p07",
-      "src": "assets/img/photos/p07.jpg",
+      "src": "./assets/img/photos/p07.jpg",
       "price": 50,
       "title": "Бассейн",
       "hot": true
     },
     {
       "id": "p08",
-      "src": "assets/img/photos/p08.jpg",
+      "src": "./assets/img/photos/p08.jpg",
       "price": 50,
       "title": "Белый шёлк",
       "hot": true
     },
     {
       "id": "p09",
-      "src": "assets/img/photos/p09.jpg",
+      "src": "./assets/img/photos/p09.jpg",
       "price": 50,
       "title": "Бордо",
       "hot": true
     },
     {
       "id": "p10",
-      "src": "assets/img/photos/p10.jpg",
+      "src": "./assets/img/photos/p10.jpg",
       "price": 50,
       "title": "Цветы у окна",
       "hot": true
     },
     {
       "id": "p11",
-      "src": "assets/img/photos/p11.jpg",
+      "src": "./assets/img/photos/p11.jpg",
       "price": 50,
       "title": "Рассвет у моря",
       "hot": true
     },
     {
       "id": "p12",
-      "src": "assets/img/photos/p12.jpg",
+      "src": "./assets/img/photos/p12.jpg",
       "price": 50,
       "title": "Палуба",
       "hot": true
     },
     {
       "id": "p13",
-      "src": "assets/img/photos/p13.jpg",
+      "src": "./assets/img/photos/p13.jpg",
       "price": 50,
       "title": "Студия",
       "hot": true
     },
     {
       "id": "p14",
-      "src": "assets/img/photos/p14.jpg",
+      "src": "./assets/img/photos/p14.jpg",
       "price": 50,
       "title": "Постель и свет",
       "hot": true
     },
     {
       "id": "p15",
-      "src": "assets/img/photos/p15.jpg",
+      "src": "./assets/img/photos/p15.jpg",
       "price": 50,
       "title": "Крыша",
       "hot": true
     },
     {
       "id": "p16",
-      "src": "assets/img/photos/p16.jpg",
+      "src": "./assets/img/photos/p16.jpg",
       "price": 50,
       "title": "Терраса",
       "hot": true
     },
     {
       "id": "p17",
-      "src": "assets/img/photos/p17.jpg",
+      "src": "./assets/img/photos/p17.jpg",
       "price": 50,
       "title": "Тихий дом",
       "hot": true
     },
     {
       "id": "p18",
-      "src": "assets/img/photos/p18.jpg",
+      "src": "./assets/img/photos/p18.jpg",
       "price": 50,
       "title": "Красный вечер",
       "hot": true
     },
     {
       "id": "p19",
-      "src": "assets/img/photos/p19.jpg",
+      "src": "./assets/img/photos/p19.jpg",
       "price": 50,
       "title": "Спа",
       "hot": true
     },
     {
       "id": "p20",
-      "src": "assets/img/photos/p20.jpg",
+      "src": "./assets/img/photos/p20.jpg",
       "price": 50,
       "title": "Гирлянды",
       "hot": true
     },
     {
       "id": "p21",
-      "src": "assets/img/photos/p21.jpg",
+      "src": "./assets/img/photos/p21.jpg",
       "price": 50,
       "title": "Фонари на песке",
       "hot": true
     },
     {
       "id": "p22",
-      "src": "assets/img/photos/p22.jpg",
+      "src": "./assets/img/photos/p22.jpg",
       "price": 50,
       "title": "Камера на крыше",
       "hot": true
     },
     {
       "id": "p23",
-      "src": "assets/img/photos/p23.jpg",
+      "src": "./assets/img/photos/p23.jpg",
       "price": 50,
       "title": "После сцены",
       "hot": true
     },
     {
       "id": "p24",
-      "src": "assets/img/photos/p24.jpg",
+      "src": "./assets/img/photos/p24.jpg",
       "price": 50,
       "title": "Поле и закат",
       "hot": true
     },
     {
       "id": "p25",
-      "src": "assets/img/photos/p25.jpg",
+      "src": "./assets/img/photos/p25.jpg",
       "price": 50,
       "title": "Книга и лампа",
       "hot": true
     },
     {
       "id": "p26",
-      "src": "assets/img/photos/p26.jpg",
+      "src": "./assets/img/photos/p26.jpg",
       "price": 50,
       "title": "Дождь на стекле",
       "hot": true
     },
     {
       "id": "p27",
-      "src": "assets/img/photos/p27.jpg",
+      "src": "./assets/img/photos/p27.jpg",
       "price": 50,
       "title": "Утро у воды",
       "hot": true
     },
     {
       "id": "p28",
-      "src": "assets/img/photos/p28.jpg",
+      "src": "./assets/img/photos/p28.jpg",
       "price": 50,
       "title": "Изумруд",
       "hot": true
@@ -538,7 +538,7 @@ const CONTENT = {
     {
       "id": "poshly",
       "title": "Насколько ты пошлый?",
-      "cover": "assets/img/photos/p01.jpg",
+      "cover": "./assets/img/photos/p01.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -884,7 +884,7 @@ const CONTENT = {
     {
       "id": "open",
       "title": "Насколько ты открытый?",
-      "cover": "assets/img/photos/p05.jpg",
+      "cover": "./assets/img/photos/p05.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -1230,7 +1230,7 @@ const CONTENT = {
     {
       "id": "flirt",
       "title": "Насколько ты смелый во флирте?",
-      "cover": "assets/img/photos/p02.jpg",
+      "cover": "./assets/img/photos/p02.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -1576,7 +1576,7 @@ const CONTENT = {
     {
       "id": "dates",
       "title": "Твой стиль свиданий",
-      "cover": "assets/img/photos/p06.jpg",
+      "cover": "./assets/img/photos/p06.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -1922,7 +1922,7 @@ const CONTENT = {
     {
       "id": "romantic",
       "title": "Насколько ты романтик",
-      "cover": "assets/img/photos/p10.jpg",
+      "cover": "./assets/img/photos/p10.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -2268,7 +2268,7 @@ const CONTENT = {
     {
       "id": "chatstyle",
       "title": "Какой ты в переписке",
-      "cover": "assets/img/photos/p08.jpg",
+      "cover": "./assets/img/photos/p08.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -2614,7 +2614,7 @@ const CONTENT = {
     {
       "id": "compliments",
       "title": "Какие комплименты тебе близки",
-      "cover": "assets/img/photos/p09.jpg",
+      "cover": "./assets/img/photos/p09.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -2960,7 +2960,7 @@ const CONTENT = {
     {
       "id": "care",
       "title": "Твой язык заботы",
-      "cover": "assets/img/photos/p11.jpg",
+      "cover": "./assets/img/photos/p11.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -3306,7 +3306,7 @@ const CONTENT = {
     {
       "id": "jealous",
       "title": "Насколько ты ревнивый",
-      "cover": "assets/img/photos/p15.jpg",
+      "cover": "./assets/img/photos/p15.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -3652,7 +3652,7 @@ const CONTENT = {
     {
       "id": "crush",
       "title": "Как ты влюбляешься",
-      "cover": "assets/img/photos/p14.jpg",
+      "cover": "./assets/img/photos/p14.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -3998,7 +3998,7 @@ const CONTENT = {
     {
       "id": "evening",
       "title": "Идеальный вечер вдвоём",
-      "cover": "assets/img/photos/p20.jpg",
+      "cover": "./assets/img/photos/p20.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -4344,7 +4344,7 @@ const CONTENT = {
     {
       "id": "chemistry",
       "title": "Какая химия тебе ближе",
-      "cover": "assets/img/photos/p22.jpg",
+      "cover": "./assets/img/photos/p22.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -4697,7 +4697,7 @@ const CONTENT = {
     {
       "id": "alisa",
       "age": 24,
-      "avatar": "assets/img/photos/alisa-01.jpg",
+      "avatar": "./assets/img/photos/alisa-01.jpg",
       "name": "Алиса",
       "job": "Бариста",
       "preview": "Я сейчас одна... напиши?"
@@ -4705,7 +4705,7 @@ const CONTENT = {
     {
       "id": "mira",
       "age": 26,
-      "avatar": "assets/img/photos/mira-01.jpg",
+      "avatar": "./assets/img/photos/mira-01.jpg",
       "name": "Мира",
       "job": "Фотограф",
       "preview": "Поймала свет. Хочешь кадр?"
@@ -4713,7 +4713,7 @@ const CONTENT = {
     {
       "id": "kira",
       "age": 25,
-      "avatar": "assets/img/photos/kira-01.jpg",
+      "avatar": "./assets/img/photos/kira-01.jpg",
       "name": "Кира",
       "job": "Тренер",
       "preview": "После тренировки энергия бьёт ключом"
@@ -4721,7 +4721,7 @@ const CONTENT = {
     {
       "id": "lena",
       "age": 27,
-      "avatar": "assets/img/photos/lena-01.jpg",
+      "avatar": "./assets/img/photos/lena-01.jpg",
       "name": "Лена",
       "job": "Путешественница",
       "preview": "Закат на море. Жаль, тебя нет рядом"
@@ -4729,7 +4729,7 @@ const CONTENT = {
     {
       "id": "nina",
       "age": 23,
-      "avatar": "assets/img/photos/nina-01.jpg",
+      "avatar": "./assets/img/photos/nina-01.jpg",
       "name": "Нина",
       "job": "Диджей",
       "preview": "Ночной сет закончился. Не спится"
@@ -4737,7 +4737,7 @@ const CONTENT = {
     {
       "id": "eva",
       "age": 28,
-      "avatar": "assets/img/photos/eva-01.jpg",
+      "avatar": "./assets/img/photos/eva-01.jpg",
       "name": "Ева",
       "job": "Стилист",
       "preview": "Примеряю комплект. Оценишь?"
@@ -4745,7 +4745,7 @@ const CONTENT = {
     {
       "id": "dasha",
       "age": 25,
-      "avatar": "assets/img/photos/dasha-01.jpg",
+      "avatar": "./assets/img/photos/dasha-01.jpg",
       "name": "Даша",
       "job": "Дизайнер",
       "preview": "Дома тихо. Составишь компанию?"
@@ -4753,7 +4753,7 @@ const CONTENT = {
     {
       "id": "sofia",
       "age": 26,
-      "avatar": "assets/img/photos/sofia-01.jpg",
+      "avatar": "./assets/img/photos/sofia-01.jpg",
       "name": "София",
       "job": "Йога-инструктор",
       "preview": "Рассвет у океана. Дыши со мной"
@@ -4832,7 +4832,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Держи кадр с веранды. Свет плохой, зато честно.",
-      "photo": "assets/img/photos/alisa-02.jpg"
+      "photo": "./assets/img/photos/alisa-02.jpg"
     },
     {
       "opts": [
@@ -4987,7 +4987,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Ещё одно фото. Уже без веранды — свет лампы, я ближе.",
-      "photo": "assets/img/photos/alisa-03.jpg"
+      "photo": "./assets/img/photos/alisa-03.jpg"
     },
     {
       "opts": [
@@ -5235,7 +5235,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Первый кадр. Скажи, что режет глаз, а что цепляет.",
-      "photo": "assets/img/photos/mira-02.jpg"
+      "photo": "./assets/img/photos/mira-02.jpg"
     },
     {
       "opts": [
@@ -5368,7 +5368,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Хочу. Вот тот самый. Не для ленты.",
-      "photo": "assets/img/photos/mira-03.jpg"
+      "photo": "./assets/img/photos/mira-03.jpg"
     },
     {
       "opts": [
@@ -5682,7 +5682,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Согласен или нет — вот фото после зала. Без фильтров, только пот и свет.",
-      "photo": "assets/img/photos/kira-01.jpg"
+      "photo": "./assets/img/photos/kira-01.jpg"
     },
     {
       "opts": [
@@ -5793,7 +5793,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Слово телу: ещё кадр. Дома, уже спокойнее, но форма та же.",
-      "photo": "assets/img/photos/kira-02.jpg"
+      "photo": "./assets/img/photos/kira-02.jpg"
     },
     {
       "opts": [
@@ -5948,7 +5948,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Вот у окна. Уже не зал. Уже я.",
-      "photo": "assets/img/photos/kira-03.jpg"
+      "photo": "./assets/img/photos/kira-03.jpg"
     },
     {
       "opts": [
@@ -6064,7 +6064,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Себя. Закат честный, я тоже.",
-      "photo": "assets/img/photos/lena-02.jpg"
+      "photo": "./assets/img/photos/lena-02.jpg"
     },
     {
       "opts": [
@@ -6197,7 +6197,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Ночь. Огни. Рубашка уже на стуле.",
-      "photo": "assets/img/photos/lena-03.jpg"
+      "photo": "./assets/img/photos/lena-03.jpg"
     },
     {
       "opts": [
@@ -6445,7 +6445,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Лифт. Ночь. Я.",
-      "photo": "assets/img/photos/nina-02.jpg"
+      "photo": "./assets/img/photos/nina-02.jpg"
     },
     {
       "opts": [
@@ -6578,7 +6578,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Остаюсь. Ещё кадр уже из квартиры, не из клуба.",
-      "photo": "assets/img/photos/nina-03.jpg"
+      "photo": "./assets/img/photos/nina-03.jpg"
     },
     {
       "opts": [
@@ -6755,7 +6755,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Точка ночи. Не для сторис.",
-      "photo": "assets/img/photos/nina-01.jpg"
+      "photo": "./assets/img/photos/nina-01.jpg"
     },
     {
       "opts": [
@@ -6849,7 +6849,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Роль: смотри. Это не «голо», это мода. Но мода на мне.",
-      "photo": "assets/img/photos/eva-02.jpg"
+      "photo": "./assets/img/photos/eva-02.jpg"
     },
     {
       "opts": [
@@ -6916,7 +6916,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Шёлк. Смотри, как он держит свет. И меня.",
-      "photo": "assets/img/photos/eva-03.jpg"
+      "photo": "./assets/img/photos/eva-03.jpg"
     },
     {
       "opts": [
@@ -7049,7 +7049,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Бонус можно. Третий кадр — у зеркала, уже не витрина, уже вечер дома.",
-      "photo": "assets/img/photos/eva-01.jpg"
+      "photo": "./assets/img/photos/eva-01.jpg"
     },
     {
       "opts": [
@@ -7209,7 +7209,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Выбираешь дождь — держи кадр с подоконника.",
-      "photo": "assets/img/photos/dasha-02.jpg"
+      "photo": "./assets/img/photos/dasha-02.jpg"
     },
     {
       "opts": [
@@ -7320,7 +7320,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Кивок: ещё фото. Уже с дивана, свет лампы, дождь сильнее.",
-      "photo": "assets/img/photos/dasha-03.jpg"
+      "photo": "./assets/img/photos/dasha-03.jpg"
     },
     {
       "opts": [
@@ -7431,7 +7431,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Пожалуйста. Сонная, свитер, экран в темноте.",
-      "photo": "assets/img/photos/dasha-01.jpg"
+      "photo": "./assets/img/photos/dasha-01.jpg"
     },
     {
       "opts": [
@@ -7569,7 +7569,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Женщину видишь? Тогда кадр. Рассвет честный.",
-      "photo": "assets/img/photos/sofia-02.jpg"
+      "photo": "./assets/img/photos/sofia-02.jpg"
     },
     {
       "opts": [
@@ -7658,7 +7658,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "После. Вода, окно, я без позы.",
-      "photo": "assets/img/photos/sofia-03.jpg"
+      "photo": "./assets/img/photos/sofia-03.jpg"
     },
     {
       "opts": [
@@ -7791,7 +7791,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "В чате: последний кадр утра — уже солнце выше, я улыбаюсь тебе, не океану.",
-      "photo": "assets/img/photos/sofia-01.jpg"
+      "photo": "./assets/img/photos/sofia-01.jpg"
     },
     {
       "opts": [
@@ -8027,8 +8027,8 @@ const Platform = {
       const id = setInterval(() => {
         n++;
         if (window.YaGames) { clearInterval(id); resolve(true); }
-        else if (n > 20) { clearInterval(id); resolve(false); }
-      }, 80);
+        else if (n > 50) { clearInterval(id); resolve(false); }
+      }, 100);
     });
     const has = await waitYa();
     if (!has) {
@@ -8218,6 +8218,7 @@ const Game = {
 
   async start() {
     await Platform.init();
+    Platform.lang();
     this.lang = "ru";
     document.documentElement.lang = "ru";
     this.loadLocal();
@@ -8411,22 +8412,22 @@ const Game = {
       <div class="home-notifs">${notif}</div>
       <div class="home-grid">
         <button class="app-ico" data-k="1" onclick="Game.showTests()">
-          <span class="ico-wrap"><img src="assets/img/ui/app-test.jpg" alt=""></span>
+          <span class="ico-wrap"><img src="./assets/img/ui/app-test.jpg" alt=""></span>
           <span>TEST 18+</span>
         </button>
         <button class="app-ico" data-k="1" onclick="Game.showPhotos()">
-          <span class="ico-wrap"><img src="assets/img/ui/app-photos.jpg" alt=""></span>
+          <span class="ico-wrap"><img src="./assets/img/ui/app-photos.jpg" alt=""></span>
           <span>Горячие<br>фоточки</span>
         </button>
         <button class="app-ico" data-k="1" onclick="Game.showChats()">
           <span class="ico-wrap">
-            <img src="assets/img/ui/app-chats.jpg" alt="">
+            <img src="./assets/img/ui/app-chats.jpg" alt="">
             ${unread ? `<span class="app-badge">${unread}</span>` : ""}
           </span>
           <span>Мои чаты</span>
         </button>
         <button class="app-ico" data-k="1" onclick="Game.showProfile()">
-          <span class="ico-wrap"><img src="assets/img/ui/app-profile.jpg" alt=""></span>
+          <span class="ico-wrap"><img src="./assets/img/ui/app-profile.jpg" alt=""></span>
           <span>Мой профиль</span>
         </button>
       </div>

@@ -68,7 +68,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Держи кадр с веранды. Свет плохой, зато честно.",
-      "photo": "assets/img/photos/alisa-02.jpg"
+      "photo": "./assets/img/photos/alisa-02.jpg"
     },
     {
       "opts": [
@@ -223,7 +223,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Ещё одно фото. Уже без веранды — свет лампы, я ближе.",
-      "photo": "assets/img/photos/alisa-03.jpg"
+      "photo": "./assets/img/photos/alisa-03.jpg"
     },
     {
       "opts": [
@@ -471,7 +471,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Первый кадр. Скажи, что режет глаз, а что цепляет.",
-      "photo": "assets/img/photos/mira-02.jpg"
+      "photo": "./assets/img/photos/mira-02.jpg"
     },
     {
       "opts": [
@@ -604,7 +604,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Хочу. Вот тот самый. Не для ленты.",
-      "photo": "assets/img/photos/mira-03.jpg"
+      "photo": "./assets/img/photos/mira-03.jpg"
     },
     {
       "opts": [
@@ -918,7 +918,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Согласен или нет — вот фото после зала. Без фильтров, только пот и свет.",
-      "photo": "assets/img/photos/kira-01.jpg"
+      "photo": "./assets/img/photos/kira-01.jpg"
     },
     {
       "opts": [
@@ -1029,7 +1029,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Слово телу: ещё кадр. Дома, уже спокойнее, но форма та же.",
-      "photo": "assets/img/photos/kira-02.jpg"
+      "photo": "./assets/img/photos/kira-02.jpg"
     },
     {
       "opts": [
@@ -1184,7 +1184,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Вот у окна. Уже не зал. Уже я.",
-      "photo": "assets/img/photos/kira-03.jpg"
+      "photo": "./assets/img/photos/kira-03.jpg"
     },
     {
       "opts": [
@@ -1300,7 +1300,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Себя. Закат честный, я тоже.",
-      "photo": "assets/img/photos/lena-02.jpg"
+      "photo": "./assets/img/photos/lena-02.jpg"
     },
     {
       "opts": [
@@ -1433,7 +1433,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Ночь. Огни. Рубашка уже на стуле.",
-      "photo": "assets/img/photos/lena-03.jpg"
+      "photo": "./assets/img/photos/lena-03.jpg"
     },
     {
       "opts": [
@@ -1681,7 +1681,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Лифт. Ночь. Я.",
-      "photo": "assets/img/photos/nina-02.jpg"
+      "photo": "./assets/img/photos/nina-02.jpg"
     },
     {
       "opts": [
@@ -1814,7 +1814,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Остаюсь. Ещё кадр уже из квартиры, не из клуба.",
-      "photo": "assets/img/photos/nina-03.jpg"
+      "photo": "./assets/img/photos/nina-03.jpg"
     },
     {
       "opts": [
@@ -1991,7 +1991,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Точка ночи. Не для сторис.",
-      "photo": "assets/img/photos/nina-01.jpg"
+      "photo": "./assets/img/photos/nina-01.jpg"
     },
     {
       "opts": [
@@ -2085,7 +2085,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Роль: смотри. Это не «голо», это мода. Но мода на мне.",
-      "photo": "assets/img/photos/eva-02.jpg"
+      "photo": "./assets/img/photos/eva-02.jpg"
     },
     {
       "opts": [
@@ -2152,7 +2152,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Шёлк. Смотри, как он держит свет. И меня.",
-      "photo": "assets/img/photos/eva-03.jpg"
+      "photo": "./assets/img/photos/eva-03.jpg"
     },
     {
       "opts": [
@@ -2285,7 +2285,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Бонус можно. Третий кадр — у зеркала, уже не витрина, уже вечер дома.",
-      "photo": "assets/img/photos/eva-01.jpg"
+      "photo": "./assets/img/photos/eva-01.jpg"
     },
     {
       "opts": [
@@ -2445,7 +2445,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Выбираешь дождь — держи кадр с подоконника.",
-      "photo": "assets/img/photos/dasha-02.jpg"
+      "photo": "./assets/img/photos/dasha-02.jpg"
     },
     {
       "opts": [
@@ -2556,7 +2556,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Кивок: ещё фото. Уже с дивана, свет лампы, дождь сильнее.",
-      "photo": "assets/img/photos/dasha-03.jpg"
+      "photo": "./assets/img/photos/dasha-03.jpg"
     },
     {
       "opts": [
@@ -2667,7 +2667,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Пожалуйста. Сонная, свитер, экран в темноте.",
-      "photo": "assets/img/photos/dasha-01.jpg"
+      "photo": "./assets/img/photos/dasha-01.jpg"
     },
     {
       "opts": [
@@ -2805,7 +2805,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "Женщину видишь? Тогда кадр. Рассвет честный.",
-      "photo": "assets/img/photos/sofia-02.jpg"
+      "photo": "./assets/img/photos/sofia-02.jpg"
     },
     {
       "opts": [
@@ -2894,7 +2894,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "После. Вода, окно, я без позы.",
-      "photo": "assets/img/photos/sofia-03.jpg"
+      "photo": "./assets/img/photos/sofia-03.jpg"
     },
     {
       "opts": [
@@ -3027,7 +3027,7 @@ CONTENT.CHATS = {
     },
     {
       "her": "В чате: последний кадр утра — уже солнце выше, я улыбаюсь тебе, не океану.",
-      "photo": "assets/img/photos/sofia-01.jpg"
+      "photo": "./assets/img/photos/sofia-01.jpg"
     },
     {
       "opts": [
