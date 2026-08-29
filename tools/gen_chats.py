@@ -14,7 +14,7 @@ def O(triples):
     return {"opts": [{"t": t, "h": h, "her": her} for t, h, her in triples]}
 
 def ph(gid, n):
-    return "./assets/img/photos/%s-0%d.jpg" % (gid, n)
+    return "./photos/%s-0%d.jpg" % (gid, n)
 
 def build():
     chats = {}

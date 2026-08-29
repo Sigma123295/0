@@ -1,0 +1,4 @@
+Fotki zdes: papka photos
+Ikonki i oboi: papka ui
+Raspakuy arhiv v papku i otkroy index.html
+Ne otkryvay html iznutri zip.

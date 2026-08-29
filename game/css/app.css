@@ -91,7 +91,7 @@ button { cursor: pointer; font: inherit; color: inherit; }
 .scroll::-webkit-scrollbar-thumb { background: rgba(80,190,255,.45); border-radius: 99px; }
 
 .home {
-  flex: 1; min-height: 0; background: #071018 url("../assets/img/ui/home-wall.jpg") center/cover no-repeat;
+  flex: 1; min-height: 0; background: #071018 url("../ui/home-wall.jpg") center/cover no-repeat;
   display: flex; flex-direction: column; padding: 18px 16px 10px;
 }
 .home-clock { text-align: center; color: #fff; text-shadow: 0 2px 12px #000a; padding: 8px 0 12px; }
@@ -178,7 +178,7 @@ button { cursor: pointer; font: inherit; color: inherit; }
 .tg-head .avatar { width: 38px; height: 38px; border-width: 0; }
 .tg {
   flex: 1; min-height: 0; display: flex; flex-direction: column;
-  background: #0e1621 url("../assets/img/ui/tg-wall.jpg") center/cover no-repeat;
+  background: #0e1621 url("../ui/tg-wall.jpg") center/cover no-repeat;
 }
 .messages { display: flex; flex-direction: column; gap: 6px; padding: 8px 8px 12px; }
 .bubble {

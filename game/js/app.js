@@ -214,22 +214,22 @@ const Game = {
       <div class="home-notifs">${notif}</div>
       <div class="home-grid">
         <button class="app-ico" data-k="1" onclick="Game.showTests()">
-          <span class="ico-wrap"><img src="./assets/img/ui/app-test.jpg" alt=""></span>
+          <span class="ico-wrap"><img src="./ui/app-test.jpg" alt=""></span>
           <span>TEST 18+</span>
         </button>
         <button class="app-ico" data-k="1" onclick="Game.showPhotos()">
-          <span class="ico-wrap"><img src="./assets/img/ui/app-photos.jpg" alt=""></span>
+          <span class="ico-wrap"><img src="./ui/app-photos.jpg" alt=""></span>
           <span>Горячие<br>фоточки</span>
         </button>
         <button class="app-ico" data-k="1" onclick="Game.showChats()">
           <span class="ico-wrap">
-            <img src="./assets/img/ui/app-chats.jpg" alt="">
+            <img src="./ui/app-chats.jpg" alt="">
             ${unread ? `<span class="app-badge">${unread}</span>` : ""}
           </span>
           <span>Мои чаты</span>
         </button>
         <button class="app-ico" data-k="1" onclick="Game.showProfile()">
-          <span class="ico-wrap"><img src="./assets/img/ui/app-profile.jpg" alt=""></span>
+          <span class="ico-wrap"><img src="./ui/app-profile.jpg" alt=""></span>
           <span>Мой профиль</span>
         </button>
       </div>
