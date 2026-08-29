@@ -7,7 +7,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#16041f">
   <meta name="google" content="notranslate">
-  <title>Лунные переписки</title>
+  <title>Шкала откровенности</title>
   <style>
 :root {
   --bg: #120218;
@@ -93,7 +93,7 @@ button, .tap { cursor: pointer; font: inherit; color: inherit; }
   position: absolute; left: 0; right: 0; bottom: 0;
   height: calc(var(--navh) + var(--safeb));
   padding-bottom: var(--safeb);
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   background: rgba(12, 2, 18, .92); border-top: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
@@ -225,9 +225,9 @@ button, .tap { cursor: pointer; font: inherit; color: inherit; }
       <div class="boot-glow"></div>
       <img class="boot-hero" src="assets/img/hero.jpg" alt="">
       <div class="boot-copy">
-        <p class="boot-kicker">секретные диалоги</p>
-        <h1>Лунные переписки</h1>
-        <p class="boot-sub">Чаты · Фото · Тесты</p>
+        <p class="boot-kicker">тесты · фото · монеты</p>
+        <h1>Шкала откровенности</h1>
+        <p class="boot-sub">Насколько ты пошлый?</p>
         <div class="boot-bar"><i></i></div>
       </div>
     </div>
@@ -244,110 +244,76 @@ button, .tap { cursor: pointer; font: inherit; color: inherit; }
   <script>
 const I18N = {
   ru: {
-    title: "Лунные переписки",
-    chats: "Чаты",
-    photos: "Фото",
+    title: "Шкала откровенности",
     tests: "Тесты",
-    profile: "Профиль",
-    home: "Главная",
+    photos: "Фото",
+    coinsTab: "Монеты",
     back: "Назад",
     coins: "монет",
-    online: "онлайн",
-    write: "Написать",
-    locked: "Закрыто",
-    hot: "Горячая 18+",
+    hot: "Горячая",
     openFor: "Открыть за",
-    watchAd: "Смотреть рекламу и открыть",
-    watchAdCoins: "Смотреть рекламу и получить 25 монет",
-    adLocal: "В каталоге Яндекс Игр здесь откроется реклама. Для предпросмотра награда выдана.",
+    watchAd: "Смотреть рекламу и открыть фото",
+    watchAdCoins: "Смотреть рекламу и получить 50 монет",
+    adLocal: "В Яндекс Играх здесь будет реклама. Для предпросмотра награда выдана.",
     adFail: "Реклама сейчас недоступна. Попробуйте позже.",
-    rewardedHint: "За просмотр рекламы вы получите награду в игре.",
+    rewardedHint: "Вы посмотрите рекламу и получите награду в игре.",
     testReward: "За тест: {n} вопросов · +{c} монет",
     startTest: "Начать тест",
-    next: "Далее",
     result: "Твой результат",
     again: "Пройти ещё раз",
     coinsGot: "+{c} монет",
     alreadyRewarded: "Повторно монеты не начисляются",
     how: "Как играть",
-    howBody: "Пишите девушкам, выбирая готовые ответы. Проходите тесты из 15 вопросов — за первое прохождение каждого теста начисляется 20 монет. Монеты тратятся на фото в галерее. Фото и монеты также можно получить за просмотр рекламы. Управление: нажимайте кнопки пальцем или мышью. На компьютере работают стрелки, Enter и Escape. Прогресс сохраняется автоматически.",
+    howBody: "Проходите тесты — за первое прохождение каждого теста 20 монет. Смотрите рекламу — 50 монет за просмотр. Каждое фото стоит 50 монет или одну рекламу. Управление: нажимайте пальцем или мышью. На компьютере — стрелки, Enter, Escape. Прогресс сохраняется сам.",
     login: "Войти через Яндекс ID",
-    loginHint: "Авторизация нужна, чтобы сохранять прогресс в облаке и открывать игру с разных устройств. Можно играть и без входа — прогресс сохранится на этом устройстве.",
-    guest: "Играть без входа",
+    loginHint: "Вход сохраняет прогресс в облаке на всех устройствах. Без входа тоже можно играть — прогресс останется на этом устройстве.",
     music: "Музыка",
     sfx: "Звуки",
-    lang: "Язык",
     paused: "Пауза",
     pausedHint: "Игра на паузе, звук выключен",
-    progress: "Прогресс",
-    chatsDone: "Чаты",
-    testsDone: "Тесты",
-    photosOpen: "Фото",
-    privacy: "Политика и права",
-    privacyBody: "Все изображения и тексты созданы для этой игры. Персонажи вымышлены и старше 21 года. Данные прогресса хранятся локально и, после входа через Яндекс ID, в облаке Яндекс Игр.",
-    continue: "Продолжить",
-    close: "Закрыть",
-    endingWarm: "Тёплый финал",
-    endingSpark: "Искры между вами",
-    endingFire: "На одной волне",
-    moreCoins: "Монеты за рекламу",
-    needCoins: "Не хватает монет",
+    needCoins: "Не хватает монет. Пройдите тест или посмотрите рекламу.",
     opened: "Фото открыто",
-    pick: "Выберите ответ",
-    ageNote: "Персонажи старше 21 года. Фото — стильные портреты, без запрещённого контента."
+    close: "Закрыть",
+    continue: "Далее",
+    ageNote: "Персонажи старше 21 года. Фото — стильные портреты.",
+    coinsHelp: "1 реклама = 50 монет. 1 тест = 20 монет. 1 фото = 50 монет.",
+    moreCoins: "Монеты за рекламу"
   },
   en: {
-    title: "Moonlit Messages",
-    chats: "Chats",
-    photos: "Photos",
+    title: "Candid Scale",
     tests: "Tests",
-    profile: "Profile",
-    home: "Home",
+    photos: "Photos",
+    coinsTab: "Coins",
     back: "Back",
     coins: "coins",
-    online: "online",
-    write: "Message",
-    locked: "Locked",
-    hot: "Hot 18+",
+    hot: "Hot",
     openFor: "Unlock for",
-    watchAd: "Watch an ad to unlock",
-    watchAdCoins: "Watch an ad and get 25 coins",
-    adLocal: "On Yandex Games this will show an ad. Preview reward granted.",
-    adFail: "Ads are unavailable right now. Try later.",
-    rewardedHint: "Watching the ad gives you an in-game reward.",
+    watchAd: "Watch an ad to unlock the photo",
+    watchAdCoins: "Watch an ad and get 50 coins",
+    adLocal: "On Yandex Games this shows an ad. Preview reward granted.",
+    adFail: "Ads unavailable right now. Try later.",
+    rewardedHint: "You will watch an ad and get an in-game reward.",
     testReward: "This test: {n} questions · +{c} coins",
     startTest: "Start test",
-    next: "Next",
     result: "Your result",
     again: "Try again",
     coinsGot: "+{c} coins",
     alreadyRewarded: "Coins are awarded once",
     how: "How to play",
-    howBody: "Chat with girls by tapping reply options. Complete 15-question tests — the first clear of each test gives 20 coins. Spend coins on gallery photos. Photos and coins can also be earned by watching ads. Controls: tap or click. On desktop use arrows, Enter and Escape. Progress is saved automatically.",
+    howBody: "Complete tests — 20 coins for the first clear of each test. Watch an ad — 50 coins. Each photo costs 50 coins or one ad. Tap or click. On desktop: arrows, Enter, Escape. Progress saves automatically.",
     login: "Sign in with Yandex ID",
-    loginHint: "Sign in to save cloud progress across devices. You can keep playing as a guest — progress stays on this device.",
-    guest: "Continue as guest",
+    loginHint: "Sign in to save cloud progress across devices. Guest play keeps progress on this device.",
     music: "Music",
     sfx: "Sounds",
-    lang: "Language",
     paused: "Paused",
     pausedHint: "The game is paused and muted",
-    progress: "Progress",
-    chatsDone: "Chats",
-    testsDone: "Tests",
-    photosOpen: "Photos",
-    privacy: "Credits",
-    privacyBody: "All art and text were created for this game. Characters are fictional and over 21. Progress is stored locally and, after Yandex ID sign-in, in Yandex Games cloud saves.",
-    continue: "Continue",
-    close: "Close",
-    endingWarm: "A warm ending",
-    endingSpark: "Sparks between you",
-    endingFire: "On the same wavelength",
-    moreCoins: "Coins for an ad",
-    needCoins: "Not enough coins",
+    needCoins: "Not enough coins. Finish a test or watch an ad.",
     opened: "Photo unlocked",
-    pick: "Choose a reply",
-    ageNote: "Characters are over 21. Photos are stylish portraits, not adult content."
+    close: "Close",
+    continue: "Next",
+    ageNote: "Characters are over 21. Photos are stylish portraits.",
+    coinsHelp: "1 ad = 50 coins. 1 test = 20 coins. 1 photo = 50 coins.",
+    moreCoins: "Coins for an ad"
   }
 };
 function t(key, vars) {
@@ -365,2378 +331,1495 @@ function tx(obj) {
 
 const CONTENT = {
   "GAME_TITLE": {
-    "ru": "Лунные переписки",
-    "en": "Moonlit Messages"
-  },
-  "GIRLS": [
-    {
-      "id": "alisa",
-      "age": 24,
-      "avatar": "assets/img/avatars/alisa.jpg",
-      "name": {
-        "ru": "Алиса",
-        "en": "Alisa"
-      },
-      "job": {
-        "ru": "Бариста",
-        "en": "Barista"
-      },
-      "preview": {
-        "ru": "Я сейчас одна... напиши?",
-        "en": "I'm free right now... write me?"
-      }
-    },
-    {
-      "id": "mira",
-      "age": 26,
-      "avatar": "assets/img/avatars/mira.jpg",
-      "name": {
-        "ru": "Мира",
-        "en": "Mira"
-      },
-      "job": {
-        "ru": "Фотограф",
-        "en": "Photographer"
-      },
-      "preview": {
-        "ru": "Поймала свет. Хочешь кадр?",
-        "en": "Caught the light. Want a shot?"
-      }
-    },
-    {
-      "id": "kira",
-      "age": 25,
-      "avatar": "assets/img/avatars/kira.jpg",
-      "name": {
-        "ru": "Кира",
-        "en": "Kira"
-      },
-      "job": {
-        "ru": "Тренер",
-        "en": "Coach"
-      },
-      "preview": {
-        "ru": "После тренировки энергия бьёт ключом",
-        "en": "Post-workout energy is wild"
-      }
-    },
-    {
-      "id": "lena",
-      "age": 27,
-      "avatar": "assets/img/avatars/lena.jpg",
-      "name": {
-        "ru": "Лена",
-        "en": "Lena"
-      },
-      "job": {
-        "ru": "Путешественница",
-        "en": "Traveler"
-      },
-      "preview": {
-        "ru": "Закат на море. Жаль, тебя нет рядом",
-        "en": "Sunset by the sea. Wish you were here"
-      }
-    },
-    {
-      "id": "nina",
-      "age": 23,
-      "avatar": "assets/img/avatars/nina.jpg",
-      "name": {
-        "ru": "Нина",
-        "en": "Nina"
-      },
-      "job": {
-        "ru": "Диджей",
-        "en": "DJ"
-      },
-      "preview": {
-        "ru": "Ночной сет закончился. Не спится",
-        "en": "Night set is over. Can't sleep"
-      }
-    },
-    {
-      "id": "eva",
-      "age": 28,
-      "avatar": "assets/img/avatars/eva.jpg",
-      "name": {
-        "ru": "Ева",
-        "en": "Eva"
-      },
-      "job": {
-        "ru": "Стилист",
-        "en": "Stylist"
-      },
-      "preview": {
-        "ru": "Примеряю платье. Оценишь?",
-        "en": "Trying a dress. Rate it?"
-      }
-    },
-    {
-      "id": "dasha",
-      "age": 25,
-      "avatar": "assets/img/avatars/dasha.jpg",
-      "name": {
-        "ru": "Даша",
-        "en": "Dasha"
-      },
-      "job": {
-        "ru": "Дизайнер",
-        "en": "Designer"
-      },
-      "preview": {
-        "ru": "Дома тихо. Составишь компанию в чате?",
-        "en": "It's quiet at home. Keep me company?"
-      }
-    },
-    {
-      "id": "sofia",
-      "age": 26,
-      "avatar": "assets/img/avatars/sofia.jpg",
-      "name": {
-        "ru": "София",
-        "en": "Sofia"
-      },
-      "job": {
-        "ru": "Йога-инструктор",
-        "en": "Yoga instructor"
-      },
-      "preview": {
-        "ru": "Рассвет у океана. Дыши со мной",
-        "en": "Sunrise by the ocean. Breathe with me"
-      }
-    }
-  ],
-  "CHATS": {
-    "alisa": [
-      {
-        "her": {
-          "ru": "Привет. Сегодня смена короткая, я уже дома с какао.",
-          "en": "Hey. Short shift today, I'm home with cocoa."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Звучит уютно. Как прошёл день?",
-              "en": "Sounds cozy. How was the day?"
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Какао — серьёзный аргумент.",
-              "en": "Cocoa is a strong argument."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Привет. Что нового?",
-              "en": "Hi. What's new?"
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "День был шумный, но вечером хочется тихого разговора. Ты из тех, кто пишет коротко или рассказывает?",
-          "en": "It was noisy, but I want a quiet talk tonight. Short texts or stories?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Могу и так, и так — как тебе спокойнее.",
-              "en": "I can do both — whatever feels easier."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Люблю подробности, если есть настроение.",
-              "en": "I like details when the mood is right."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Коротко. Меньше шума.",
-              "en": "Short. Less noise."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Тогда секрет: я иногда оставляю сердечко на стаканчике постоянным гостям. Глупо?",
-          "en": "Secret: I sometimes draw a heart on regulars' cups. Silly?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Мило. Я бы точно заметил.",
-              "en": "Cute. I would notice."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Это маленький ритуал, мне нравится.",
-              "en": "A tiny ritual. I like it."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Немного театрально.",
-              "en": "A bit theatrical."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "А ты? Есть привычка, которую стесняешься рассказывать незнакомцам?",
-          "en": "What about you? A habit you rarely tell strangers?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Слушаю один и тот же плейлист, когда хочу спокойствия.",
-              "en": "I play the same playlist when I need calm."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Перечитываю старые сообщения, если день странный.",
-              "en": "I reread old messages on odd days."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Пока держу в секрете.",
-              "en": "I'll keep that one."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Хорошо. Тогда ближе: если бы мы сидели за столиком у окна, о чём бы ты спросил первым?",
-          "en": "Okay. Closer: if we sat by the window, what would you ask first?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Какой вечер тебя заряжает после смены.",
-              "en": "What kind of evening recharges you after a shift."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Куда бы ты поехала на выходные без планов.",
-              "en": "Where you'd go on a planless weekend."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Что вкуснее всего в твоём меню.",
-              "en": "What's the best thing on your menu."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Меня заряжает тёплый свет и человек, который не торопит. Ты умеешь не торопить?",
-          "en": "Warm light and someone who doesn't rush. Can you slow down?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Умею. Можно просто писать и молчать паузами.",
-              "en": "I can. We can text and leave pauses."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Постараюсь, если напомнишь.",
-              "en": "I'll try if you remind me."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Иногда спешу, честно.",
-              "en": "Sometimes I rush, honestly."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Тогда ещё один вопрос без подвоха: комплимент в чате — про глаза, про голос или про характер?",
-          "en": "No trick: a chat compliment — eyes, voice, or character?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Про то, какая ты живая в мелочах.",
-              "en": "How alive you are in small things."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Про взгляд. У тебя тёплый.",
-              "en": "The look. Yours is warm."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Про характер — он дольше держится.",
-              "en": "Character. It lasts longer."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ты милый, когда не играешь. Если бы я прислала фото с веранды кафе, ты бы написал честно?",
-          "en": "You're sweet when you aren't performing. If I send a cafe terrace photo, would you be honest?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Честно и мягко. Красиво — скажу красиво.",
-              "en": "Honest and kind. If it's lovely, I'll say so."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Сначала смущусь, потом напишу.",
-              "en": "I'd get shy, then write."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Коротко: огонь.",
-              "en": "Short: fire."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ха. Ладно, держи настроение: я сегодня без спешки. Напиши, как бы ты закончил этот вечер, если бы мы были в одном городе.",
-          "en": "Ha. Okay — no rush tonight. How would you end the evening if we were in the same city?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Прогулка домой длинной дорогой и чай.",
-              "en": "A long way home and tea."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Ещё час разговоров на веранде.",
-              "en": "Another hour of talk on the terrace."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Кино и плед, без лишнего шума.",
-              "en": "A movie and a blanket, no extra noise."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Мне это подходит. Сохраняю тебя в особых. Завтра напишу первой, если не против.",
-          "en": "That works. You're in my specials. I'll text first tomorrow if that's okay."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Только да. Буду ждать.",
-              "en": "Yes. I'll be waiting."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Я могу написать сам утром.",
-              "en": "I can text in the morning."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ок. Спокойной ночи.",
-              "en": "Okay. Good night."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Спокойной. И спасибо, что выбрал тёплые ответы — это чувствуется даже в чате.",
-          "en": "Night. Thanks for the warm replies — it shows even in chat."
-        }
-      }
-    ],
-    "mira": [
-      {
-        "her": {
-          "ru": "Снимала витрины и случайно поймала своё отражение. Странно нравится.",
-          "en": "I shot storefronts and caught my reflection. Weirdly like it."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Покажи. Хочу понять твой взгляд.",
-              "en": "Show me. I want your angle."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Отражения — честная магия.",
-              "en": "Reflections are honest magic."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Звучит красиво.",
-              "en": "Sounds pretty."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Люди думают, фотограф всегда хочет позу. А я хочу паузу. Ты умеешь быть в кадре спокойным?",
-          "en": "People think a photographer wants a pose. I want a pause. Can you be still in frame?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Могу молчать и смотреть.",
-              "en": "I can stay quiet and look."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Немного стесняюсь камер.",
-              "en": "Cameras make me shy."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Буду шутить, пока не получится.",
-              "en": "I'd joke until it works."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Хорошо. Если бы я снимала тебя на крыше, какой свет выберешь: закат или ночные огни?",
-          "en": "If I shot you on a roof, sunset or night lights?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Закат. Он делает голос тише.",
-              "en": "Sunset. It makes voices quieter."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Ночь. Больше тайны.",
-              "en": "Night. More mystery."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Как скажешь — ты видишь лучше.",
-              "en": "Your call — you see better."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Мне нравится, когда человек не спорит с тишиной. Расскажи город, который тебе кажется фильмом.",
-          "en": "I like when someone doesn't fight the silence. Name a city that feels like a film."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Любой приморский вечером.",
-              "en": "Any seaside town at night."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Старый центр после дождя.",
-              "en": "An old downtown after rain."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Не знаю. Подскажи свой.",
-              "en": "Not sure. Tell me yours."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Мой — тот, где неон отражается в лужах. Если я пришлю такой кадр, напишешь не «класс», а что-то живое?",
-          "en": "Mine is neon in puddles. If I send that shot, write something alive, not just “cool”?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Напишу, какой в нём воздух.",
-              "en": "I'll write about the air in it."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Попробую без шаблона.",
-              "en": "I'll skip the template."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Класс запрещён, принято.",
-              "en": "No “cool”. Got it."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ещё секрет: я иногда снимаю пустые стулья. Они честнее людей. Ты бы сел на такой стул рядом?",
-          "en": "Secret: I shoot empty chairs. They're more honest than people. Would you sit beside one?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Сел бы. И не заполнял паузу словами.",
-              "en": "I would. And I wouldn't fill the pause."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Сел бы и спросил, кого ты ждёшь.",
-              "en": "I'd sit and ask who you're waiting for."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Странная романтика, но ок.",
-              "en": "Strange romance, but okay."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ты внимательный. Это редкость. Если бы у нас была одна плёнка на двоих, что снимем первым?",
-          "en": "You're attentive. Rare. If we shared one film roll, first frame?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Твои руки и чашку.",
-              "en": "Your hands and a cup."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Улицу под дождём.",
-              "en": "The street in the rain."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Нас в отражении окна.",
-              "en": "Us in a window reflection."
-            },
-            "h": 2
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Сохраняю это. Спокойной ночи. Если не спится — напиши, я тоже ещё с камерой.",
-          "en": "Saving that. Good night. If you can't sleep, write — I'm still with the camera."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Напишу. Не пропадай.",
-              "en": "I will. Don't vanish."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Спокойной. Пусть кадры будут мягкими.",
-              "en": "Night. May the frames stay soft."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ок.",
-              "en": "Okay."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Мягкими и будут. Ты хороший собеседник для ночи.",
-          "en": "They will. You're a good night conversation."
-        }
-      }
-    ],
-    "kira": [
-      {
-        "her": {
-          "ru": "Только с тренировки. Пульс ещё высокий, а в чате почему-то хочется писать тебе.",
-          "en": "Just finished training. Heart rate's up, and I still want to text you."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Пиши. Я на линии.",
-              "en": "Write. I'm here."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Как самочувствие?",
-              "en": "How do you feel?"
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Круто, что не забыла.",
-              "en": "Nice you didn't forget."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Нормально. Иногда после спорта я резкая. Если скажу «давай честно» — выдержишь?",
-          "en": "Fine. After sport I get blunt. If I say “be honest” — can you take it?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Выдержу. Лучше правда.",
-              "en": "I can. Truth is better."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Попробую без обиды.",
-              "en": "I'll try not to take it personally."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Зависит от темы.",
-              "en": "Depends on the topic."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Тема простая: свидание после зала. Кофе, прогулка или домашняя еда?",
-          "en": "Simple: a date after the gym. Coffee, a walk, or home food?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Прогулка, пока город остывает.",
-              "en": "A walk while the city cools."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Еда. Ты заслужила спокойный стол.",
-              "en": "Food. You earned a quiet table."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Кофе и короткие шутки.",
-              "en": "Coffee and short jokes."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Мне нравится движение. Но вечером — чтобы кто-то заметил, что я устала, без лекции. Ты так умеешь?",
-          "en": "I like movement. At night I want someone who notices I'm tired, no lecture. Can you?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Умею. «Давай сядем» — и всё.",
-              "en": "Yes. “Let's sit” — that's it."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Могу принести воду и заткнуться.",
-              "en": "I can bring water and stay quiet."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Обычно советую восстановиться.",
-              "en": "I usually suggest recovery."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Почти идеально. А комплимент: про силу или про то, как я смеюсь, когда сдаю темп?",
-          "en": "Almost perfect. Compliment: my strength, or how I laugh when I slow down?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Про смех. Он честнее медалей.",
-              "en": "The laugh. It's more honest than medals."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Про силу и мягкость сразу.",
-              "en": "Strength and softness together."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Про дисциплину. Это красиво.",
-              "en": "Discipline. That's attractive."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ого. Ладно, ближе: если я пришлю фото с зала, без фильтров, ты не начнёшь про идеальность?",
-          "en": "Okay, closer: if I send a gym photo, no filters, you won't start about perfection?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Напишу, что живое лучше идеального.",
-              "en": "I'll say alive beats perfect."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Просто скажу, что ты в своём месте.",
-              "en": "I'll say you look in your element."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Скажу «мощно» и не буду умничать.",
-              "en": "I'll say “powerful” and stop there."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Договорились. Завтра утренний бег. Составишь компанию хотя бы текстом — «не сдавайся на третьем круге»?",
-          "en": "Deal. Morning run tomorrow. Keep me company in text — “don't quit on lap three”?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Напишу ещё до будильника.",
-              "en": "I'll text before your alarm."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Могу быть твоим темпом в чате.",
-              "en": "I can be your pace in chat."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ок, напомню.",
-              "en": "Okay, I'll remind you."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Тогда ты в команде. Мне с тобой легко, хотя мы только в переписке. Это редкий вид спорта.",
-          "en": "You're on the team. This is easy, even in texts. Rare sport."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Тогда не сходим с дистанции.",
-              "en": "Then we don't drop the distance."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Мне тоже легко. Это важно.",
-              "en": "It's easy for me too. That matters."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Продолжим завтра.",
-              "en": "Let's continue tomorrow."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Продолжим. И да — можешь писать не только про спорт.",
-          "en": "We will. And yes — you can write about more than sport."
-        }
-      }
-    ],
-    "lena": [
-      {
-        "her": {
-          "ru": "Пишу с набережной. Ветер тёплый, сумка полная магнитов, которых я никогда не вешаю.",
-          "en": "Writing from the promenade. Warm wind, a bag of magnets I never hang."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Зато есть повод вспоминать города.",
-              "en": "At least the cities stay with you."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Пришли вид, если не лень.",
-              "en": "Send the view if you want."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Куда дальше?",
-              "en": "Where next?"
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Дальше — неизвестно. Люблю билеты без жёсткого плана. Ты бы выдержал такое путешествие рядом?",
-          "en": "Unknown. I like tickets without a hard plan. Could you travel like that beside me?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Да. Главное — не терять друг друга на вокзале.",
-              "en": "Yes. Just don't lose each other at the station."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Нужен один якорь: утро с кофе.",
-              "en": "I'd need one anchor: morning coffee."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Я больше по маршрутам.",
-              "en": "I prefer itineraries."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Кофе можно. А вечер? Море, крыша отеля или ночной рынок?",
-          "en": "Coffee is fine. Evening: sea, hotel roof, or night market?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Море. Чтобы разговаривать почти шёпотом.",
-              "en": "Sea. Almost whispering."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Рынок. Чтобы смеяться над специями.",
-              "en": "Market. Laughing at spices."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Крыша. Город как карта.",
-              "en": "Roof. The city as a map."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ты романтик с чемоданом. Если бы я прислала пляж на закате, что напишешь вместо «красиво»?",
-          "en": "You're a romantic with a suitcase. If I send a sunset beach, what instead of “pretty”?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Что воздух, кажется, пахнет каникулами.",
-              "en": "That the air smells like a holiday."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Что хочется быть в кадре, но не портить его.",
-              "en": "That I'd want to be in frame without ruining it."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Что этот свет тебе идёт.",
-              "en": "That this light suits you."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Идёт. Иногда слишком. Люди пялятся, я надеваю шляпу. Ты бы защитил или пошутил?",
-          "en": "It does. Sometimes too much. People stare, I put a hat on. Protect or joke?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Встал бы так, чтобы тебе было спокойно.",
-              "en": "I'd stand so you feel easy."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Шляпа + шутка, чтобы снять напряжение.",
-              "en": "Hat plus a joke to ease it."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ты справишься сама, я рядом.",
-              "en": "You can handle it, I'm nearby."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Рядом — ключевое. Знаешь, в поездках я редко пишу кому-то перед сном. Сегодня вот пишу.",
-          "en": "Nearby is the key. I rarely text anyone before sleep on trips. Today I am."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Тогда я буду твоей тихой станцией.",
-              "en": "Then I'll be your quiet station."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Пиши, даже если это три слова.",
-              "en": "Write even if it's three words."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Приятно быть исключением.",
-              "en": "Nice to be the exception."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Три слова: не пропадай, ладно? Завтра паром, связь может моргать.",
-          "en": "Three words: don't disappear, okay? Ferry tomorrow, signal may blink."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Не пропаду. Напиши, как ступишь на берег.",
-              "en": "I won't. Text when you step on shore."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Буду ждать, даже если сообщения придут пачкой.",
-              "en": "I'll wait even if texts arrive in a bunch."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ок, удачной дороги.",
-              "en": "Okay, safe trip."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Удачной нам переписке. Ты сделал этот закат теплее, чем он был.",
-          "en": "Safe messages to us. You made this sunset warmer than it was."
-        }
-      }
-    ],
-    "nina": [
-      {
-        "her": {
-          "ru": "Свет выключили, зал ещё гудит в ушах. Пишу тебе, потому что тишина резко слишком большая.",
-          "en": "Lights off, the hall still buzzing in my ears. Texting you because the silence got too big."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Я тут. Можно без темы.",
-              "en": "I'm here. No topic needed."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Как прошёл сет?",
-              "en": "How was the set?"
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Добро пожаловать в тишину.",
-              "en": "Welcome to the quiet."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Сет огонь, но я не хочу быть «диджеем» в чате. Хочу быть просто Ниной, которая ест картошку в три ночи.",
-          "en": "The set slapped, but I don't want to be “the DJ” here. Just Nina eating fries at 3 a.m."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Привет, Нина с картошкой. Как вкус?",
-              "en": "Hi, Nina with fries. How's the taste?"
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Это самый честный статус.",
-              "en": "That's the most honest status."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "В три ночи всё вкуснее.",
-              "en": "At 3 a.m. everything tastes better."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Солёная и идеальная. Если бы ты заехал после концерта, что привёз бы — плед, чай или тишину?",
-          "en": "Salty and perfect. If you came after a gig, what would you bring — a blanket, tea, or silence?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Тишину и чай. Плед само собой.",
-              "en": "Silence and tea. Blanket included."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Чай и глупые мемы, если устала от крутого.",
-              "en": "Tea and silly memes if you're tired of cool."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Просто себя и наушники.",
-              "en": "Just me and headphones."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Мемы принимаются. А комплимент без сцены: что тебе во мне слышно, когда нет баса?",
-          "en": "Memes accepted. A compliment offstage: what do you hear in me when the bass is gone?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Тёплый голос, который не орёт.",
-              "en": "A warm voice that doesn't shout."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Любопытство. Ты всё ещё ищешь трек.",
-              "en": "Curiosity. You're still hunting a track."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Усталость и блеск сразу.",
-              "en": "Tiredness and sparkle at once."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Блеск можно выключить. Иногда хочется, чтобы меня не фотографировали. Ты бы убрал телефон?",
-          "en": "Sparkle can switch off. Sometimes I don't want photos. Would you put the phone away?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Убрал бы. Ты не контент.",
-              "en": "I would. You're not content."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Спросил бы. Без «можно кадр».",
-              "en": "I'd ask. No “one shot” pressure."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Один кадр для тебя, не для ленты.",
-              "en": "One frame for you, not the feed."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "За это можно даже поделиться плейлистом. Если я пришлю ночной трек, послушаешь до конца?",
-          "en": "That earns a playlist. If I send a night track, will you listen to the end?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "До последнего затухания.",
-              "en": "Until the last fade."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "И напишу, где мурашки.",
-              "en": "And I'll mark the goosebumps."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Попробую, если не усну.",
-              "en": "I'll try if I don't fall asleep."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Не засни сразу. Мне сегодня нужна переписка как afterparty. Ты остаёшься?",
-          "en": "Don't sleep yet. I need chat as afterparty. Staying?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Остаюсь. Ещё один круг.",
-              "en": "Staying. One more round."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "На два сообщения точно.",
-              "en": "For two more messages at least."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Чуть-чуть и спать.",
-              "en": "A little, then sleep."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Тогда добро пожаловать в мой тихий клуб. Здесь только мы и картошка.",
-          "en": "Welcome to my quiet club. Just us and the fries."
-        }
-      }
-    ],
-    "eva": [
-      {
-        "her": {
-          "ru": "Стою у зеркала в бордовом платье и понимаю, что хочу мнение не коллеги, а твоё.",
-          "en": "Standing at the mirror in a burgundy dress, wanting your opinion, not a coworker's."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Пришли. Скажу как человек, не как критик.",
-              "en": "Send it. I'll speak as a person, not a critic."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Бордовый тебе идёт уже в воображении.",
-              "en": "Burgundy already suits you in my head."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Какой повод?",
-              "en": "What's the occasion?"
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Повод — я. Иногда наряжаюсь без выхода. Ты бы понял такую странность?",
-          "en": "The occasion is me. I dress up with nowhere to go. Would you get that?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Понял. Красота не обязана быть для зала.",
-              "en": "I would. Beauty doesn't need an audience."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Это свидание с собой. Уважаю.",
-              "en": "A date with yourself. Respect."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Я бы предложил выйти хотя бы в парк.",
-              "en": "I'd suggest at least a park walk."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Парк можно. Только без оценки «дорого/дёшево». Говори про настроение ткани.",
-          "en": "A park is fine. No “expensive/cheap”. Talk about the mood of the fabric."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Тогда: платье звучит как вечер без спешки.",
-              "en": "Then: the dress sounds like an unhurried evening."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Бордо — как низкий голос.",
-              "en": "Burgundy is a low voice."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Звучит уверенно.",
-              "en": "It sounds confident."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Низкий голос — попал. Если бы ты выбирал комплимент: осанка, взгляд или то, как я поправляю волосы?",
-          "en": "Low voice — bullseye. Compliment: posture, gaze, or how I fix my hair?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Как поправляешь волосы. Живая деталь.",
-              "en": "How you fix your hair. A living detail."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Взгляд. Он держит зал без слов.",
-              "en": "The gaze. It holds a room."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Осанка. В ней характер.",
-              "en": "Posture. Character lives there."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Ты опасный стилист слов. Ладно, ближе: балкон ночью, шёлковый халат, город внизу. Напишешь что-то тёплое, не липкое?",
-          "en": "You're a dangerous word-stylist. Closer: night balcony, silk robe, city below. Warm, not clingy?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Ты выглядишь как пауза, которую хочется сохранить.",
-              "en": "You look like a pause worth keeping."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Городу повезло с видом наверх.",
-              "en": "The city is lucky with the view up there."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Осторожно красиво. Я рядом в чате.",
-              "en": "Carefully beautiful. I'm here in chat."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Пауза — хорошее слово. Я редко кому даю право на паузу. Не злоупотребляй.",
-          "en": "Pause is a good word. I rarely give that right. Don't overuse it."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Не буду. Буду точным.",
-              "en": "I won't. I'll be precise."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Тогда буду спрашивать, когда много.",
-              "en": "Then I'll ask when it's too much."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Понял границы.",
-              "en": "Got the boundary."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Границы есть, интерес тоже. Завтра примерочная. Напишешь «удачной ткани» утром?",
-          "en": "Boundaries exist, interest too. Fitting tomorrow. Text “good fabric” in the morning?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Напишу. И спрошу, какое настроение выберешь.",
-              "en": "I will. And I'll ask which mood you pick."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Удачной ткани. Заранее.",
-              "en": "Good fabric. In advance."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ок.",
-              "en": "Okay."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Заранее принято. Ты умеешь быть парой к платью, даже из чата.",
-          "en": "Advance accepted. You match a dress even from chat."
-        }
-      }
-    ],
-    "dasha": [
-      {
-        "her": {
-          "ru": "Переставляю вазу третий раз. Это либо дизайн, либо я жду, пока ты напишешь.",
-          "en": "Moving the vase a third time. Either design, or I'm waiting for you to text."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Написал. Вазу можно оставить.",
-              "en": "I did. The vase can stay."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Покажи комнату, я «посмотрю свет».",
-              "en": "Show the room, I'll “check the light”."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Привет. Как вечер?",
-              "en": "Hi. How's the evening?"
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Вечер мягкий. Дома пахнет чаем и карандашами. Ты бы выдержал такой тихий быт?",
-          "en": "Soft evening. Tea and pencils in the air. Could you handle that quiet life?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Да. Тишина — тоже свидание.",
-              "en": "Yes. Quiet is also a date."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Если можно сидеть рядом и читать.",
-              "en": "If I can sit nearby and read."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Иногда мне нужно больше шума.",
-              "en": "Sometimes I need more noise."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Шум можно дозированно. А сейчас вопрос: плед, сериал или разговор без экрана?",
-          "en": "Noise in doses. Right now: blanket, a series, or a talk with no screen?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Разговор. Экрану сегодня выходной.",
-              "en": "Talk. The screen gets a night off."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Плед и голоса. Сериал фоном.",
-              "en": "Blanket and voices. Series as background."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Сериал, но с комментариями.",
-              "en": "A series, but with comments."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Без экрана победил. Расскажи, какую мелочь в человеке ты замечаешь первой дома.",
-          "en": "No-screen wins. What tiny thing do you notice first in someone at home?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Как ставит кружку. Честно.",
-              "en": "How they set the mug. Honestly."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Смех, когда никто не снимает.",
-              "en": "A laugh when nobody is filming."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Порядок или творческий хаос.",
-              "en": "Order or creative mess."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Кружка — попал в дизайнера. Если пришлю фото с цветами у окна, не говори «миленько». Скажи точнее.",
-          "en": "The mug hit the designer. If I send flowers by the window, don't say “cute”. Be precise."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Свет падает так, будто комната выдыхает.",
-              "en": "The light falls like the room is exhaling."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Цветы делают тишину цветной.",
-              "en": "The flowers color the quiet."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Хочется быть в этом кадре аккуратно.",
-              "en": "I'd want to step into that frame carefully."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Аккуратно — да. Я не люблю, когда врываются. Ты стучишься в чат или вваливаешься?",
-          "en": "Carefully — yes. I dislike bursting in. Do you knock in chat or barge?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Стучусь. «Как ты?» — и жду.",
-              "en": "I knock. “How are you?” — and wait."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Иногда вваливаюсь от радости. Могу учиться.",
-              "en": "Sometimes I barge from joy. I can learn."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Пишу сразу по делу.",
-              "en": "I text straight to the point."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Учись. Тогда ты можешь быть человеком, которому я присылаю домашние кадры. Это уровень доверия.",
-          "en": "Learn. Then you can be the person who gets home photos. That's trust."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Храню. Не разнесу.",
-              "en": "I'll keep them. I won't scatter them."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Значит, буду бережным.",
-              "en": "Then I'll be careful."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Спасибо за доверие.",
-              "en": "Thanks for the trust."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Бережность принята. Спокойной ночи. Ваза остаётся где стоит.",
-          "en": "Carefulness accepted. Good night. The vase stays where it is."
-        }
-      }
-    ],
-    "sofia": [
-      {
-        "her": {
-          "ru": "Сейчас рассвет. Песок ещё холодный, чай горячий. Дыши со мной: четыре на вдохе.",
-          "en": "It's sunrise. Sand still cold, tea hot. Breathe with me: four on the inhale."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Вдох. Я здесь.",
-              "en": "Inhale. I'm here."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Четыре. И выдох длиннее.",
-              "en": "Four. And a longer exhale."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Слишком рано, но для тебя можно.",
-              "en": "Too early, but for you okay."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Для меня можно — опасная фраза. Я не хочу, чтобы меня выбирали вместо сна. Хочу, чтобы хотели этот ритм.",
-          "en": "“For you” is a dangerous phrase. I don't want to replace sleep. I want someone who wants this rhythm."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Хочу ритм. Не жертву.",
-              "en": "I want the rhythm. Not a sacrifice."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Тогда разбужу себя сам.",
-              "en": "Then I'll wake myself."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Иногда сон победит, честно.",
-              "en": "Sometimes sleep will win, honestly."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Честность — уже йога. Если бы мы встретились после практики, куда пойдём: чай, море или молчание?",
-          "en": "Honesty is already yoga. After practice: tea, sea, or silence?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Море и молчание. Чай можно взять с собой.",
-              "en": "Sea and silence. Tea can come along."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Чай и мягкий разговор.",
-              "en": "Tea and a soft talk."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Молчание, если ты не против компании.",
-              "en": "Silence, if you don't mind company."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Не против. Люди думают, что я всегда спокойная. А я просто хорошо выдыхаю. Ты заметишь, когда мне шумно внутри?",
-          "en": "I don't mind. People think I'm always calm. I just exhale well. Would you notice noise inside me?"
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Замечу по коротким сообщениям.",
-              "en": "I'd notice shorter messages."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Спрошу прямо и тихо.",
-              "en": "I'd ask directly and quietly."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Могу не заметить сразу.",
-              "en": "I might miss it at first."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Прямо и тихо — идеально. Если пришлю фото заката на берегу, не пиши «вау». Напиши, куда ушёл день.",
-          "en": "Direct and quiet is perfect. If I send a shore sunset, don't write “wow”. Write where the day went."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "День ушёл в воду и стал спокойнее.",
-              "en": "The day went into the water and got calmer."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "День остался в твоих волосах на ветру.",
-              "en": "The day stayed in your hair in the wind."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "День закончился правильно.",
-              "en": "The day ended the right way."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Нравится. Оставь меня в избранных не как «спокойную девушку», а как человека, с которым можно молчать.",
-          "en": "I like that. Keep me in favorites not as “the calm girl”, but as someone you can be silent with."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Оставляю. Молчание тоже связь.",
-              "en": "I will. Silence is also a bond."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "Буду писать, когда тишина тёплая.",
-              "en": "I'll write when the quiet is warm."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "Ок. Ты в особом списке.",
-              "en": "Okay. You're on a special list."
-            },
-            "h": 1
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "Тогда до вечерней практики. Если не напишешь — я всё равно пожелаю тебе ровного дыхания.",
-          "en": "Until evening practice. If you don't text, I'll still wish you an even breath."
-        }
-      },
-      {
-        "opts": [
-          {
-            "t": {
-              "ru": "Напишу. Дыши спокойно.",
-              "en": "I'll write. Breathe easy."
-            },
-            "h": 2
-          },
-          {
-            "t": {
-              "ru": "И тебе ровного дня.",
-              "en": "An even day to you too."
-            },
-            "h": 1
-          },
-          {
-            "t": {
-              "ru": "До вечера.",
-              "en": "Until evening."
-            },
-            "h": 0
-          }
-        ]
-      },
-      {
-        "her": {
-          "ru": "До вечера. Ты приятно присутствуешь.",
-          "en": "Until evening. Your presence is pleasant."
-        }
-      }
-    ]
+    "ru": "Шкала откровенности",
+    "en": "Candid Scale"
   },
   "PHOTOS": [
     {
-      "id": "alisa-01",
-      "girl": "alisa",
-      "price": 25,
-      "title": {
-        "ru": "Утро в кафе",
-        "en": "Morning cafe"
-      },
-      "src": "assets/img/photos/alisa-01.jpg",
-      "hot": true
-    },
-    {
-      "id": "alisa-02",
-      "girl": "alisa",
-      "price": 40,
-      "title": {
-        "ru": "Вечер на балконе",
-        "en": "Evening balcony"
-      },
-      "src": "assets/img/photos/alisa-02.jpg",
-      "hot": true
-    },
-    {
-      "id": "alisa-03",
-      "girl": "alisa",
-      "price": 55,
-      "title": {
-        "ru": "Пляж и океан",
-        "en": "Beach and ocean"
-      },
-      "src": "assets/img/photos/alisa-03.jpg",
-      "hot": true
-    },
-    {
-      "id": "mira-01",
-      "girl": "mira",
-      "price": 30,
-      "title": {
-        "ru": "Студия и камера",
-        "en": "Studio and camera"
-      },
-      "src": "assets/img/photos/mira-01.jpg",
-      "hot": true
-    },
-    {
-      "id": "mira-02",
-      "girl": "mira",
+      "id": "p01",
+      "src": "assets/img/photos/p01.jpg",
       "price": 50,
       "title": {
-        "ru": "Крыша ночью",
-        "en": "Night rooftop"
+        "ru": "Утро в атласе",
+        "en": "Утро в атласе"
       },
-      "src": "assets/img/photos/mira-02.jpg",
       "hot": true
     },
     {
-      "id": "mira-03",
-      "girl": "mira",
-      "price": 45,
-      "title": {
-        "ru": "Лофт и свет",
-        "en": "Loft light"
-      },
-      "src": "assets/img/photos/mira-03.jpg",
-      "hot": true
-    },
-    {
-      "id": "kira-01",
-      "girl": "kira",
-      "price": 35,
-      "title": {
-        "ru": "После тренировки",
-        "en": "After training"
-      },
-      "src": "assets/img/photos/kira-01.jpg",
-      "hot": true
-    },
-    {
-      "id": "kira-02",
-      "girl": "kira",
-      "price": 70,
-      "title": {
-        "ru": "У бассейна",
-        "en": "By the pool"
-      },
-      "src": "assets/img/photos/kira-02.jpg",
-      "hot": true
-    },
-    {
-      "id": "kira-03",
-      "girl": "kira",
-      "price": 40,
-      "title": {
-        "ru": "Закат в парке",
-        "en": "Park sunset"
-      },
-      "src": "assets/img/photos/kira-03.jpg",
-      "hot": true
-    },
-    {
-      "id": "lena-01",
-      "girl": "lena",
+      "id": "p02",
+      "src": "assets/img/photos/p02.jpg",
       "price": 50,
       "title": {
-        "ru": "Платье у моря",
-        "en": "Dress by the sea"
+        "ru": "Окно и город",
+        "en": "Окно и город"
       },
-      "src": "assets/img/photos/lena-01.jpg",
       "hot": true
     },
     {
-      "id": "lena-02",
-      "girl": "lena",
-      "price": 35,
+      "id": "p03",
+      "src": "assets/img/photos/p03.jpg",
+      "price": 50,
       "title": {
-        "ru": "Терраса у воды",
-        "en": "Terrace by water"
+        "ru": "Золотое зеркало",
+        "en": "Золотое зеркало"
       },
-      "src": "assets/img/photos/lena-02.jpg",
       "hot": true
     },
     {
-      "id": "lena-03",
-      "girl": "lena",
-      "price": 80,
+      "id": "p04",
+      "src": "assets/img/photos/p04.jpg",
+      "price": 50,
       "title": {
-        "ru": "Палуба на закате",
-        "en": "Deck at sunset"
+        "ru": "Неон и сирень",
+        "en": "Неон и сирень"
       },
-      "src": "assets/img/photos/lena-03.jpg",
       "hot": true
     },
     {
-      "id": "nina-01",
-      "girl": "nina",
-      "price": 45,
+      "id": "p05",
+      "src": "assets/img/photos/p05.jpg",
+      "price": 50,
       "title": {
-        "ru": "Неон и сцена",
-        "en": "Neon stage"
+        "ru": "Балкон ночью",
+        "en": "Балкон ночью"
       },
-      "src": "assets/img/photos/nina-01.jpg",
       "hot": true
     },
     {
-      "id": "nina-02",
-      "girl": "nina",
-      "price": 55,
+      "id": "p06",
+      "src": "assets/img/photos/p06.jpg",
+      "price": 50,
       "title": {
-        "ru": "Ночная крыша",
-        "en": "Night roof"
+        "ru": "Закат на пляже",
+        "en": "Закат на пляже"
       },
-      "src": "assets/img/photos/nina-02.jpg",
       "hot": true
     },
     {
-      "id": "nina-03",
-      "girl": "nina",
-      "price": 30,
+      "id": "p07",
+      "src": "assets/img/photos/p07.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Бассейн",
+        "en": "Бассейн"
+      },
+      "hot": true
+    },
+    {
+      "id": "p08",
+      "src": "assets/img/photos/p08.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Белый шёлк",
+        "en": "Белый шёлк"
+      },
+      "hot": true
+    },
+    {
+      "id": "p09",
+      "src": "assets/img/photos/p09.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Бордо",
+        "en": "Бордо"
+      },
+      "hot": true
+    },
+    {
+      "id": "p10",
+      "src": "assets/img/photos/p10.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Цветы у окна",
+        "en": "Цветы у окна"
+      },
+      "hot": true
+    },
+    {
+      "id": "p11",
+      "src": "assets/img/photos/p11.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Рассвет у моря",
+        "en": "Рассвет у моря"
+      },
+      "hot": true
+    },
+    {
+      "id": "p12",
+      "src": "assets/img/photos/p12.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Палуба",
+        "en": "Палуба"
+      },
+      "hot": true
+    },
+    {
+      "id": "p13",
+      "src": "assets/img/photos/p13.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Студия",
+        "en": "Студия"
+      },
+      "hot": true
+    },
+    {
+      "id": "p14",
+      "src": "assets/img/photos/p14.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Постель и свет",
+        "en": "Постель и свет"
+      },
+      "hot": true
+    },
+    {
+      "id": "p15",
+      "src": "assets/img/photos/p15.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Крыша",
+        "en": "Крыша"
+      },
+      "hot": true
+    },
+    {
+      "id": "p16",
+      "src": "assets/img/photos/p16.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Терраса",
+        "en": "Терраса"
+      },
+      "hot": true
+    },
+    {
+      "id": "p17",
+      "src": "assets/img/photos/p17.jpg",
+      "price": 50,
       "title": {
         "ru": "Тихий дом",
-        "en": "Quiet home"
+        "en": "Тихий дом"
       },
-      "src": "assets/img/photos/nina-03.jpg",
       "hot": true
     },
     {
-      "id": "eva-01",
-      "girl": "eva",
-      "price": 60,
-      "title": {
-        "ru": "Бордовое платье",
-        "en": "Burgundy dress"
-      },
-      "src": "assets/img/photos/eva-01.jpg",
-      "hot": true
-    },
-    {
-      "id": "eva-02",
-      "girl": "eva",
-      "price": 75,
-      "title": {
-        "ru": "Ночной балкон",
-        "en": "Night balcony"
-      },
-      "src": "assets/img/photos/eva-02.jpg",
-      "hot": true
-    },
-    {
-      "id": "eva-03",
-      "girl": "eva",
-      "price": 65,
-      "title": {
-        "ru": "Красный вечер",
-        "en": "Red evening"
-      },
-      "src": "assets/img/photos/eva-03.jpg",
-      "hot": true
-    },
-    {
-      "id": "dasha-01",
-      "girl": "dasha",
-      "price": 25,
-      "title": {
-        "ru": "Цветы и свет",
-        "en": "Flowers and light"
-      },
-      "src": "assets/img/photos/dasha-01.jpg",
-      "hot": true
-    },
-    {
-      "id": "dasha-02",
-      "girl": "dasha",
-      "price": 40,
-      "title": {
-        "ru": "Домашний вечер",
-        "en": "Home evening"
-      },
-      "src": "assets/img/photos/dasha-02.jpg",
-      "hot": true
-    },
-    {
-      "id": "dasha-03",
-      "girl": "dasha",
-      "price": 35,
-      "title": {
-        "ru": "Летний пикник",
-        "en": "Summer picnic"
-      },
-      "src": "assets/img/photos/dasha-03.jpg",
-      "hot": true
-    },
-    {
-      "id": "sofia-01",
-      "girl": "sofia",
-      "price": 40,
-      "title": {
-        "ru": "Йога у моря",
-        "en": "Yoga by the sea"
-      },
-      "src": "assets/img/photos/sofia-01.jpg",
-      "hot": true
-    },
-    {
-      "id": "sofia-02",
-      "girl": "sofia",
-      "price": 30,
-      "title": {
-        "ru": "Спа и чай",
-        "en": "Spa and tea"
-      },
-      "src": "assets/img/photos/sofia-02.jpg",
-      "hot": true
-    },
-    {
-      "id": "sofia-03",
-      "girl": "sofia",
+      "id": "p18",
+      "src": "assets/img/photos/p18.jpg",
       "price": 50,
       "title": {
-        "ru": "Сумерки на берегу",
-        "en": "Dusk on the shore"
+        "ru": "Красный вечер",
+        "en": "Красный вечер"
       },
-      "src": "assets/img/photos/sofia-03.jpg",
+      "hot": true
+    },
+    {
+      "id": "p19",
+      "src": "assets/img/photos/p19.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Спа",
+        "en": "Спа"
+      },
+      "hot": true
+    },
+    {
+      "id": "p20",
+      "src": "assets/img/photos/p20.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Гирлянды",
+        "en": "Гирлянды"
+      },
+      "hot": true
+    },
+    {
+      "id": "p21",
+      "src": "assets/img/photos/p21.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Фонари на песке",
+        "en": "Фонари на песке"
+      },
+      "hot": true
+    },
+    {
+      "id": "p22",
+      "src": "assets/img/photos/p22.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Камера на крыше",
+        "en": "Камера на крыше"
+      },
+      "hot": true
+    },
+    {
+      "id": "p23",
+      "src": "assets/img/photos/p23.jpg",
+      "price": 50,
+      "title": {
+        "ru": "После сцены",
+        "en": "После сцены"
+      },
+      "hot": true
+    },
+    {
+      "id": "p24",
+      "src": "assets/img/photos/p24.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Поле и закат",
+        "en": "Поле и закат"
+      },
+      "hot": true
+    },
+    {
+      "id": "p25",
+      "src": "assets/img/photos/p25.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Книга и лампа",
+        "en": "Книга и лампа"
+      },
+      "hot": true
+    },
+    {
+      "id": "p26",
+      "src": "assets/img/photos/p26.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Дождь на стекле",
+        "en": "Дождь на стекле"
+      },
+      "hot": true
+    },
+    {
+      "id": "p27",
+      "src": "assets/img/photos/p27.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Утро у воды",
+        "en": "Утро у воды"
+      },
+      "hot": true
+    },
+    {
+      "id": "p28",
+      "src": "assets/img/photos/p28.jpg",
+      "price": 50,
+      "title": {
+        "ru": "Изумруд",
+        "en": "Изумруд"
+      },
       "hot": true
     }
   ],
   "QUIZZES": [
+    {
+      "id": "poshly",
+      "title": {
+        "ru": "Насколько ты пошлый?",
+        "en": "How spicy are you?"
+      },
+      "cover": "assets/img/photos/p01.jpg",
+      "reward": 20,
+      "questions": 15,
+      "results": [
+        {
+          "min": 0,
+          "title": {
+            "ru": "Почти святой",
+            "en": "Almost saint"
+          },
+          "text": {
+            "ru": "Ты держишься прилично. Иногда искра в шутке не помешает.",
+            "en": "You stay proper. A spark in a joke wouldn't hurt."
+          }
+        },
+        {
+          "min": 16,
+          "title": {
+            "ru": "Лёгкий перец",
+            "en": "Mild pepper"
+          },
+          "text": {
+            "ru": "Ты флиртуешь мягко и без давления. Самый уютный уровень.",
+            "en": "You flirt softly, no pressure. The coziest level."
+          }
+        },
+        {
+          "min": 28,
+          "title": {
+            "ru": "Горячая шутка",
+            "en": "Spicy joke"
+          },
+          "text": {
+            "ru": "Ты любишь двусмысленности и ночные разговоры. Главное — такт.",
+            "en": "You like double meanings and late talks. Keep the tact."
+          }
+        },
+        {
+          "min": 38,
+          "title": {
+            "ru": "Откровенный огонь",
+            "en": "Open fire"
+          },
+          "text": {
+            "ru": "Ты говоришь прямо и ярко. Спрашивай, комфортно ли другому.",
+            "en": "You speak bright and direct. Ask if the other person is comfortable."
+          }
+        }
+      ],
+      "qs": [
+        {
+          "q": {
+            "ru": "Шутка на грани приличия. Ты:",
+            "en": "A joke on the edge of propriety. You:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Меняю тему.",
+                "en": "Change the topic."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Улыбаюсь, если всем ок.",
+                "en": "I smile if everyone is fine."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Подхватываю чуть мягче.",
+                "en": "I pick it up a bit softer."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Поднимаю ставки.",
+                "en": "I raise the stakes."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Комплимент внешности в первый вечер:",
+            "en": "A looks compliment on night one:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не даю.",
+                "en": "I don't."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Про стиль, не про тело.",
+                "en": "About style, not the body."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Про взгляд и улыбку.",
+                "en": "About the eyes and smile."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Прямо: ты выглядишь огонь.",
+                "en": "Straight: you look like fire."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Поздний чат «не спится». Настроение:",
+            "en": "Late chat “can't sleep”. The mood:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Спи. Завтра.",
+                "en": "Sleep. Tomorrow."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Спокойный разговор.",
+                "en": "A calm talk."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Тёплый флирт.",
+                "en": "Warm flirt."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Игра в откровенные вопросы.",
+                "en": "A game of daring questions."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Фото в купальнике прислали. Ты пишешь:",
+            "en": "They send a swimsuit photo. You write:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Нормально.",
+                "en": "It's fine."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Красивый кадр.",
+                "en": "A beautiful shot."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Тебе очень идёт этот свет.",
+                "en": "This light suits you a lot."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Засмотрелся, честно.",
+                "en": "I stared, honestly."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Игра «правда». Ты выбираешь:",
+            "en": "A game of truth. You pick:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Безопасные факты.",
+                "en": "Safe facts."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Про свидания.",
+                "en": "About dates."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Про фантазии вечера.",
+                "en": "About evening fantasies."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Самые смелые вопросы.",
+                "en": "The boldest questions."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Эмодзи, которые ты ставишь чаще:",
+            "en": "Emojis you use most:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "🙂",
+                "en": "🙂"
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "😊",
+                "en": "😊"
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "😉🔥",
+                "en": "😉🔥"
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "😈💋",
+                "en": "😈💋"
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Фильм на ночь вдвоём:",
+            "en": "A night movie together:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Комедия.",
+                "en": "A comedy."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Романтика.",
+                "en": "Romance."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Драма с напряжением.",
+                "en": "A tense drama."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Что-то пикантное, если оба хотят.",
+                "en": "Something spicy if both want it."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Как называешь человека в чате:",
+            "en": "What you call them in chat:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "По имени.",
+                "en": "By name."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Тёплый ник.",
+                "en": "A warm nickname."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Милый / красивая.",
+                "en": "Cute / gorgeous."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Игривые прозвища.",
+                "en": "Playful nicknames."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Разговор про бывших и опыт:",
+            "en": "Talk about exes and experience:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Табу.",
+                "en": "Taboo."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Коротко и без деталей.",
+                "en": "Brief, no details."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Честно, если спросили.",
+                "en": "Honest if asked."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Сам поднимаю тему жара.",
+                "en": "I bring up the heat myself."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Голосовое ночью:",
+            "en": "A night voice note:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Текст удобнее.",
+                "en": "Text is easier."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Коротко «спокойной».",
+                "en": "A short goodnight."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Тихий тёплый голос.",
+                "en": "A quiet warm voice."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Специально ниже и ближе.",
+                "en": "Lower and closer on purpose."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Если намекают на встречу «просто посидеть»:",
+            "en": "If they hint at “just hanging out”:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Только общественное место.",
+                "en": "Only a public place."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Кафе и прогулка.",
+                "en": "Cafe and a walk."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Дом, если доверяю.",
+                "en": "Home if I trust them."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Откажусь, рано.",
+                "en": "I'll refuse, too soon."
+              },
+              "s": 0
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Самая смелая вещь в переписке для тебя:",
+            "en": "The boldest chat move for you:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Написать первым.",
+                "en": "Texting first."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Признаться в симпатии.",
+                "en": "Admitting a crush."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Попросить фото вечера.",
+                "en": "Asking for an evening photo."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Задать очень личный вопрос.",
+                "en": "Asking a very personal question."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Реакция на подмигивание:",
+            "en": "Reaction to a wink:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Игнор.",
+                "en": "Ignore."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Смайл в ответ.",
+                "en": "A smile back."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Подмигиваю тоже.",
+                "en": "I wink back."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Пишу, что это было горячо.",
+                "en": "I write that it was hot."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Граница «слишком»:",
+            "en": "The “too much” line:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Уже комплимент телу.",
+                "en": "Already a body compliment."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Когда нет согласия.",
+                "en": "When there's no consent."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Грубые слова.",
+                "en": "Crude words."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Почти нет границ, если оба в игре.",
+                "en": "Almost no line if both are in."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Итог вечера в чате:",
+            "en": "How the chat night ends:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Спокойной ночи.",
+                "en": "Good night."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Тёплый комплимент.",
+                "en": "A warm compliment."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "«Не хочу отпускать чат».",
+                "en": "“Don't want to let the chat go”."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "«Напиши, как закроешь глаза».",
+                "en": "“Text me when you close your eyes”."
+              },
+              "s": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "open",
+      "title": {
+        "ru": "Насколько ты открытый?",
+        "en": "How open are you?"
+      },
+      "cover": "assets/img/photos/p05.jpg",
+      "reward": 20,
+      "questions": 15,
+      "results": [
+        {
+          "min": 0,
+          "title": {
+            "ru": "Закрытая дверь",
+            "en": "Closed door"
+          },
+          "text": {
+            "ru": "Ты дозируешь себя. Близость приходит медленно.",
+            "en": "You dose yourself. Closeness comes slowly."
+          }
+        },
+        {
+          "min": 16,
+          "title": {
+            "ru": "Осторожный свет",
+            "en": "Careful light"
+          },
+          "text": {
+            "ru": "Ты открываешься тем, кто заслужил.",
+            "en": "You open up to those who earned it."
+          }
+        },
+        {
+          "min": 28,
+          "title": {
+            "ru": "Честный разговор",
+            "en": "Honest talk"
+          },
+          "text": {
+            "ru": "Тебе легче сказать правду, чем играть.",
+            "en": "You'd rather tell the truth than perform."
+          }
+        },
+        {
+          "min": 38,
+          "title": {
+            "ru": "Открытая книга",
+            "en": "Open book"
+          },
+          "text": {
+            "ru": "Ты мало прячешь. Следи, чтобы это был выбор, а не привычка.",
+            "en": "You hide little. Make sure it's a choice, not a habit."
+          }
+        }
+      ],
+      "qs": [
+        {
+          "q": {
+            "ru": "Секрет с полуслова. Ты:",
+            "en": "A secret after a few words. You:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Молчу.",
+                "en": "I stay quiet."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Даю намёк.",
+                "en": "I hint."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Рассказываю, если тепло.",
+                "en": "I tell if it feels warm."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Выкладываю сразу.",
+                "en": "I spill it right away."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Слабость показать:",
+            "en": "Showing a weakness:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Никогда.",
+                "en": "Never."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Редко, своим.",
+                "en": "Rarely, to my people."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Когда просят поддержки.",
+                "en": "When they ask for support."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Считаю это близостью.",
+                "en": "I count it as closeness."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Слёзы при другом человеке:",
+            "en": "Tears in front of someone:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Уйду.",
+                "en": "I'll leave."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Сдержу.",
+                "en": "I'll hold them."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Если доверяю — можно.",
+                "en": "If I trust them — okay."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Не стыдно.",
+                "en": "I'm not ashamed."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Мечты вслух:",
+            "en": "Dreams out loud:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Держу в себе.",
+                "en": "I keep them in."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Коротко.",
+                "en": "Briefly."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Люблю делиться.",
+                "en": "I love sharing."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Рассказываю ярко.",
+                "en": "I tell them vividly."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Обида:",
+            "en": "Hurt feelings:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Коплю.",
+                "en": "I store them."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Пишу позже.",
+                "en": "I text later."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Говорю в тот же вечер.",
+                "en": "I say it the same evening."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Сразу вслух.",
+                "en": "Out loud immediately."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Страх отвержения:",
+            "en": "Fear of rejection:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не признаюсь.",
+                "en": "I won't admit it."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Шуткой прикрою.",
+                "en": "I'll cover with a joke."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Могу сказать «мне важно».",
+                "en": "I can say “this matters”."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Говорю прямо о страхе.",
+                "en": "I name the fear."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Прошлые ошибки:",
+            "en": "Past mistakes:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Скрываю.",
+                "en": "I hide them."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Если спросят.",
+                "en": "If asked."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Сам предупреждаю.",
+                "en": "I warn myself."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Делаю из этого историю.",
+                "en": "I make a story of it."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Тело и комплексы:",
+            "en": "Body and complexes:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Закрытая тема.",
+                "en": "Closed topic."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Намёком.",
+                "en": "By hint."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Могу доверить.",
+                "en": "I can trust someone with it."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Говорю легко.",
+                "en": "I talk easily."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Деньги и быт в начале:",
+            "en": "Money and daily life early on:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не обсуждаю.",
+                "en": "I don't discuss."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Общими словами.",
+                "en": "In general words."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Честно о рамке.",
+                "en": "Honest about the frame."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Полная прозрачность.",
+                "en": "Full transparency."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Семья:",
+            "en": "Family:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Поздно.",
+                "en": "Later."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Базовые факты.",
+                "en": "Basic facts."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Когда появилось «мы».",
+                "en": "Once there's a we."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Скоро и живо.",
+                "en": "Soon and vividly."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Переписка другим людям о вас:",
+            "en": "Texting others about you two:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Никому.",
+                "en": "No one."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Лучшему другу.",
+                "en": "A best friend."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Если человек не против.",
+                "en": "If they're okay with it."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Почти всем.",
+                "en": "Almost everyone."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "«Я не знаю, что чувствую»:",
+            "en": "“I don't know what I feel”:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Промолчу.",
+                "en": "I'll stay silent."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Напишу позже.",
+                "en": "I'll write later."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Скажу, что путаюсь.",
+                "en": "I'll say I'm confused."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Разберу вслух вместе.",
+                "en": "We'll unpack it out loud."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Границы озвучиваешь:",
+            "en": "You state boundaries:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Жду, пока нарушат.",
+                "en": "I wait until they're crossed."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Намекаю.",
+                "en": "I hint."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Говорю спокойно.",
+                "en": "I say it calmly."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Сразу список.",
+                "en": "A list right away."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Комплимент принять:",
+            "en": "Receiving a compliment:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Отшучусь.",
+                "en": "I'll joke it off."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Спасибо и всё.",
+                "en": "Thanks, that's it."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Приму и отвечу.",
+                "en": "I'll take it and reply."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Раскрою, что мне приятно.",
+                "en": "I'll say it feels good."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Будущее через месяц:",
+            "en": "The future in a month:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не загадываю.",
+                "en": "I don't plan."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Думаю молча.",
+                "en": "I think quietly."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Спрашиваю «куда мы».",
+                "en": "I ask where we are going."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Предлагаю план.",
+                "en": "I suggest a plan."
+              },
+              "s": 3
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "flirt",
       "title": {
         "ru": "Насколько ты смелый во флирте?",
         "en": "How bold is your flirt?"
       },
-      "cover": "assets/img/avatars/nina.jpg",
+      "cover": "assets/img/photos/p02.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -3334,7 +2417,7 @@ const CONTENT = {
         "ru": "Твой стиль свиданий",
         "en": "Your dating style"
       },
-      "cover": "assets/img/avatars/lena.jpg",
+      "cover": "assets/img/photos/p06.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -3932,7 +3015,7 @@ const CONTENT = {
         "ru": "Насколько ты романтик",
         "en": "How romantic are you"
       },
-      "cover": "assets/img/avatars/sofia.jpg",
+      "cover": "assets/img/photos/p10.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -4530,7 +3613,7 @@ const CONTENT = {
         "ru": "Какой ты в переписке",
         "en": "What you're like in chat"
       },
-      "cover": "assets/img/avatars/alisa.jpg",
+      "cover": "assets/img/photos/p08.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -5123,12 +4206,610 @@ const CONTENT = {
       ]
     },
     {
+      "id": "compliments",
+      "title": {
+        "ru": "Какие комплименты тебе близки",
+        "en": "Compliments that fit you"
+      },
+      "cover": "assets/img/photos/p09.jpg",
+      "reward": 20,
+      "questions": 15,
+      "results": [
+        {
+          "min": 0,
+          "title": {
+            "ru": "Дела важнее слов",
+            "en": "Actions over words"
+          },
+          "text": {
+            "ru": "Тебе нужнее поступки, чем фразы.",
+            "en": "You need actions more than phrases."
+          }
+        },
+        {
+          "min": 16,
+          "title": {
+            "ru": "Тёплая точность",
+            "en": "Warm precision"
+          },
+          "text": {
+            "ru": "Ценишь конкретные слова без театра.",
+            "en": "You value specific words without theater."
+          }
+        },
+        {
+          "min": 28,
+          "title": {
+            "ru": "Поэзия в чате",
+            "en": "Poetry in chat"
+          },
+          "text": {
+            "ru": "Тебе идут красивые формулировки.",
+            "en": "Beautiful wording suits you."
+          }
+        },
+        {
+          "min": 38,
+          "title": {
+            "ru": "Сцена и свет",
+            "en": "Stage and light"
+          },
+          "text": {
+            "ru": "Любишь яркие, смелые комплименты.",
+            "en": "You like bright, bold compliments."
+          }
+        }
+      ],
+      "qs": [
+        {
+          "q": {
+            "ru": "Лучший комплимент:",
+            "en": "The best compliment:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Ты надёжный.",
+                "en": "You're reliable."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "С тобой спокойно.",
+                "en": "It's calm with you."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Ты красиво думаешь.",
+                "en": "You think beautifully."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Ты выглядишь невероятно.",
+                "en": "You look incredible."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Где приятнее слышать:",
+            "en": "Where it's nicer to hear:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Наедине.",
+                "en": "In private."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "В чате.",
+                "en": "In chat."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "При друзьях.",
+                "en": "Around friends."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Не люблю вслух.",
+                "en": "I dislike it out loud."
+              },
+              "s": 0
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Частота:",
+            "en": "Frequency:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Редко, но метко.",
+                "en": "Rare but precise."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Каждый день по чуть-чуть.",
+                "en": "A little every day."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Чем больше, тем лучше.",
+                "en": "The more the better."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Можно без них.",
+                "en": "Fine without them."
+              },
+              "s": 0
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Про ум или про внешность:",
+            "en": "Mind or looks:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Только ум.",
+                "en": "Mind only."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Баланс.",
+                "en": "Balance."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Внешность тоже важна.",
+                "en": "Looks matter too."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Про характер.",
+                "en": "Character."
+              },
+              "s": 0
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Публичный комплимент:",
+            "en": "A public compliment:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Стыдно.",
+                "en": "Embarrassing."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Немного ок.",
+                "en": "A little okay."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Приятно.",
+                "en": "Nice."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Обожаю.",
+                "en": "I love it."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Голосовое «ты сегодня…»:",
+            "en": "A voice note “today you look…”:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Текст лучше.",
+                "en": "Text is better."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Коротко можно.",
+                "en": "Short is fine."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Очень мило.",
+                "en": "Very sweet."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Хочу такое чаще.",
+                "en": "I want that more often."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Сравнение с огнём/солнцем:",
+            "en": "Comparing to fire/sun:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Слишком.",
+                "en": "Too much."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Иногда.",
+                "en": "Sometimes."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Люблю образы.",
+                "en": "I like images."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Давай ещё.",
+                "en": "More please."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Комплимент от незнакомца:",
+            "en": "A stranger's compliment:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не нужно.",
+                "en": "No thanks."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Вежливо приму.",
+                "en": "I'll take it politely."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Поднимет день.",
+                "en": "It would lift the day."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Может начать флирт.",
+                "en": "It may start a flirt."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Ты сам даёшь комплименты:",
+            "en": "You give compliments:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Редко.",
+                "en": "Rarely."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Когда точно.",
+                "en": "When I'm sure."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Часто и конкретно.",
+                "en": "Often and specifically."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Щедро и ярко.",
+                "en": "Generously and bright."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Про голос:",
+            "en": "About the voice:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не замечаю.",
+                "en": "I don't notice."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Могу сказать «приятный».",
+                "en": "I can say it's pleasant."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Люблю такие.",
+                "en": "I like those."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Это мой слабость-комплимент.",
+                "en": "That's my weakness compliment."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Про руки / взгляд / смех:",
+            "en": "Hands / gaze / laugh:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Странно.",
+                "en": "Weird."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Взгляд — да.",
+                "en": "The gaze — yes."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Смех цепляет.",
+                "en": "The laugh catches me."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Детали тела — да, мягко.",
+                "en": "Body details — yes, softly."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Повтор одного и того же:",
+            "en": "Repeating the same one:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Надоест.",
+                "en": "It'll get old."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Если искренне — ок.",
+                "en": "If sincere — ok."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Хочу разнообразия.",
+                "en": "I want variety."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Пусть твердит.",
+                "en": "Let them repeat it."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Комплимент после ссоры:",
+            "en": "A compliment after a fight:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не время.",
+                "en": "Wrong time."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Может растопить.",
+                "en": "It may melt things."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Лучше извинение.",
+                "en": "An apology is better."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Беру оба.",
+                "en": "I'll take both."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Письменно длинный текст:",
+            "en": "A long written note:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Слишком.",
+                "en": "Too much."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Иногда сохрню.",
+                "en": "I'll save it sometimes."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Мечтаю получить.",
+                "en": "I dream of getting one."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Короче, пожалуйста.",
+                "en": "Shorter, please."
+              },
+              "s": 1
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Когда комплимент фальшивый:",
+            "en": "When a compliment is fake:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Сразу чувствую.",
+                "en": "I feel it instantly."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Прощу, если мило.",
+                "en": "I'll forgive if it's sweet."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Злюсь.",
+                "en": "I get angry."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Не парюсь.",
+                "en": "I don't care."
+              },
+              "s": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "care",
       "title": {
         "ru": "Твой язык заботы",
         "en": "Your care language"
       },
-      "cover": "assets/img/avatars/dasha.jpg",
+      "cover": "assets/img/photos/p11.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -5726,7 +5407,7 @@ const CONTENT = {
         "ru": "Насколько ты ревнивый",
         "en": "How jealous are you"
       },
-      "cover": "assets/img/avatars/eva.jpg",
+      "cover": "assets/img/photos/p15.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -6319,12 +6000,610 @@ const CONTENT = {
       ]
     },
     {
+      "id": "crush",
+      "title": {
+        "ru": "Как ты влюбляешься",
+        "en": "How you fall for someone"
+      },
+      "cover": "assets/img/photos/p14.jpg",
+      "reward": 20,
+      "questions": 15,
+      "results": [
+        {
+          "min": 0,
+          "title": {
+            "ru": "Медленный лёд",
+            "en": "Slow ice"
+          },
+          "text": {
+            "ru": "Ты разогреваешься долго. Это серьёзность.",
+            "en": "You warm up slowly. That's seriousness."
+          }
+        },
+        {
+          "min": 16,
+          "title": {
+            "ru": "Тихая симпатия",
+            "en": "Quiet liking"
+          },
+          "text": {
+            "ru": "Чувство растёт из разговоров и привычки.",
+            "en": "Feeling grows from talks and habit."
+          }
+        },
+        {
+          "min": 28,
+          "title": {
+            "ru": "Яркая вспышка",
+            "en": "Bright flash"
+          },
+          "text": {
+            "ru": "Ты быстро понимаешь «это оно».",
+            "en": "You quickly know this is it."
+          }
+        },
+        {
+          "min": 38,
+          "title": {
+            "ru": "Голова кругом",
+            "en": "Head spinning"
+          },
+          "text": {
+            "ru": "Влюбляешься жарко. Добавь паузу, чтобы не сгореть.",
+            "en": "You fall hot. Add a pause so you don't burn out."
+          }
+        }
+      ],
+      "qs": [
+        {
+          "q": {
+            "ru": "Первый сигнал симпатии:",
+            "en": "First crush signal:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Общий юмор.",
+                "en": "Shared humor."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Голос.",
+                "en": "Voice."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Внешность.",
+                "en": "Looks."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Надёжность.",
+                "en": "Reliability."
+              },
+              "s": 0
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Скорость «мне нравится»:",
+            "en": "Speed of “I like you”:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Недели.",
+                "en": "Weeks."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Несколько встреч.",
+                "en": "A few meetings."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Пара вечеров в чате.",
+                "en": "A couple of chat nights."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Почти сразу.",
+                "en": "Almost at once."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Признание:",
+            "en": "A confession:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Жду их шага.",
+                "en": "I wait for theirs."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Намёками.",
+                "en": "By hints."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Прямо, когда уверен.",
+                "en": "Direct when sure."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Быстро, пока не остыло.",
+                "en": "Fast before it cools."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Ревность в начале:",
+            "en": "Jealousy at the start:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Нет.",
+                "en": "No."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Капля.",
+                "en": "A drop."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Мешает спать.",
+                "en": "It steals sleep."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Слежу за собой.",
+                "en": "I watch myself."
+              },
+              "s": 2
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Мысли перед сном:",
+            "en": "Thoughts before sleep:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "О делах.",
+                "en": "About tasks."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Иногда о человеке.",
+                "en": "Sometimes about them."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Перечитываю чат.",
+                "en": "I reread the chat."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Не могу думать о другом.",
+                "en": "I can't think of anything else."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Подарки влюблённости:",
+            "en": "Crush gifts:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не дарю рано.",
+                "en": "Not early."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Мелочь по смыслу.",
+                "en": "A small meaningful thing."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Впечатление.",
+                "en": "An experience."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Только присутствие.",
+                "en": "Just presence."
+              },
+              "s": 1
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Страх всё испортить:",
+            "en": "Fear of ruining it:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Почти нет.",
+                "en": "Almost none."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Есть, но иду.",
+                "en": "It's there, I still go."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Сильный.",
+                "en": "Strong."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Действую осторожно.",
+                "en": "I act carefully."
+              },
+              "s": 1
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Соцсети человека:",
+            "en": "Their socials:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не смотрю.",
+                "en": "I don't look."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Раз взгляну.",
+                "en": "A glance."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Листаю, когда скучаю.",
+                "en": "I scroll when I miss them."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Часто.",
+                "en": "Often."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Песня «про нас» на второй день:",
+            "en": "A “our song” on day two:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Рано.",
+                "en": "Too soon."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Может засесть.",
+                "en": "It may stick."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Уже ищу.",
+                "en": "I'm already hunting one."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Просто нравится трек.",
+                "en": "I just like the track."
+              },
+              "s": 1
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Отмена встречи:",
+            "en": "A cancelled meetup:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Бывает.",
+                "en": "It happens."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Немного колет.",
+                "en": "It stings a bit."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Придумываю причины.",
+                "en": "I invent reasons."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Пишу «жаль, давай новую».",
+                "en": "I write “pity, let's set a new one”."
+              },
+              "s": 2
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Знакомство с друзьями:",
+            "en": "Meeting friends:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Не спешу.",
+                "en": "No rush."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Когда стабильно.",
+                "en": "When it's stable."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Хочу скорее.",
+                "en": "I want it soon."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Пусть само.",
+                "en": "Let it happen."
+              },
+              "s": 2
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Слово «любовь»:",
+            "en": "The word love:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Очень поздно.",
+                "en": "Very late."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Когда тело и быт совпали.",
+                "en": "When life and feeling match."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Когда не могу молчать.",
+                "en": "When I can't stay quiet."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Готов сказать рано.",
+                "en": "Ready to say it early."
+              },
+              "s": 3
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Пауза в чате сутки:",
+            "en": "A one-day chat pause:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Нормально.",
+                "en": "Normal."
+              },
+              "s": 0
+            },
+            {
+              "t": {
+                "ru": "Проверю «ты как».",
+                "en": "I'll check in."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Нервничаю.",
+                "en": "I get nervous."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Займусь своими.",
+                "en": "I'll do my things."
+              },
+              "s": 1
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Идеальный знак взаимности:",
+            "en": "Ideal sign of mutual feeling:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Стабильные сообщения.",
+                "en": "Stable messages."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Встреча без телефона.",
+                "en": "A meeting without phones."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Смелые комплименты.",
+                "en": "Bold compliments."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Общие планы.",
+                "en": "Shared plans."
+              },
+              "s": 0
+            }
+          ]
+        },
+        {
+          "q": {
+            "ru": "Если чувства сильнее, чем у них:",
+            "en": "If your feelings are stronger:"
+          },
+          "a": [
+            {
+              "t": {
+                "ru": "Отойду.",
+                "en": "I'll step back."
+              },
+              "s": 1
+            },
+            {
+              "t": {
+                "ru": "Скажу и приму ответ.",
+                "en": "I'll say it and take the answer."
+              },
+              "s": 2
+            },
+            {
+              "t": {
+                "ru": "Буду стараться сильнее.",
+                "en": "I'll try harder."
+              },
+              "s": 3
+            },
+            {
+              "t": {
+                "ru": "Подожду молча.",
+                "en": "I'll wait in silence."
+              },
+              "s": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "evening",
       "title": {
         "ru": "Идеальный вечер вдвоём",
         "en": "The ideal evening together"
       },
-      "cover": "assets/img/avatars/mira.jpg",
+      "cover": "assets/img/photos/p20.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -6922,7 +7201,7 @@ const CONTENT = {
         "ru": "Какая химия тебе ближе",
         "en": "Which chemistry fits you"
       },
-      "cover": "assets/img/avatars/kira.jpg",
+      "cover": "assets/img/photos/p22.jpg",
       "reward": 20,
       "questions": 15,
       "results": [
@@ -7516,21 +7795,23 @@ const CONTENT = {
     }
   ],
   "TEST_REWARD": 20,
-  "AD_COINS": 25,
-  "START_COINS": 40
+  "AD_COINS": 50,
+  "PHOTO_PRICE": 50,
+  "START_COINS": 0
 };
 
 const AudioFX = (() => {
-  let ctx = null, master, musicGain, sfxGain, musicNodes = [];
-  let musicOn = true, sfxOn = true, running = false;
+  let ctx = null, master, musicGain, sfxGain;
+  let musicOn = true, sfxOn = true, running = false, timer = 0, step = 0;
+  const melody = [220, 261.63, 293.66, 329.63, 392, 329.63, 293.66, 261.63, 246.94, 220, 196, 220];
 
   function ac() {
     if (!ctx) {
       const C = window.AudioContext || window.webkitAudioContext;
       ctx = new C();
-      master = ctx.createGain(); master.gain.value = 0.7; master.connect(ctx.destination);
-      musicGain = ctx.createGain(); musicGain.gain.value = 0.18; musicGain.connect(master);
-      sfxGain = ctx.createGain(); sfxGain.gain.value = 0.55; sfxGain.connect(master);
+      master = ctx.createGain(); master.gain.value = 0.72; master.connect(ctx.destination);
+      musicGain = ctx.createGain(); musicGain.gain.value = 0.22; musicGain.connect(master);
+      sfxGain = ctx.createGain(); sfxGain.gain.value = 0.5; sfxGain.connect(master);
     }
     if (ctx.state === "suspended") ctx.resume();
     return ctx;
@@ -7543,51 +7824,62 @@ const AudioFX = (() => {
     o.type = type || "sine";
     o.frequency.value = freq;
     g.gain.setValueAtTime(0.0001, c.currentTime + (when || 0));
-    g.gain.exponentialRampToValueAtTime(vol || 0.2, c.currentTime + (when || 0) + 0.01);
+    g.gain.exponentialRampToValueAtTime(vol || 0.2, c.currentTime + (when || 0) + 0.02);
     g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + (when || 0) + dur);
     o.connect(g); g.connect(sfxGain);
     o.start(c.currentTime + (when || 0));
     o.stop(c.currentTime + (when || 0) + dur + 0.02);
   }
 
-  function click() { if (!sfxOn) return; beep(720, 0.06, "triangle", 0.12); beep(980, 0.05, "sine", 0.08, 0.02); }
-  function coin() { if (!sfxOn) return; beep(880, 0.08, "square", 0.1); beep(1320, 0.12, "sine", 0.12, 0.06); }
-  function message() { if (!sfxOn) return; beep(420, 0.09, "sine", 0.1); beep(640, 0.1, "triangle", 0.08, 0.04); }
-  function success() { if (!sfxOn) return; beep(523, 0.1, "sine", 0.1); beep(659, 0.12, "sine", 0.1, 0.08); beep(784, 0.16, "sine", 0.12, 0.16); }
+  function click() { if (!sfxOn) return; beep(840, 0.05, "sine", 0.1); }
+  function coin() { if (!sfxOn) return; beep(660, 0.08, "sine", 0.1); beep(990, 0.12, "sine", 0.12, 0.07); }
+  function success() { if (!sfxOn) return; beep(523, 0.12, "sine", 0.1); beep(659, 0.14, "sine", 0.1, 0.1); beep(784, 0.18, "sine", 0.12, 0.2); }
+
+  function tone(freq, dur, vol) {
+    const c = ac();
+    const o = c.createOscillator();
+    const g = c.createGain();
+    const f = c.createBiquadFilter();
+    o.type = "sine";
+    o.frequency.value = freq;
+    f.type = "lowpass"; f.frequency.value = 1400;
+    g.gain.setValueAtTime(0.0001, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(vol, c.currentTime + 0.04);
+    g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+    o.connect(f); f.connect(g); g.connect(musicGain);
+    o.start(); o.stop(c.currentTime + dur + 0.05);
+  }
+
+  function tick() {
+    if (!running || !musicOn) return;
+    const n = melody[step % melody.length];
+    tone(n, 1.15, 0.09);
+    tone(n / 2, 1.4, 0.05);
+    step++;
+  }
 
   function startPad() {
-    const c = ac();
     stopPad();
-    const notes = [196, 247, 294, 330, 392];
-    notes.forEach((n, i) => {
-      const o = c.createOscillator();
-      const g = c.createGain();
-      const f = c.createBiquadFilter();
-      o.type = i % 2 ? "sine" : "triangle";
-      o.frequency.value = n;
-      f.type = "lowpass"; f.frequency.value = 900;
-      g.gain.value = 0.07;
-      const lfo = c.createOscillator();
-      const lg = c.createGain();
-      lfo.frequency.value = 0.04 + i * 0.015;
-      lg.gain.value = 18;
-      lfo.connect(lg); lg.connect(o.frequency);
-      o.connect(f); f.connect(g); g.connect(musicGain);
-      o.start(); lfo.start();
-      musicNodes.push(o, lfo, g);
-    });
+    ac();
     running = true;
+    step = 0;
+    tick();
+    timer = setInterval(tick, 720);
   }
   function stopPad() {
-    musicNodes.forEach((n) => { try { n.stop && n.stop(); } catch (e) {} });
-    musicNodes = [];
     running = false;
+    if (timer) { clearInterval(timer); timer = 0; }
   }
 
   return {
     unlock() { ac(); },
-    click, coin, message, success,
-    setMusic(v) { musicOn = v; if (musicGain) musicGain.gain.value = v && !this._paused ? 0.18 : 0; if (v && !running && !this._paused) startPad(); if (!v) stopPad(); },
+    click, coin, success, message: click,
+    setMusic(v) {
+      musicOn = v;
+      if (musicGain) musicGain.gain.value = v && !this._paused ? 0.22 : 0;
+      if (v && !running && !this._paused) startPad();
+      if (!v) stopPad();
+    },
     setSfx(v) { sfxOn = v; },
     pauseAll() {
       this._paused = true;
@@ -7598,9 +7890,9 @@ const AudioFX = (() => {
     resumeAll() {
       this._paused = false;
       if (ctx) ctx.resume();
-      if (sfxGain) sfxGain.gain.value = sfxOn ? 0.55 : 0;
+      if (sfxGain) sfxGain.gain.value = sfxOn ? 0.5 : 0;
       if (musicOn) {
-        if (musicGain) musicGain.gain.value = 0.18;
+        if (musicGain) musicGain.gain.value = 0.22;
         if (!running) startPad();
       }
     },
@@ -7798,21 +8090,19 @@ const Platform = {
   }
 };
 
-const SAVE_KEY = "lunar_messages_v2";
+const SAVE_KEY = "candid_scale_v1";
 
 const Game = {
   lang: "ru",
-  screen: "home",
-  tab: "chats",
-  coins: 40,
+  screen: "hub",
+  tab: "tests",
+  coins: 0,
   unlocked: {},
   testsDone: {},
-  chats: {},
   music: true,
   sfx: true,
   focus: 0,
   test: null,
-  chatId: null,
   fsAsked: false,
 
   async start() {
@@ -7826,54 +8116,34 @@ const Game = {
     AudioFX.setMusic(this.music);
     AudioFX.setSfx(this.sfx);
     this.bindGlobal();
-    this.showHome();
+    this.goTab("tests");
     Platform.ready();
     this.save();
-    const href = location.href || "";
-    if (location.protocol === "file:" && /Temp|\.zip/i.test(href)) {
-      this.toast("Распакуйте архив в папку и откройте index.html оттуда");
-    }
-  },
-
-  defaultChats() {
-    const o = {};
-    CONTENT.GIRLS.forEach((g) => { o[g.id] = { i: 0, h: 0, log: [], done: false }; });
-    return o;
   },
 
   loadLocal() {
     try {
       const d = JSON.parse(localStorage.getItem(SAVE_KEY) || "null");
-      if (!d) { this.coins = CONTENT.START_COINS; this.chats = this.defaultChats(); return; }
-      this.coins = d.coins || CONTENT.START_COINS;
+      if (!d) { this.coins = CONTENT.START_COINS; return; }
+      this.coins = d.coins || 0;
       this.unlocked = d.unlocked || {};
       this.testsDone = d.testsDone || {};
-      this.chats = d.chats || this.defaultChats();
       this.music = d.music !== false;
       this.sfx = d.sfx !== false;
       if (d.lang === "en" || d.lang === "ru") this.lang = d.lang;
-    } catch (e) {
-      this.coins = CONTENT.START_COINS;
-      this.chats = this.defaultChats();
-    }
+    } catch (e) { this.coins = 0; }
   },
 
   mergeCloud(d) {
     if ((d.coins || 0) > this.coins) this.coins = d.coins;
     this.unlocked = Object.assign({}, d.unlocked || {}, this.unlocked);
     this.testsDone = Object.assign({}, d.testsDone || {}, this.testsDone);
-    const base = this.defaultChats();
-    Object.keys(base).forEach((id) => {
-      const a = (d.chats && d.chats[id]) || base[id];
-      const b = this.chats[id] || base[id];
-      this.chats[id] = (a.i || 0) >= (b.i || 0) ? a : b;
-    });
   },
 
   save() {
     const data = {
       coins: this.coins, unlocked: this.unlocked, testsDone: this.testsDone,
-      chats: this.chats, music: this.music, sfx: this.sfx, lang: this.lang, t: Date.now()
+      music: this.music, sfx: this.sfx, lang: this.lang, t: Date.now()
     };
     try { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); } catch (e) {}
     clearTimeout(this._cloudT);
@@ -7887,48 +8157,37 @@ const Game = {
       e.preventDefault();
     });
     document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        AudioFX.pauseAll();
-        Platform.stopGameplay();
-      } else if (!Platform.paused) {
+      if (document.hidden) { AudioFX.pauseAll(); Platform.stopGameplay(); }
+      else if (!Platform.paused) {
         AudioFX.resumeAll();
         if (this.screenNeedsPlay()) Platform.startGameplay();
       }
     });
-    window.addEventListener("blur", () => { AudioFX.pauseAll(); });
+    window.addEventListener("blur", () => AudioFX.pauseAll());
     window.addEventListener("focus", () => { if (!document.hidden && !Platform.paused) AudioFX.resumeAll(); });
     document.addEventListener("keydown", (e) => this.onKey(e));
     document.addEventListener("pointerdown", () => {
       AudioFX.unlock();
-      if (!this.fsAsked && Platform.isMobile()) {
-        this.fsAsked = true;
-        Platform.requestFs();
-      }
-    }, { once: false });
+      if (!this.fsAsked && Platform.isMobile()) { this.fsAsked = true; Platform.requestFs(); }
+    });
   },
 
-  screenNeedsPlay() {
-    return this.screen === "chat" || this.screen === "testPlay" || this.screen === "photo";
-  },
+  screenNeedsPlay() { return this.screen === "testPlay" || this.screen === "photo"; },
 
   onKey(e) {
     if (e.key === "Escape") {
       if (!document.getElementById("modal").classList.contains("hidden")) { this.closeModal(); return; }
-      if (this.screen === "chat" || this.screen === "test" || this.screen === "photo") this.goTab(this.tab);
+      if (this.screen === "testPlay" || this.screen === "result" || this.screen === "photo") this.goTab(this.tab);
       return;
     }
     const items = [...document.querySelectorAll("[data-k]")];
     if (!items.length) return;
     if (e.key === "ArrowDown" || e.key === "ArrowRight") {
-      e.preventDefault();
-      this.focus = (this.focus + 1) % items.length;
-      items[this.focus].focus();
+      e.preventDefault(); this.focus = (this.focus + 1) % items.length; items[this.focus].focus();
     } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
-      e.preventDefault();
-      this.focus = (this.focus - 1 + items.length) % items.length;
-      items[this.focus].focus();
-    } else if (e.key === "Enter") {
-      if (document.activeElement && document.activeElement.dataset.k) document.activeElement.click();
+      e.preventDefault(); this.focus = (this.focus - 1 + items.length) % items.length; items[this.focus].focus();
+    } else if (e.key === "Enter" && document.activeElement && document.activeElement.dataset.k) {
+      document.activeElement.click();
     }
   },
 
@@ -7938,8 +8197,6 @@ const Game = {
     b.classList.remove("hidden");
     document.getElementById("boot").classList.add("hidden");
     this.focus = 0;
-    const first = b.querySelector("[data-k]");
-    if (first) first.setAttribute("tabindex", "0");
   },
 
   toast(msg) {
@@ -7951,7 +8208,6 @@ const Game = {
   },
 
   closeModal() { document.getElementById("modal").classList.add("hidden"); document.getElementById("modal").innerHTML = ""; },
-
   modal(html) {
     const m = document.getElementById("modal");
     m.innerHTML = html;
@@ -7961,7 +8217,7 @@ const Game = {
 
   top(title, back) {
     return `<div class="topbar">
-      ${back ? `<button class="icon-btn" data-k="1" onclick="Game.goTab(Game.tab)">${"←"}</button>` : `<span class="icon-btn">🌙</span>`}
+      ${back ? `<button class="icon-btn" data-k="1" onclick="Game.goTab(Game.tab)">←</button>` : `<span class="icon-btn">✧</span>`}
       <h2>${title}</h2>
       <span class="coin-chip">✦ ${this.coins}</span>
       <button class="icon-btn" data-k="1" onclick="Game.toggleMusic()">${this.music ? "♫" : "🔇"}</button>
@@ -7971,10 +8227,9 @@ const Game = {
   nav() {
     const on = (id) => this.tab === id ? "on" : "";
     return `<nav class="nav">
-      <button class="${on("chats")}" data-k="1" onclick="Game.goTab('chats')"><b>💬</b>${t("chats")}</button>
-      <button class="${on("photos")}" data-k="1" onclick="Game.goTab('photos')"><b>📷</b>${t("photos")}</button>
       <button class="${on("tests")}" data-k="1" onclick="Game.goTab('tests')"><b>✦</b>${t("tests")}</button>
-      <button class="${on("profile")}" data-k="1" onclick="Game.goTab('profile')"><b>♡</b>${t("profile")}</button>
+      <button class="${on("photos")}" data-k="1" onclick="Game.goTab('photos')"><b>♡</b>${t("photos")}</button>
+      <button class="${on("coins")}" data-k="1" onclick="Game.goTab('coins')"><b>✦</b>${t("coinsTab")}</button>
     </nav>`;
   },
 
@@ -7983,27 +8238,20 @@ const Game = {
     this.tab = id;
     this.screen = "hub";
     Platform.stopGameplay();
-    if (id === "chats") this.showChats();
+    if (id === "tests") this.showTests();
     else if (id === "photos") this.showPhotos();
-    else if (id === "tests") this.showTests();
-    else this.showProfile();
+    else this.showCoins();
   },
 
-  showHome() {
-    this.tab = "chats";
-    this.showChats(true);
-  },
-
-  showChats() {
-    const cards = CONTENT.GIRLS.map((g) => {
-      const st = this.chats[g.id] || { done: false, i: 0 };
-      const mark = st.done ? "✓" : "";
-      return `<button class="card chat-list" data-k="1" onclick="Game.openChat('${g.id}')">
-        <img class="avatar" src="${g.avatar}" alt="">
-        <div style="flex:1;min-width:0;text-align:left">
-          <div><b>${tx(g.name)}</b> · ${g.age} · ${tx(g.job)} ${mark}</div>
-          <div class="muted"><span class="online"></span> ${t("online")}</div>
-          <div class="preview">${tx(g.preview)}</div>
+  showTests() {
+    const cards = CONTENT.QUIZZES.map((q) => {
+      const done = !!this.testsDone[q.id];
+      return `<button class="card" data-k="1" onclick="Game.previewTest('${q.id}')">
+        <img class="avatar" src="${q.cover}" alt="">
+        <div style="text-align:left;flex:1;min-width:0">
+          <b>${tx(q.title)}</b>
+          <div class="muted">${t("testReward", { n: q.questions, c: q.reward })}</div>
+          <div class="preview">${done ? "✓ +20" : "+20 ✦"}</div>
         </div>
       </button>`;
     }).join("");
@@ -8013,178 +8261,13 @@ const Game = {
           <img src="assets/img/hero.jpg" alt="">
           <div class="shade"></div>
           <div class="copy">
-            <div class="badge-row"><span class="badge hot">${t("hot")}</span><span class="badge">${t("chats")} · ${t("photos")} · ${t("tests")}</span></div>
+            <div class="badge-row"><span class="badge hot">${t("hot")}</span><span class="badge">${CONTENT.QUIZZES.length} ${t("tests")}</span></div>
             <h3>${tx(CONTENT.GAME_TITLE)}</h3>
-            <div class="muted">${t("ageNote")}</div>
+            <div class="muted">${t("coinsHelp")}</div>
           </div>
         </div>
-        <div class="section-title">${t("chats")}</div>
-        <div class="chat-col" style="display:flex;flex-direction:column;gap:8px">${cards}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">${cards}</div>
       </div>${this.nav()}`);
-  },
-
-  openChat(id) {
-    AudioFX.click();
-    this.chatId = id;
-    this.screen = "chat";
-    Platform.startGameplay();
-    const g = CONTENT.GIRLS.find((x) => x.id === id);
-    const script = CONTENT.CHATS[id];
-    if (!this.chats[id]) this.chats[id] = { i: 0, h: 0, log: [], done: false };
-    const st = this.chats[id];
-    if (!st.log.length) this.advanceNpc(id, true);
-    this.renderChat(g, script, st);
-  },
-
-  advanceNpc(id, init) {
-    const script = CONTENT.CHATS[id];
-    const st = this.chats[id];
-    while (st.i < script.length && script[st.i].her) {
-      st.log.push({ who: "her", text: script[st.i].her });
-      st.i++;
-    }
-    if (st.i >= script.length) st.done = true;
-    if (!init) this.save();
-  },
-
-  renderChat(g, script, st) {
-    const msgs = st.log.map((m) => `<div class="bubble ${m.who}">${tx(m.text)}</div>`).join("");
-    let choices = "";
-    if (st.i < script.length && script[st.i].opts) {
-      choices = `<div class="choices">` + script[st.i].opts.map((op, i) =>
-        `<button class="choice" data-k="1" onclick="Game.pickChat(${i})">${tx(op.t)}</button>`
-      ).join("") + `</div>`;
-    } else if (st.done) {
-      const end = st.h >= 12 ? t("endingFire") : st.h >= 7 ? t("endingSpark") : t("endingWarm");
-      choices = `<div class="q-card" style="text-align:center"><div class="stars">♥ ${st.h}</div><p>${end}</p>
-        <button class="btn" data-k="1" onclick="Game.goTab('chats')">${t("continue")}</button></div>`;
-    }
-    this.el(`${this.top(tx(g.name) + " · " + g.age, true)}
-      <div class="scroll" id="chatScroll">
-        <div class="card" style="margin-bottom:10px">
-          <img class="avatar" src="${g.avatar}" alt="">
-          <div><b>${tx(g.name)}</b><div class="muted">${tx(g.job)} · <span class="online"></span> ${t("online")}</div></div>
-        </div>
-        <div class="messages">${msgs}</div>${choices}
-      </div>`);
-    const sc = document.getElementById("chatScroll");
-    sc.scrollTop = sc.scrollHeight;
-  },
-
-  pickChat(i) {
-    AudioFX.message();
-    const id = this.chatId;
-    const script = CONTENT.CHATS[id];
-    const st = this.chats[id];
-    const op = script[st.i].opts[i];
-    st.log.push({ who: "me", text: op.t });
-    st.h += op.h || 0;
-    st.i++;
-    this.advanceNpc(id);
-    const g = CONTENT.GIRLS.find((x) => x.id === id);
-    this.renderChat(g, script, st);
-    this.save();
-    if (st.done) {
-      Platform.interstitial(() => {});
-    }
-  },
-
-  showPhotos() {
-    const cards = CONTENT.PHOTOS.map((p) => {
-      const open = !!this.unlocked[p.id];
-      const g = CONTENT.GIRLS.find((x) => x.id === p.girl);
-      return `<button class="photo-card ${open ? "" : "locked"}" data-k="1" onclick="Game.openPhoto('${p.id}')">
-        <img src="${p.src}" alt="">
-        ${open ? "" : `<div class="lock-ico">🔒</div>`}
-        <div class="meta">
-          <span class="badge hot">${t("hot")}</span>
-          <span class="badge gold">${open ? "✓" : "✦ " + p.price}</span>
-        </div>
-      </button>`;
-    }).join("");
-    this.el(`${this.top(t("photos"))}
-      <div class="scroll">
-        <div class="btn-row" style="margin-bottom:10px">
-          <button class="btn gold" data-k="1" onclick="Game.adCoins()">${t("watchAdCoins")}</button>
-        </div>
-        <div class="photo-grid">${cards}</div>
-      </div>${this.nav()}`);
-  },
-
-  openPhoto(id) {
-    AudioFX.click();
-    const p = CONTENT.PHOTOS.find((x) => x.id === id);
-    const open = !!this.unlocked[id];
-    const g = CONTENT.GIRLS.find((x) => x.id === p.girl);
-    if (open) {
-      this.screen = "photo";
-      Platform.startGameplay();
-      this.modal(`<div class="modal-card" style="text-align:center">
-        <img src="${p.src}" alt="" style="width:100%;border-radius:12px;max-height:55vh;object-fit:contain">
-        <h3>${tx(p.title)}</h3>
-        <p class="muted">${tx(g.name)} · ${t("hot")}</p>
-        <button class="btn sec" data-k="1" onclick="Game.closeModal();Game.goTab('photos')">${t("close")}</button>
-      </div>`);
-      return;
-    }
-    this.modal(`<div class="modal-card">
-      <div class="badge-row"><span class="badge hot">${t("hot")}</span><span class="badge gold">✦ ${p.price}</span></div>
-      <h3>${tx(p.title)}</h3>
-      <p class="muted">${tx(g.name)} · ${t("rewardedHint")}</p>
-      <div class="btn-row" style="margin-top:10px">
-        <button class="btn" data-k="1" onclick="Game.buyPhoto('${id}')">${t("openFor")} ${p.price}</button>
-      </div>
-      <button class="btn cyan" style="width:100%;margin-top:8px" data-k="1" onclick="Game.adPhoto('${id}')">${t("watchAd")}</button>
-      <button class="btn sec" style="width:100%;margin-top:8px" data-k="1" onclick="Game.closeModal()">${t("close")}</button>
-    </div>`);
-  },
-
-  unlockPhoto(id) {
-    this.unlocked[id] = 1;
-    this.save();
-    AudioFX.success();
-    this.toast(t("opened"));
-    this.closeModal();
-    this.showPhotos();
-    this.openPhoto(id);
-  },
-
-  buyPhoto(id) {
-    const p = CONTENT.PHOTOS.find((x) => x.id === id);
-    if (this.coins < p.price) { this.toast(t("needCoins")); return; }
-    this.coins -= p.price;
-    this.unlockPhoto(id);
-  },
-
-  adPhoto(id) {
-    Platform.rewarded(() => this.unlockPhoto(id), () => this.toast(t("adFail")));
-  },
-
-  adCoins() {
-    Platform.rewarded(() => {
-      this.coins += CONTENT.AD_COINS;
-      this.save();
-      AudioFX.coin();
-      this.toast(t("coinsGot", { c: CONTENT.AD_COINS }));
-      if (this.tab === "photos") this.showPhotos();
-      if (this.tab === "profile") this.showProfile();
-    }, () => this.toast(t("adFail")));
-  },
-
-  showTests() {
-    const cards = CONTENT.QUIZZES.map((q) => {
-      const done = !!this.testsDone[q.id];
-      return `<button class="card" data-k="1" onclick="Game.previewTest('${q.id}')">
-        <img class="avatar" src="${q.cover}" alt="">
-        <div style="text-align:left;flex:1">
-          <b>${tx(q.title)}</b>
-          <div class="muted">${t("testReward", { n: q.questions, c: q.reward })}</div>
-          <div class="preview">${done ? "✓" : "15"} </div>
-        </div>
-      </button>`;
-    }).join("");
-    this.el(`${this.top(t("tests"))}
-      <div class="scroll"><div style="display:flex;flex-direction:column;gap:8px">${cards}</div></div>${this.nav()}`);
   },
 
   previewTest(id) {
@@ -8218,7 +8301,7 @@ const Game = {
     this.el(`${this.top(tx(st.quiz.title), true)}
       <div class="scroll">
         <div class="q-card">
-          <div class="muted">${st.i + 1} / ${st.quiz.qs.length}</div>
+          <div class="muted">${st.i + 1} / ${st.quiz.qs.length} · ${t("testReward", { n: st.quiz.qs.length, c: st.quiz.reward })}</div>
           <div class="progress"><i style="width:${pct}%"></i></div>
           <h3>${tx(item.q)}</h3>
           <div class="answers">${ans}</div>
@@ -8266,46 +8349,84 @@ const Game = {
     Platform.interstitial(() => {});
   },
 
+  showPhotos() {
+    const cards = CONTENT.PHOTOS.map((p) => {
+      const open = !!this.unlocked[p.id];
+      return `<button class="photo-card ${open ? "" : "locked"}" data-k="1" onclick="Game.openPhoto('${p.id}')">
+        <img src="${p.src}" alt="">
+        ${open ? "" : `<div class="lock-ico">🔒</div>`}
+        <div class="meta">
+          <span class="badge hot">${t("hot")}</span>
+          <span class="badge gold">${open ? "✓" : "✦ 50"}</span>
+        </div>
+      </button>`;
+    }).join("");
+    this.el(`${this.top(t("photos"))}
+      <div class="scroll">
+        <p class="muted" style="margin-top:0">${t("coinsHelp")}</p>
+        <div class="photo-grid">${cards}</div>
+      </div>${this.nav()}`);
+  },
+
+  openPhoto(id) {
+    AudioFX.click();
+    const p = CONTENT.PHOTOS.find((x) => x.id === id);
+    if (this.unlocked[id]) {
+      this.screen = "photo";
+      Platform.startGameplay();
+      this.modal(`<div class="modal-card" style="text-align:center">
+        <img src="${p.src}" alt="" style="width:100%;border-radius:12px;max-height:55vh;object-fit:contain">
+        <h3>${tx(p.title)}</h3>
+        <button class="btn sec" data-k="1" onclick="Game.closeModal();Game.goTab('photos')">${t("close")}</button>
+      </div>`);
+      return;
+    }
+    this.modal(`<div class="modal-card">
+      <div class="badge-row"><span class="badge hot">${t("hot")}</span><span class="badge gold">✦ 50</span></div>
+      <h3>${tx(p.title)}</h3>
+      <p class="muted">${t("rewardedHint")}</p>
+      <button class="btn" style="width:100%;margin-top:10px" data-k="1" onclick="Game.buyPhoto('${id}')">${t("openFor")} 50</button>
+      <button class="btn cyan" style="width:100%;margin-top:8px" data-k="1" onclick="Game.adPhoto('${id}')">${t("watchAd")}</button>
+      <button class="btn sec" style="width:100%;margin-top:8px" data-k="1" onclick="Game.closeModal()">${t("close")}</button>
+    </div>`);
+  },
+
+  unlockPhoto(id) {
+    this.unlocked[id] = 1;
+    this.save();
+    AudioFX.success();
+    this.toast(t("opened"));
+    this.closeModal();
+    this.showPhotos();
+    this.openPhoto(id);
+  },
+
+  buyPhoto(id) {
+    if (this.coins < CONTENT.PHOTO_PRICE) { this.toast(t("needCoins")); return; }
+    this.coins -= CONTENT.PHOTO_PRICE;
+    this.unlockPhoto(id);
+  },
+
+  adPhoto(id) {
+    Platform.rewarded(() => this.unlockPhoto(id), () => this.toast(t("adFail")));
+  },
+
+  adCoins() {
+    Platform.rewarded(() => {
+      this.coins += CONTENT.AD_COINS;
+      this.save();
+      AudioFX.coin();
+      this.toast(t("coinsGot", { c: CONTENT.AD_COINS }));
+      if (this.tab === "coins") this.showCoins();
+    }, () => this.toast(t("adFail")));
+  },
+
   toggleMusic() {
     this.music = !this.music;
     AudioFX.setMusic(this.music);
     this.save();
     if (this.screen === "hub") this.goTab(this.tab);
-    else if (this.screen === "chat") this.openChat(this.chatId);
-    else if (this.screen === "testPlay" && this.test && this.test.i < (this.test.quiz.qs.length)) this.renderQ();
-  },
-
-  showProfile() {
-    const chatsDone = Object.values(this.chats).filter((c) => c.done).length;
-    const tests = Object.keys(this.testsDone).length;
-    const photos = Object.keys(this.unlocked).length;
-    this.el(`${this.top(t("profile"))}
-      <div class="scroll">
-        <div class="stat-row">
-          <div class="stat"><b>${this.coins}</b>${t("coins")}</div>
-          <div class="stat"><b>${photos}/${CONTENT.PHOTOS.length}</b>${t("photosOpen")}</div>
-          <div class="stat"><b>${chatsDone}/${CONTENT.GIRLS.length}</b>${t("chatsDone")}</div>
-          <div class="stat"><b>${tests}/${CONTENT.QUIZZES.length}</b>${t("testsDone")}</div>
-        </div>
-        <button class="btn gold" style="width:100%;margin:8px 0" data-k="1" onclick="Game.adCoins()">${t("watchAdCoins")}</button>
-        <div class="q-card" style="margin:10px 0">
-          <b>${t("login")}</b>
-          <p class="muted">${t("loginHint")}</p>
-          ${Platform.isAuth() ? `<p>Yandex ID ✓</p>` : `<button class="btn" data-k="1" onclick="Game.doLogin()">${t("login")}</button>`}
-        </div>
-        <div class="q-card" style="margin:10px 0">
-          <div class="btn-row">
-            <button class="btn sec" data-k="1" onclick="Game.toggleMusic()">${t("music")}: ${this.music ? "ON" : "OFF"}</button>
-            <button class="btn sec" data-k="1" onclick="Game.toggleSfx()">${t("sfx")}: ${this.sfx ? "ON" : "OFF"}</button>
-          </div>
-          <div class="btn-row" style="margin-top:8px">
-            <button class="btn sec" data-k="1" onclick="Game.setLang('ru')">🇷🇺 Русский</button>
-            <button class="btn sec" data-k="1" onclick="Game.setLang('en')">🇬🇧 English</button>
-          </div>
-        </div>
-        <div class="q-card"><b>${t("how")}</b><p class="muted">${t("howBody")}</p></div>
-        <div class="q-card" style="margin-top:10px"><b>${t("privacy")}</b><p class="muted">${t("privacyBody")}</p></div>
-      </div>${this.nav()}`);
+    else if (this.screen === "testPlay") this.renderQ();
   },
 
   toggleSfx() {
@@ -8313,7 +8434,7 @@ const Game = {
     AudioFX.setSfx(this.sfx);
     AudioFX.click();
     this.save();
-    this.showProfile();
+    this.showCoins();
   },
 
   setLang(l) {
@@ -8321,7 +8442,37 @@ const Game = {
     document.documentElement.lang = l === "ru" ? "ru" : "en";
     this.save();
     AudioFX.click();
-    this.showProfile();
+    this.showCoins();
+  },
+
+  showCoins() {
+    const tests = Object.keys(this.testsDone).length;
+    const photos = Object.keys(this.unlocked).length;
+    this.el(`${this.top(t("coinsTab"))}
+      <div class="scroll">
+        <div class="stat-row">
+          <div class="stat"><b>${this.coins}</b>${t("coins")}</div>
+          <div class="stat"><b>${tests}/${CONTENT.QUIZZES.length}</b>${t("tests")}</div>
+          <div class="stat"><b>${photos}/${CONTENT.PHOTOS.length}</b>${t("photos")}</div>
+        </div>
+        <p class="muted">${t("coinsHelp")}</p>
+        <button class="btn gold" style="width:100%;min-height:56px;margin:8px 0" data-k="1" onclick="Game.adCoins()">${t("watchAdCoins")}</button>
+        <p class="muted">${t("rewardedHint")}</p>
+        <div class="q-card" style="margin-top:12px">
+          <b>${t("login")}</b>
+          <p class="muted">${t("loginHint")}</p>
+          ${Platform.isAuth() ? "<p>Yandex ID ✓</p>" : `<button class="btn" data-k="1" onclick="Game.doLogin()">${t("login")}</button>`}
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="btn sec" data-k="1" onclick="Game.toggleMusic()">${t("music")}: ${this.music ? "ON" : "OFF"}</button>
+          <button class="btn sec" data-k="1" onclick="Game.toggleSfx()">${t("sfx")}: ${this.sfx ? "ON" : "OFF"}</button>
+        </div>
+        <div class="btn-row" style="margin-top:8px">
+          <button class="btn sec" data-k="1" onclick="Game.setLang('ru')">🇷🇺 Русский</button>
+          <button class="btn sec" data-k="1" onclick="Game.setLang('en')">🇬🇧 English</button>
+        </div>
+        <div class="q-card" style="margin-top:12px"><b>${t("how")}</b><p class="muted">${t("howBody")}</p></div>
+      </div>${this.nav()}`);
   },
 
   async doLogin() {
@@ -8332,18 +8483,15 @@ const Game = {
       if (cloud) this.mergeCloud(cloud);
       this.save();
     }
-    this.showProfile();
+    this.showCoins();
   }
 };
 
 window.Game = Game;
 Game.start().catch(function (e) {
   var msg = (e && e.message) ? e.message : String(e);
-  document.body.style.background = "#120218";
-  document.body.innerHTML = '<div style="padding:28px;font-family:Segoe UI,sans-serif;color:#fff;max-width:560px">' +
-    "<h2>Игра не запустилась</h2>" +
-    "<p>Распакуйте архив <b>целиком</b> на Рабочий стол. Затем откройте файл <b>index.html</b> из этой папки. Не открывайте его прямо изнутри zip.</p>" +
-    "<pre style='white-space:pre-wrap;color:#ff87d0'>" + msg + "</pre></div>";
+  document.body.innerHTML = '<div style="padding:28px;font-family:Segoe UI,sans-serif;color:#fff;background:#120218;min-height:100vh">' +
+    "<h2>Распакуйте архив целиком и откройте index.html из папки</h2><pre>" + msg + "</pre></div>";
 });
 
   </script>

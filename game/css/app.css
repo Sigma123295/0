@@ -82,7 +82,7 @@ button, .tap { cursor: pointer; font: inherit; color: inherit; }
   position: absolute; left: 0; right: 0; bottom: 0;
   height: calc(var(--navh) + var(--safeb));
   padding-bottom: var(--safeb);
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   background: rgba(12, 2, 18, .92); border-top: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
