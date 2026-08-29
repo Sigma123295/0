@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#16041f">
+  <title>Лунные переписки</title>
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/sdk.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div id="boot" class="boot">
+      <div class="boot-glow"></div>
+      <img class="boot-hero" src="assets/img/hero.jpg" alt="">
+      <div class="boot-copy">
+        <p class="boot-kicker">секретные диалоги</p>
+        <h1>Лунные переписки</h1>
+        <p class="boot-sub">Чаты · Фото · Тесты</p>
+        <div class="boot-bar"><i></i></div>
+      </div>
+    </div>
+    <div id="view" class="view hidden"></div>
+    <div id="toast" class="toast hidden"></div>
+    <div id="modal" class="modal hidden"></div>
+    <div id="pause" class="pause hidden">
+      <div class="pause-card">
+        <h2 data-i="paused">Пауза</h2>
+        <p data-i="pausedHint">Игра на паузе, звук выключен</p>
+      </div>
+    </div>
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/platform.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
