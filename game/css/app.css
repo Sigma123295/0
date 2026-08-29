@@ -198,6 +198,7 @@ button, .tap { cursor: pointer; font: inherit; color: inherit; }
   .grid-2 { grid-template-columns: 1fr 1fr 1fr 1fr; }
   .hero-card { height: 280px; }
   .scroll { padding-left: 22px; padding-right: 22px; }
+  .chat-col { display: grid !important; grid-template-columns: 1fr 1fr; gap: 8px !important; }
 }
 @media (max-width: 380px) {
   .nav button { font-size: 10px; }

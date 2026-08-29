@@ -1,4 +1,4 @@
-const SAVE_KEY = "lunar_messages_v1";
+const SAVE_KEY = "lunar_messages_v2";
 
 const Game = {
   lang: "ru",
@@ -160,7 +160,7 @@ const Game = {
       ${back ? `<button class="icon-btn" data-k="1" onclick="Game.goTab(Game.tab)">${"←"}</button>` : `<span class="icon-btn">🌙</span>`}
       <h2>${title}</h2>
       <span class="coin-chip">✦ ${this.coins}</span>
-      <button class="icon-btn" data-k="1" onclick="Game.toggleMusic()">${this.music ? "♪" : "🔇"}</button>
+      <button class="icon-btn" data-k="1" onclick="Game.toggleMusic()">${this.music ? "♫" : "🔇"}</button>
     </div>`;
   },
 
@@ -215,7 +215,7 @@ const Game = {
           </div>
         </div>
         <div class="section-title">${t("chats")}</div>
-        <div style="display:flex;flex-direction:column;gap:8px">${cards}</div>
+        <div class="chat-col" style="display:flex;flex-direction:column;gap:8px">${cards}</div>
       </div>${this.nav()}`);
   },
 

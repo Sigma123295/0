@@ -159,7 +159,7 @@ const Platform = {
   _mock() {
     const self = this;
     return {
-      environment: { i18n: { lang: (navigator.language || "ru").slice(0, 2) } },
+      environment: { i18n: { lang: "ru" } },
       deviceInfo: { isMobile: /Mobi|Android|iPhone/i.test(navigator.userAgent), isDesktop: true, type: "desktop" },
       features: { LoadingAPI: { ready() {} }, GameplayAPI: { start() {}, stop() {} } },
       adv: {
