@@ -46,14 +46,14 @@ promo/yandex_upload/videos/gameplay_horizontal.mp4
 
 Device: Desktop
 Orientation: Landscape
-Size: 1920×1080, 16:9, 24-bit PNG
+Size: 1920×1080 JPEG, exact 16:9
 
-Add 5 screenshots, 1920×1080 (16:9):
-1. promo/yandex_upload/screenshots_desktop_16x9/01_home.png
-2. promo/yandex_upload/screenshots_desktop_16x9/02_tests.png
-3. promo/yandex_upload/screenshots_desktop_16x9/03_photos.png
-4. promo/yandex_upload/screenshots_desktop_16x9/04_chats.png
-5. promo/yandex_upload/screenshots_desktop_16x9/05_alisa.png
+Add 5 screenshots:
+1. promo/yandex_upload/screenshots_16x9_jpeg/01_home_1920x1080.jpg
+2. promo/yandex_upload/screenshots_16x9_jpeg/02_tests_1920x1080.jpg
+3. promo/yandex_upload/screenshots_16x9_jpeg/03_photos_1920x1080.jpg
+4. promo/yandex_upload/screenshots_16x9_jpeg/04_chats_1920x1080.jpg
+5. promo/yandex_upload/screenshots_16x9_jpeg/05_alisa_1920x1080.jpg
 
 === ADVERTISING VIDEOS ===
 
