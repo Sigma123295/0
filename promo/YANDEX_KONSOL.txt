@@ -63,19 +63,12 @@ promo/yandex_upload/videos/gameplay_horizontal.mp4
 Ориентация скриншотов: Альбомная
 Формат: 1920×1080, 16:9, PNG 24-bit
 
-Добавьте скриншоты — по порядку:
+Добавьте скриншоты — ровно 5 штук, 1920×1080 (16:9):
 1. promo/yandex_upload/screenshots_desktop_16x9/01_home.png
 2. promo/yandex_upload/screenshots_desktop_16x9/02_tests.png
-3. promo/yandex_upload/screenshots_desktop_16x9/03_quiz.png
-4. promo/yandex_upload/screenshots_desktop_16x9/04_photos.png
-5. promo/yandex_upload/screenshots_desktop_16x9/05_chats.png
-6. promo/yandex_upload/screenshots_desktop_16x9/06_alisa.png
-
-Дополнительно (если консоль примет больше двух):
-7. promo/yandex_upload/screenshots_desktop_16x9/07_profile.png
-8. promo/yandex_upload/screenshots_desktop_16x9/08_photo_open.png
-
-Минимум 2 штуки. Лучше загрузить все шесть первых.
+3. promo/yandex_upload/screenshots_desktop_16x9/03_photos.png
+4. promo/yandex_upload/screenshots_desktop_16x9/04_chats.png
+5. promo/yandex_upload/screenshots_desktop_16x9/05_alisa.png
 
 Мобильные скрины тоже готовы (9:16), если консоль попросит мобильные:
 promo/yandex_upload/screenshots_mobile_9x16/

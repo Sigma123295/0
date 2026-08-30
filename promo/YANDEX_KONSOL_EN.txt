@@ -48,13 +48,12 @@ Device: Desktop
 Orientation: Landscape
 Size: 1920×1080, 16:9, 24-bit PNG
 
-Add screenshots:
+Add 5 screenshots, 1920×1080 (16:9):
 1. promo/yandex_upload/screenshots_desktop_16x9/01_home.png
 2. promo/yandex_upload/screenshots_desktop_16x9/02_tests.png
-3. promo/yandex_upload/screenshots_desktop_16x9/03_quiz.png
-4. promo/yandex_upload/screenshots_desktop_16x9/04_photos.png
-5. promo/yandex_upload/screenshots_desktop_16x9/05_chats.png
-6. promo/yandex_upload/screenshots_desktop_16x9/06_alisa.png
+3. promo/yandex_upload/screenshots_desktop_16x9/03_photos.png
+4. promo/yandex_upload/screenshots_desktop_16x9/04_chats.png
+5. promo/yandex_upload/screenshots_desktop_16x9/05_alisa.png
 
 === ADVERTISING VIDEOS ===
 
