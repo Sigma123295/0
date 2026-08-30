@@ -253,7 +253,7 @@ const Game = {
       </button>`;
     }).join("");
     this.el(`${this.top(t("tests"), "Game.showHome()")}
-      <div class="scroll" style="display:flex;flex-direction:column;gap:8px">${cards}</div>`);
+      <div class="scroll list-col">${cards}</div>`);
   },
 
   previewTest(id) {
@@ -427,7 +427,7 @@ const Game = {
       </button>`;
     }).join("");
     this.el(`${this.top(t("chats"), "Game.showHome()")}
-      <div class="scroll tg-list" style="display:flex;flex-direction:column;gap:0;padding:0">${cards}</div>`);
+      <div class="scroll tg-list list-col" style="padding:0">${cards}</div>`);
   },
 
   openChat(id) {

@@ -231,3 +231,60 @@ button { cursor: pointer; font: inherit; color: inherit; }
 }
 .pause-card { text-align: center; }
 .img-zoom { width: 100%; border-radius: 12px; max-height: 58vh; object-fit: contain; pointer-events: none; }
+
+.list-col { display: flex; flex-direction: column; gap: 8px; }
+
+@media (min-aspect-ratio: 3/2) {
+  .home {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 18px 40px 12px;
+  }
+  .home-clock {
+    text-align: left;
+    flex: 1;
+    padding: 8px 24px 0 0;
+  }
+  .home-clock .time { font-size: 92px; }
+  .home-notifs {
+    width: min(440px, 36%);
+    margin: 28px 0 0;
+  }
+  .home-grid {
+    flex-basis: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 8px;
+    padding: 0;
+  }
+  .photo-grid { grid-template-columns: repeat(4, 1fr); }
+  .stat-row { grid-template-columns: repeat(4, 1fr); }
+  .list-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-content: stretch;
+    grid-auto-rows: 1fr;
+  }
+  .list-col .card { height: 100%; }
+  .tg-list.list-col { gap: 1px; }
+  .tg {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    grid-template-rows: 1fr auto;
+  }
+  .tg .scroll { grid-column: 1; grid-row: 1; min-height: 0; }
+  .choices {
+    width: auto;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    justify-content: center;
+    border-left: 1px solid rgba(140, 220, 255, 0.18);
+  }
+  .tg-input { grid-column: 1; grid-row: 2; }
+  .bubble { max-width: 70%; }
+  .answers { display: grid; grid-template-columns: 1fr 1fr; }
+  .q-card { max-width: none; }
+  .modal { align-items: center; }
+  .modal-card { max-width: 720px; }
+}
